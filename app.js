@@ -4,8 +4,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var { router } = require('./routes/getRoutes/index');
 
 var app = express();
 
@@ -18,8 +17,7 @@ app.set('view engine', 'ejs');
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+app.use('/', router);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -35,7 +33,7 @@ app.use(function (req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function (err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
+        res.render('shared/error', {
             message: err.message,
             error: err
         });
@@ -46,7 +44,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function (err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
+    res.render('shared/error', {
         message: err.message,
         error: {}
     });

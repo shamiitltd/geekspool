@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node app"
+    "stop": "pkill node",
+    "start": "node app.js",
+    "test": "nodemon app.js",
+    "prod": "nohup npm start --production & exit"
   },
   "description": "geekspool",
   "author": {
-    "name": ""
+    "name": "King Upadhyay"
   },
   "dependencies": {
     "axios": "^1.1.3",
