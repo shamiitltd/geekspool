@@ -29,57 +29,166 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.js" />
-    <Content Include="GeekspoolTest\routes\shared\home.js">
+    <Content Include=".env" />
+    <Content Include="api\account.js">
       <SubType>Code</SubType>
-      <TestFramework>Mocha</TestFramework>
     </Content>
-    <Content Include="routes\getRoutes\index.js" />
+    <Content Include="api\form.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="api\index.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="api\mail.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="api\master.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="api\payment.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="api\rss.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="api\search.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="api\setup.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="api\sitemap.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="api\user.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="app.js" />
+    <Content Include="config\database.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="config\mail.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="config\payment.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="setup\setup.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="model\account.js" />
+    <Content Include="model\auth.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="model\form.js" />
+    <Content Include="model\index.js" />
+    <Content Include="model\mail.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="model\master.js" />
+    <Content Include="model\notification.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="model\payment.js" />
+    <Content Include="model\rss.js" />
+    <Content Include="model\search.js" />
+    <Content Include="model\setup.js" />
+    <Content Include="model\sitemap.js" />
+    <Content Include="model\user.js" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\shared\main.css" />
     <Content Include="README.md" />
-    <Content Include="views\shared\index.ejs">
+    <Content Include="setup\application\api.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="setup\application\config.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="setup\application\css.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="setup\application\directories.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="setup\application\javascript.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="setup\application\model.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="setup\application\routes.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="setup\application\test.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="setup\application\view.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="setup\Databases\database.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="setup\Databases\storedprocedure.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="setup\Databases\tables.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="test\routes\shared\homeTest.js">
+      <SubType>Code</SubType>
+      <TestFramework>Mocha</TestFramework>
+    </Content>
+    <Content Include="views\controllers\offlineController.ejs" />
+    <Content Include="views\shared\footer.ejs" />
+    <Content Include="views\shared\header.ejs" />
     <Content Include="views\shared\error.ejs">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="views\shared\navbar.ejs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GeekspoolTest\" />
-    <Folder Include="GeekspoolTest\javascripts\controllers\" />
-    <Folder Include="GeekspoolTest\javascripts\" />
-    <Folder Include="GeekspoolTest\javascripts\libraries\" />
-    <Folder Include="GeekspoolTest\routes\" />
-    <Folder Include="GeekspoolTest\routes\controllers\" />
-    <Folder Include="GeekspoolTest\routes\libraries\" />
-    <Folder Include="GeekspoolTest\routes\shared\" />
-    <Folder Include="GeekspoolTest\view\" />
-    <Folder Include="GeekspoolTest\javascripts\shared\" />
-    <Folder Include="GeekspoolTest\view\controllers\" />
-    <Folder Include="GeekspoolTest\view\shared\" />
+    <Folder Include="test\" />
+    <Folder Include="test\javascripts\controllers\" />
+    <Folder Include="test\javascripts\" />
+    <Folder Include="test\javascripts\libraries\" />
+    <Folder Include="test\api\" />
+    <Folder Include="test\model\" />
+    <Folder Include="test\routes\" />
+    <Folder Include="test\routes\controllers\" />
+    <Folder Include="test\routes\libraries\" />
+    <Folder Include="test\routes\shared\" />
+    <Folder Include="test\view\" />
+    <Folder Include="test\javascripts\shared\" />
+    <Folder Include="test\view\controllers\" />
+    <Folder Include="test\view\shared\" />
+    <Folder Include="api\" />
+    <Folder Include="config\" />
+    <Folder Include="model\" />
+    <Folder Include="setup\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\images\controllers\" />
     <Folder Include="public\images\shared\" />
     <Folder Include="public\javascripts\" />
+    <Folder Include="public\javascripts\components\" />
     <Folder Include="public\javascripts\controllers\" />
     <Folder Include="public\javascripts\libraries\" />
     <Folder Include="public\javascripts\shared\" />
     <Folder Include="public\files\" />
     <Folder Include="public\stylesheets\" />
+    <Folder Include="public\stylesheets\components\" />
     <Folder Include="public\stylesheets\controllers\" />
     <Folder Include="public\stylesheets\libraries\" />
     <Folder Include="public\stylesheets\shared\" />
     <Folder Include="routes\" />
-    <Folder Include="routes\databases\" />
-    <Folder Include="routes\libraries\" />
+    <Folder Include="routes\components\" />
     <Folder Include="routes\controllers\" />
-    <Folder Include="routes\getRoutes\" />
-    <Folder Include="routes\postRoutes\" />
     <Folder Include="routes\shared\" />
+    <Folder Include="setup\Databases\" />
+    <Folder Include="setup\application\" />
     <Folder Include="views\" />
     <Folder Include="views\controllers\" />
+    <Folder Include="views\components\" />
     <Folder Include="views\shared\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />

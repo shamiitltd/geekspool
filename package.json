@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "stop": "pkill node",
+    "setup": "node setup/setup",
     "start": "node app.js",
     "test": "nodemon app.js",
     "prod": "nohup npm start --production & exit"

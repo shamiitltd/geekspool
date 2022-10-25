@@ -1,22 +1,45 @@
-'use strict';
-var debug = require('debug')('my express app');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
+//libraries and files //npm run setup //npm run test //npm run prod
+const express = require('express');
+const methodOverride = require('method-override');
+const cookieParser = require('cookie-parser');
+const path = require('path');
+const compression = require('compression');
+const flash = require('express-flash');
+const session = require('cookie-session');
+const app = express();
+const api = require('./api/index');
+require('dotenv').config();
 
-var { router } = require('./routes/getRoutes/index');
+//use mehtods
+app.use(compression());
+app.use(methodOverride('_method'));
+app.use(express.json({
+    limit: '50mb'
+}));
+app.use(express.urlencoded({
+    limit: '50mb',
+    extended: true
+}));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'routes')));
+app.use(cookieParser());
+app.use(flash());
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 730 * 86400000
+    }
+}))
 
-var app = express();
-
-// view engine setup
+//set methods
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+//api path
+app.use(api);  
 
-app.use('/', router);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -49,8 +72,8 @@ app.use(function (err, req, res, next) {
     });
 });
 
-app.set('port', process.env.PORT || 3000);
 
-var server = app.listen(app.get('port'), function () {
-    debug('Express server listening on port ' + server.address().port);
-});
+//listening the server
+var server = app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server is running on port ${server.address().port} !!!`);
+})
