@@ -8,16 +8,17 @@ const flash = require('express-flash');
 const session = require('cookie-session');
 const app = express();
 const api = require('./api/index');
+const passport = require('passport');
 require('dotenv').config();
 
 //use mehtods
 app.use(compression());
 app.use(methodOverride('_method'));
 app.use(express.json({
-    limit: '50mb'
+    limit: '100mb'
 }));
 app.use(express.urlencoded({
-    limit: '50mb',
+    limit: '100mb',
     extended: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -32,6 +33,9 @@ app.use(session({
         maxAge: 730 * 86400000
     }
 }))
+initializePassport(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 //set methods
 app.set('views', path.join(__dirname, 'views'));

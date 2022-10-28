@@ -1,20 +1,11 @@
 let mysql = require('mysql');
 require('dotenv').config();
 
-let tempDb = mysql.createPool({
-    connectionLimit: 100,
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE_TEMP_DBGP,
-    timezone: 'utc',
-    debug: false
-});
 let testDb = mysql.createPool({
     connectionLimit: 100,
     host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
+    user: process.env.MYSQL_USER_TEST_DBGP,
+    password: process.env.MYSQL_PASSWORD_TEST_DBGP,
     database: process.env.MYSQL_DATABASE_TEST_DBGP,
     timezone: 'utc',
     debug: false
@@ -22,24 +13,19 @@ let testDb = mysql.createPool({
 let prodDb = mysql.createPool({
     connectionLimit: 100,
     host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
+    user: process.env.MYSQL_USER_PROD_DBGP,
+    password: process.env.MYSQL_PASSWORD_PROD_DBGP,
     database: process.env.MYSQL_DATABASE_PROD_DBGP,
     timezone: 'utc',
     debug: false
 });
 
-tempDb.getConnection((err, connection) => {
+testDb.getConnection((err, connection) => {
     if (err) {
         console.log("Not connected !!! " + err);
         return;
     }
     console.log('MySql Connected as id ' + connection.threadId);
-});
-testDb.getConnection((err, connection) => {
-    if (err) {
-        return;
-    }
 });
 prodDb.getConnection((err, connection) => {
     if (err) {
@@ -47,8 +33,4 @@ prodDb.getConnection((err, connection) => {
     }
 });
 
-module.exports = {
-    tempDb,
-    testDb,
-    prodDb
-};
+exports.mysql = process.env.NODE_ENV == 'prod' ? prodDb : testDb;

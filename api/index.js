@@ -6,17 +6,10 @@ const {
     checkAuthentication,
     checkNotAuthenticated
 } = require('./routes/libraries/normal_functions');
-initializePassport(passport);
-app.use(passport.initialize());
-app.use(passport.session());
 
 
 // app.use('/variablesData', variablesData); // Routing path
 app.use('/', getRoutes); // Routing path 
-app.use('/', getRoutestools); // Routing path 
-app.use('/', getRoutesBox); // Routing path 
-app.use('/', postRoutes); // Routing path
-app.use('/', postRoutestools); // Routing path
 
 app.get('/signin', checkNotAuthenticated, async (req, res) => {
     res.render('outerMostContainers/containerWithSearchForm', {
@@ -41,33 +34,6 @@ app.get('/', async (req, res) => {
     });
 })
 
-app.get('/jobs', async (req, res) => {
-    res.render('outerMostContainers/containerWithSearchForm', {
-        user: req.user
-    });
-})
-
-app.get('/internships', async (req, res) => {
-    res.render('outerMostContainers/containerWithSearchForm', {
-        user: req.user
-    });
-})
-app.get('/referral', (req, res) => {
-    res.render('outerMostContainers/containerWithSearchForm', {
-        user: req.user
-    });
-})
-
-app.get('/scholarships', (req, res) => {
-    res.render('outerMostContainers/containerWithSearchForm', {
-        user: req.user
-    });
-})
-app.get('/forwomen', (req, res) => {
-    res.render('outerMostContainers/containerWithSearchForm', {
-        user: req.user
-    });
-})
 
 
 app.get('/recruiters', (req, res) => {
