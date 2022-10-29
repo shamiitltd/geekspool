@@ -1,3 +1,5 @@
+DROP PROCEDURE IF EXISTS backupDataSmaptorss;
+
 DELIMITER $$
 CREATE PROCEDURE backupDataSmaptorss()
 BEGIN
@@ -30,7 +32,4 @@ BEGIN
 END$$
 DELIMITER;
 
-
-SHOW CREATE PROCEDURE backupDataSmaptorss;
-CALL backupDataSmaptorss;
-DROP PROCEDURE IF EXISTS backupDataSmaptorss;
+/*https://dev.mysql.com/doc/refman/8.0/en/create-procedure.html*/

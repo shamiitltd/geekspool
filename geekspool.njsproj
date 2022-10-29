@@ -77,6 +77,9 @@
     <Content Include="config\payment.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="help\helpfile.sql">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="middleware\roles.js">
       <SubType>Code</SubType>
     </Content>
@@ -1888,10 +1891,10 @@
     <Content Include="setup\Databases\database.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="setup\Databases\storedprocedure.js">
+    <Content Include="setup\Databases\storedprocedure.sql">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="setup\Databases\tables.js">
+    <Content Include="setup\Databases\tables.sql">
       <SubType>Code</SubType>
     </Content>
     <Content Include="test\routes\shared\homeTest.js">
@@ -1909,6 +1912,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="middleware\" />
+    <Folder Include="help\" />
     <Folder Include="public\fonts\" />
     <Folder Include="public\fonts\css\" />
     <Folder Include="public\fonts\js\" />
