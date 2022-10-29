@@ -80,6 +80,9 @@
     <Content Include="middleware\roles.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="middleware\verify.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\browserconfig.xml" />
     <Content Include="public\favicon.ico" />
     <Content Include="public\fonts\attribution.js" />
@@ -1896,6 +1899,7 @@
       <TestFramework>Mocha</TestFramework>
     </Content>
     <Content Include="views\controllers\offlineController.ejs" />
+    <Content Include="views\controllers\signin.ejs" />
     <Content Include="views\shared\footer.ejs" />
     <Content Include="views\shared\header.ejs" />
     <Content Include="views\shared\error.ejs">
