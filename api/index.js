@@ -15,6 +15,7 @@ api.get('/offline', async (req, res) => {
     });
 })
 
+
 api.get('/help', (req, res) => {
     res.render('landing/help');
 })
