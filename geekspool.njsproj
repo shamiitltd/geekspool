@@ -1901,6 +1901,7 @@
       <SubType>Code</SubType>
       <TestFramework>Mocha</TestFramework>
     </Content>
+    <Content Include="views\controllers\containerWithSearchForm.ejs" />
     <Content Include="views\controllers\offlineController.ejs" />
     <Content Include="views\controllers\signin.ejs" />
     <Content Include="views\shared\footer.ejs" />

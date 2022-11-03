@@ -33,9 +33,9 @@ app.use(session({
         maxAge: 730 * 86400000
     }
 }))
-initializePassport(passport);
-app.use(passport.initialize());
-app.use(passport.session());
+//initializePassport(passport);
+//app.use(passport.initialize());
+//app.use(passport.session());
 
 //set methods
 app.set('views', path.join(__dirname, 'views'));

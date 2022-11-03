@@ -23,7 +23,7 @@ api.get('/help', (req, res) => {
 
 //set Different routes
 api.get('/', async (req, res) => {
-    res.render('outerMostContainers/containerWithSearchForm', {
+    res.render('controllers/containerWithSearchForm', {
         user: req.user
     });
 })
@@ -72,36 +72,38 @@ api.get('/viewcourses', async (req, res) => {
 })
 
 
-app.get('/courses/organisation/:companyName/:jobtitle', async (req, res) => { ///courses/organisation/google/software-engineer-1
+api.get('/courses/organisation/:companyName/:jobtitle', async (req, res) => { ///courses/organisation/google/software-engineer-1
     res.render('outerMostContainers/containerWithSearchForm', {
         user: req.user
     });
 })
 
-app.get('/*/new', verify.checkAuthentication, (req, res) => {
+api.get('/*/new', verify.checkAuthentication, (req, res) => {
     res.render('outerMostContainers/containerWithSearchForm', {
         user: req.user
     });
 })
-app.get('/profile/*', verify.checkAuthentication, (req, res) => {
-    res.render('outerMostContainers/containerWithSearchForm', {
-        user: req.user
-    });
-})
-
-app.get('/*/edit', verify.checkAuthentication, (req, res) => {
-    res.render('outerMostContainers/containerWithSearchForm', {
-        user: req.user
-    });
-})
-app.get('/deleteInfo', verify.checkAuthentication, (req, res) => {
+api.get('/profile/*', verify.checkAuthentication, (req, res) => {
     res.render('outerMostContainers/containerWithSearchForm', {
         user: req.user
     });
 })
 
-app.get('/*', (req, res) => {
+api.get('/*/edit', verify.checkAuthentication, (req, res) => {
     res.render('outerMostContainers/containerWithSearchForm', {
         user: req.user
     });
 })
+api.get('/deleteInfo', verify.checkAuthentication, (req, res) => {
+    res.render('outerMostContainers/containerWithSearchForm', {
+        user: req.user
+    });
+})
+
+api.get('/*', (req, res) => {
+    res.render('outerMostContainers/containerWithSearchForm', {
+        user: req.user
+    });
+})
+
+module.exports = api;
