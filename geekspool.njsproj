@@ -5,6 +5,9 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>geekspool</Name>
     <RootNamespace>geekspool</RootNamespace>
+    <JavaScriptTestRoot>D:\LLP\shamiit\geekspool\</JavaScriptTestRoot>
+    <JavaScriptTestFramework>mocha</JavaScriptTestFramework>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -20,7 +23,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <NodejsPort>1337</NodejsPort>
-    <StartWebBrowser>true</StartWebBrowser>
+    <StartWebBrowser>True</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1835,6 +1838,17 @@
     <Content Include="public\sitemaps\sitemap_jobs_v1.xml" />
     <Content Include="public\sitemaps\sitemap_referrals_v1.xml" />
     <Content Include="public\sitemaps\sitemap_scholarships_v1.xml" />
+    <Content Include="public\stylesheets\components\navbar.css" />
+    <Content Include="public\stylesheets\components\searchform.css" />
+    <Content Include="public\stylesheets\controllers\newjobform.css" />
+    <Content Include="public\stylesheets\controllers\profile.css" />
+    <Content Include="public\stylesheets\controllers\signin.css" />
+    <Content Include="public\stylesheets\libraries\fontAwsomeCustom.css" />
+    <Content Include="public\stylesheets\shared\common.css" />
+    <Content Include="public\stylesheets\libraries\popovers.css" />
+    <Content Include="public\stylesheets\shared\main.css" />
+    <Content Include="public\stylesheets\shared\screensize.css" />
+    <Content Include="public\stylesheets\components\spinner.css" />
     <Content Include="public\sw.js" />
     <Content Include="setup\setup.js">
       <SubType>Code</SubType>
@@ -1859,7 +1873,6 @@
     <Content Include="model\sitemap.js" />
     <Content Include="model\user.js" />
     <Content Include="package.json" />
-    <Content Include="public\stylesheets\shared\main.css" />
     <Content Include="README.md" />
     <Content Include="setup\application\api.js">
       <SubType>Code</SubType>
@@ -1901,6 +1914,7 @@
       <SubType>Code</SubType>
       <TestFramework>Mocha</TestFramework>
     </Content>
+    <Content Include="views\controllers\containerWithSearchForm.ejs" />
     <Content Include="views\controllers\offlineController.ejs" />
     <Content Include="views\controllers\signin.ejs" />
     <Content Include="views\shared\footer.ejs" />
