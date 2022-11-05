@@ -1,11 +1,12 @@
-DROP TABLE IF EXISTS userlogin;
-DROP TABLE IF EXISTS smaptorss;
-DROP TABLE IF EXISTS smaptorss_logs;
 DROP PROCEDURE IF EXISTS createTables;
 
 DELIMITER $$
 CREATE PROCEDURE createTables(IN defaultUserImage VARCHAR(200))
 BEGIN
+    DROP TABLE IF EXISTS userlogin;
+    DROP TABLE IF EXISTS smaptorss;
+    DROP TABLE IF EXISTS smaptorss_logs;
+
     CREATE TABLE `userlogin` (
       `id` char(30) NOT NULL,
       `name` varchar(100) NOT NULL,
