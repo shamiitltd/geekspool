@@ -1838,6 +1838,17 @@
     <Content Include="public\sitemaps\sitemap_jobs_v1.xml" />
     <Content Include="public\sitemaps\sitemap_referrals_v1.xml" />
     <Content Include="public\sitemaps\sitemap_scholarships_v1.xml" />
+    <Content Include="public\stylesheets\components\navbar.css" />
+    <Content Include="public\stylesheets\components\searchform.css" />
+    <Content Include="public\stylesheets\controllers\newjobform.css" />
+    <Content Include="public\stylesheets\controllers\profile.css" />
+    <Content Include="public\stylesheets\controllers\signin.css" />
+    <Content Include="public\stylesheets\libraries\fontAwsomeCustom.css" />
+    <Content Include="public\stylesheets\shared\common.css" />
+    <Content Include="public\stylesheets\libraries\popovers.css" />
+    <Content Include="public\stylesheets\shared\main.css" />
+    <Content Include="public\stylesheets\shared\screensize.css" />
+    <Content Include="public\stylesheets\components\spinner.css" />
     <Content Include="public\sw.js" />
     <Content Include="setup\setup.js">
       <SubType>Code</SubType>
@@ -1862,7 +1873,6 @@
     <Content Include="model\sitemap.js" />
     <Content Include="model\user.js" />
     <Content Include="package.json" />
-    <Content Include="public\stylesheets\shared\main.css" />
     <Content Include="README.md" />
     <Content Include="setup\application\api.js">
       <SubType>Code</SubType>
