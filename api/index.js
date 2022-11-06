@@ -23,7 +23,7 @@ api.get('/help', (req, res) => {
 
 //set Different routes
 api.get('/', async (req, res) => {
-    res.render('controllers/containerWithSearchForm', {
+    res.render('controllers/landingController', {
         user: req.user
     });
 })

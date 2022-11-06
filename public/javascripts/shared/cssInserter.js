@@ -1,14 +1,13 @@
 function loadCssFiles() { // detecting path using if else will make a longer delay than you expect.
     let arrCss = [
-        "/css/containers/basicAndDescBoxes.css",
-        "/css/containers/homeRecom.css",
-        "/css/boxes/jobbox.css",
-        "/css/boxes/newjobform.css",
-        "/css/boxes/profile.css",
-        "/css/boxes/signin.css",
-        "/css/boxes/jobdesc.css",
-        "/css/libraries/fontAwsomeCustom.css",
-        "/css/libraries/screensize.css",
+        "/stylesheets/components/searchform.css",
+        "/stylesheets/components/spinner.css",
+        "/stylesheets/controllers/landingpage.css",
+        "/stylesheets/controllers/newjobform.css",
+        "/stylesheets/controllers/profile.css",
+        "/stylesheets/controllers/signin.css",
+        "/stylesheets/libraries/fontAwsomeCustom.css",
+        "/stylesheets/libraries/popovers.css",
         "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/night-owl.min.css",
     ];
     for ( let i = 0; i < arrCss.length; i++ ) {

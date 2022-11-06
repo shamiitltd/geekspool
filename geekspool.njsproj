@@ -1840,6 +1840,7 @@
     <Content Include="public\sitemaps\sitemap_scholarships_v1.xml" />
     <Content Include="public\stylesheets\components\navbar.css" />
     <Content Include="public\stylesheets\components\searchform.css" />
+    <Content Include="public\stylesheets\controllers\landingpage.css" />
     <Content Include="public\stylesheets\controllers\newjobform.css" />
     <Content Include="public\stylesheets\controllers\profile.css" />
     <Content Include="public\stylesheets\controllers\signin.css" />
@@ -1914,9 +1915,9 @@
       <SubType>Code</SubType>
       <TestFramework>Mocha</TestFramework>
     </Content>
-    <Content Include="views\controllers\containerWithSearchForm.ejs" />
+    <Content Include="views\controllers\landingController.ejs" />
     <Content Include="views\controllers\offlineController.ejs" />
-    <Content Include="views\controllers\signin.ejs" />
+    <Content Include="views\controllers\signinController.ejs" />
     <Content Include="views\shared\footer.ejs" />
     <Content Include="views\shared\header.ejs" />
     <Content Include="views\shared\error.ejs">
