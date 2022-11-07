@@ -9,7 +9,9 @@ const session = require('cookie-session');
 const app = express();
 const api = require('./api/index');
 const passport = require('passport');
+const { initializePassport }= require('./config/auth');
 require('dotenv').config();
+
 
 //use mehtods
 app.use(compression());
@@ -33,9 +35,10 @@ app.use(session({
         maxAge: 730 * 86400000
     }
 }))
-//initializePassport(passport);
-//app.use(passport.initialize());
-//app.use(passport.session());
+
+initializePassport(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 //set methods
 app.set('views', path.join(__dirname, 'views'));

@@ -44,9 +44,7 @@ function initializePassport(passport) {
                     message: 'Some error, try another login method'
                 });
             }
-
         })
-
     }
 
     passport.use(new LocalStrategy({
@@ -152,16 +150,16 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
                 })
             }
         }
-
     })
 }
 
 function isEmpty(obj) {
-    for (var x in obj) {
+    for (let x in obj) {
         return false;
     }
     return true;
 }
+
 module.exports = {
     initializePassport
 }
