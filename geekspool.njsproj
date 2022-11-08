@@ -1915,9 +1915,12 @@
       <SubType>Code</SubType>
       <TestFramework>Mocha</TestFramework>
     </Content>
-    <Content Include="views\components\paginationbox.ejs" />
+    <Content Include="views\componentsmini\paginationbox.ejs" />
+    <Content Include="views\components\privacyPolicy.ejs" />
     <Content Include="views\components\profilePage.ejs" />
-    <Content Include="views\components\searchformNormal.ejs" />
+    <Content Include="views\components\resetpass.ejs" />
+    <Content Include="views\componentsmini\searchform.ejs" />
+    <Content Include="views\components\sitemapscanner.ejs" />
     <Content Include="views\controllers\profileController.ejs" />
     <Content Include="views\controllers\landingController.ejs" />
     <Content Include="views\controllers\offlineController.ejs" />
@@ -1990,6 +1993,7 @@
     <Folder Include="views\" />
     <Folder Include="views\controllers\" />
     <Folder Include="views\components\" />
+    <Folder Include="views\componentsmini\" />
     <Folder Include="views\shared\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />

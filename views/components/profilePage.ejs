@@ -15,7 +15,7 @@
                 searchAll:dataObject.searchAll
             };
         %>
-        <%- include("./searchformNormal", {queryString}) %>
+        <%- include("../componentsmini/searchform", {queryString}) %>
 
         <div class="flex-row-sb full-width-normal changebar">
             <span><a href="/sitemapscanner/new" target="_blank"
@@ -23,7 +23,7 @@
                 Scanner</span>
 
             <span>
-                <%- include("./paginationbox", {companiesData}) %>
+                <%- include("../componentsmini/paginationbox", {companiesData}) %>
             </span>
         </div>
         <div class="loading-spinner invisible">
@@ -110,7 +110,7 @@
                 Scanner</span>
 
             <span>
-                <%- include("./paginationbox", {companiesData}) %>
+                <%- include("../componentsmini/paginationbox", {companiesData}) %>
             </span>
         </div>
     </div>
