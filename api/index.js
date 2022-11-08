@@ -11,7 +11,7 @@ api.get('/signin', verify.checkNotAuthenticated, async (req, res) => {
     });
 })
 api.get('/offline', async (req, res) => {
-    res.render('outerMostContainers/containerWithOffline', {
+    res.render('controllers/offlineController', {
         user: req.user
     });
 })
@@ -28,24 +28,30 @@ api.get('/', async (req, res) => {
 })
 
 api.get('/*/new', verify.checkAuthentication, (req, res) => {
-    res.render('outerMostContainers/containerWithSearchForm', {
-        user: req.user
-    });
-})
-api.get('/profile/*', verify.checkAuthentication, (req, res) => {
-    res.render('outerMostContainers/containerWithSearchForm', {
+    res.render('controllers/containerWithSearchForm', {
         user: req.user
     });
 })
 
+api.get('/profile/*', (req, res) => {
+    res.render('controllers/profileController', {
+        user: req.user
+    });
+})
+//api.get('/profile/*', verify.checkAuthentication, (req, res) => {
+//    res.render('controllers/profileController', {
+//        user: req.user
+//    });
+//})
+
 api.get('/*/edit', verify.checkAuthentication, (req, res) => {
-    res.render('outerMostContainers/containerWithSearchForm', {
+    res.render('controllers/containerWithSearchForm', {
         user: req.user
     });
 })
 
 api.get('/*', (req, res) => {
-    res.render('outerMostContainers/containerWithSearchForm', {
+    res.render('controllers/containerWithSearchForm', {
         user: req.user
     });
 })
