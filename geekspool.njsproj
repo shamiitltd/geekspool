@@ -89,6 +89,15 @@
     <Content Include="middleware\verify.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="model\common.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="model\profile.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="model\schedulers.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\browserconfig.xml" />
     <Content Include="public\favicon.ico" />
     <Content Include="public\fonts\attribution.js" />
