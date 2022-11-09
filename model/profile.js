@@ -1,23 +1,22 @@
 const fs = require("fs");
 const shortid = require('shortid');
 shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
+let db = require('../config/database');
+const common = require('./common');
 
-exports.profile = async function (req, res) {
+//exports.profile = async function (req, res) {
 
-    res.render('controllers/profileController', {
-        user: req.user, dataObject, paginator
-    });
-}
+//    res.render('controllers/profileController', {
+//        user: req.user, dataObject, paginator
+//    });
+//}
 const {
     language,
 } = require('../data/staticData');
-const {
-    toolsoc2
-} = require('../database/mysqlDB');
+
 const {
     finalRssGeneration
 } = require('./sitemapscanner');
-const common = require('./common');
 
 async function profileUi(req, res, tableName, fileLocation, id ) {
     const queryVals = req.query;
@@ -37,7 +36,7 @@ async function profileUi(req, res, tableName, fileLocation, id ) {
                         ${tableName} WHERE  userid=${req.user.id} or ${req.admin} IS TRUE`;
         }
 
-        toolsoc2.query(totalRecords, async (perr, postResult, fields) => {
+        db.mysql.query(totalRecords, async (perr, postResult, fields) => {
             if (perr) {
                 return res.send("Please check your internet connection 1" + perr);
             }
@@ -62,7 +61,7 @@ async function profileUi(req, res, tableName, fileLocation, id ) {
                         LIMIT ${lim}  OFFSET ${lim * (pageNumber - 1)}`;
             }
 
-            toolsoc2.query(sqlQueryString, async (err, results, postfields) => {
+            db.mysql.query(sqlQueryString, async (err, results, postfields) => {
                 if (err) {
                     return res.send("Please check your internet connection 2" + err);
                 }
@@ -134,7 +133,7 @@ async function toolsUiLoader(tableName, fileLocation, id, req, res) {
         } else {
             let sqlQueryString = `SELECT * FROM  
                         ${tableName} WHERE rssid='${id}' AND (userid=${req.user.id} or ${req.admin} IS TRUE)`;
-            toolsoc2.query(sqlQueryString, (err, results, fields) => {
+            db.mysql.query(sqlQueryString, (err, results, fields) => {
                 if (err) {
                     return res.send("Please check your internet connection" + err);
                 }
@@ -201,7 +200,7 @@ async function uploadtoolInfoData(tableName, dataObject, res) {
                         VALUES( '${dataObject.rssid}', '${dataObject.userid}', '${dataObject.emails ? dataObject.emails : ''}', '${dataObject.urls ? dataObject.urls : ''}', '${dataObject.included ? dataObject.included : ''}', '${dataObject.excluded ? dataObject.excluded : ''}', '${dataObject.remarks ? dataObject.remarks : ''}', '${dataObject.directorypath}', '${dataObject.language}', '${dataObject.frequency}', '${dataObject.ndtype}' )
                         `;
     }
-    toolsoc2.query(sqlQueryString, async (cerr, cresults, cfields) => {
+    db.mysql.query(sqlQueryString, async (cerr, cresults, cfields) => {
         if (cerr) {
             // console.log( "Not connected !!! " + err );
             return res.send('Course not upload !!!' + cerr);
@@ -223,7 +222,7 @@ async function uploadtoolInfoData(tableName, dataObject, res) {
 async function deleteRssfromDbNFile(tableName, dataObject, req, res) {
     let sqlQueryString = `SELECT * FROM  
                         ${tableName} WHERE rssid='${dataObject.rssid}' AND (userid=${req.user.id} or ${req.admin} IS TRUE)`;
-    toolsoc2.query(sqlQueryString, (err, results, fields) => {
+    db.mysql.query(sqlQueryString, (err, results, fields) => {
         if (err) {
             return res.send("Please check your internet connection" + err);
         }
@@ -233,7 +232,7 @@ async function deleteRssfromDbNFile(tableName, dataObject, req, res) {
         sqlQueryString = `DELETE FROM ${tableName} 
                         WHERE rssid='${results[0].rssid}'
                         `;
-        toolsoc2.query(sqlQueryString, async (cerr, cresults, cfields) => {
+        db.mysql.query(sqlQueryString, async (cerr, cresults, cfields) => {
             if (cerr) {
                 return res.send("Not connected !!! " + cerr);
             }

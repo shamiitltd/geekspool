@@ -2,14 +2,12 @@ const schedule = require('node-schedule');
 const {
     responseMsgBackup
 } = require('./nodemailer');
-const {
-    toolsoc2
-} = require('../database/mysqlDB');
+const db = require('../config/database');
 
 function backUpSchedular(hour = 1) {
     const backup = schedule.scheduleJob(`0 0 ${hour} * * *`, function () {
-        let usersQueryString = `CALL backupDataSmaptorss;`;
-        toolsoc2.query(usersQueryString, async (err, results, fields) => {
+        let queryString = `CALL backupDataSmaptorss;`;
+        db.mysql.query(queryString, async (err, results, fields) => {
             if (err) {
                 // console.log( 'Some error, login with another method with different email', err );
                 return;

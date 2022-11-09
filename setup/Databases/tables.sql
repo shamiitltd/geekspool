@@ -1,9 +1,9 @@
 DROP PROCEDURE IF EXISTS createTables;
-
 DELIMITER $$
 CREATE PROCEDURE createTables(IN defaultUserImage VARCHAR(200))
 BEGIN
     DROP TABLE IF EXISTS userlogin;
+    DROP TABLE IF EXISTS dropDownsPool;
     DROP TABLE IF EXISTS smaptorss;
     DROP TABLE IF EXISTS smaptorss_logs;
 
@@ -18,6 +18,14 @@ BEGIN
       `secure` tinyint(1) NOT NULL DEFAULT 1
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
     
+    CREATE TABLE `dropDownsPool` (
+      `id` varchar(50) NOT NULL,
+      `name` varchar(50) NOT NULL, --Drop Down type
+      `key` text DEFAULT NULL,
+      `value` text DEFAULT NULL,
+      `updated` datetime DEFAULT current_timestamp()
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
     CREATE TABLE `smaptorss` (
       `rssid` varchar(50) NOT NULL,
       `userid` char(30) DEFAULT NULL,
