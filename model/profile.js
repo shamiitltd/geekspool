@@ -17,6 +17,7 @@ const {
 const {
     finalRssGeneration
 } = require('./sitemapscanner');
+const common = require('./common');
 
 async function profileUi(req, res, tableName, fileLocation, id ) {
     const queryVals = req.query;
@@ -96,7 +97,7 @@ async function profileUi(req, res, tableName, fileLocation, id ) {
                     table.push({
                         rssid: results[i].rssid,
                         emails: results[i].emails.split(',').join(", "),
-                        urls: stringToArray(results[i].urls),
+                        urls: common.stringToArray(results[i].urls),
                         included: results[i].included.split(',').join(", "),
                         excluded: results[i].excluded.split(',').join(", "),
                         remarks: results[i].remarks.split(',').join(", "),
@@ -145,15 +146,15 @@ async function toolsUiLoader(tableName, fileLocation, id, req, res) {
                             uid: req.user.id,
                             username: req.user.name
                         }
-                    }); //stringToArray
+                    }); //common.stringToArray
                 dataObject = {
                     rssid: results[0].rssid,
                     uid: results[0].userid,
-                    emails: stringToArray(results[0].emails),
-                    urls: stringToArray(results[0].urls),
-                    included: stringToArray(results[0].included),
-                    excluded: stringToArray(results[0].excluded),
-                    remarks: stringToArray(results[0].remarks),
+                    emails: common.stringToArray(results[0].emails),
+                    urls: common.stringToArray(results[0].urls),
+                    included: common.stringToArray(results[0].included),
+                    excluded: common.stringToArray(results[0].excluded),
+                    remarks: common.stringToArray(results[0].remarks),
                     directorypath: results[0].directorypath,
                     username: req.user.name,
                     language: results[0].language,
@@ -172,7 +173,7 @@ async function toolsUiLoader(tableName, fileLocation, id, req, res) {
 }
 
 async function uploadtoolInfoData(tableName, dataObject, res) {
-    dataObject = await arrayToStringObjectTool(dataObject);
+    dataObject = await common.arrayToStringObjectTool(dataObject);
     let sqlQueryString;
     if (dataObject.rssid) {
         sqlQueryString = `UPDATE ${tableName} 
@@ -213,43 +214,12 @@ async function uploadtoolInfoData(tableName, dataObject, res) {
             path: dataObject.directorypath,
             urls: dataObject.urls ? dataObject.urls.split(',').join(", ") : ''
         }
-        await finalRssGeneration(dataObject.rssid, dataObject.language, stringToArray(dataObject.urls), stringToArray(dataObject.included), stringToArray(dataObject.excluded), mailObj);
+        await finalRssGeneration(dataObject.rssid, dataObject.language, common.stringToArray(dataObject.urls), common.stringToArray(dataObject.included), common.stringToArray(dataObject.excluded), mailObj);
         let path = await dataObject.directorypath + dataObject.rssid + '.xml';
         return await res.redirect(path);
     });
 }
 
-function stringToArray(str) { //make array unique
-    if (!str || str.length == 0)
-        return [];
-    return str.split(',');
-}
-
-async function makeArrRecordUniqueNormal(arrOld) {
-    let tempObj = {};
-    await arrOld.forEach((record) => {
-        record = record.trim();
-        tempObj[record] = true
-    });
-    let arrNew = [];
-    arrNew = Object.keys(tempObj).map((key) => [key]);
-    return arrNew;
-}
-
-async function arrayToStringObjectTool(dataObject) {
-    for (let key in dataObject) {
-        if (Array.isArray(dataObject[key])) {
-            dataObject[key] = await makeArrRecordUniqueNormal(dataObject[key]);
-            let str = '';
-            for (let i = 0; i < dataObject[key].length; i++) {
-                if (str != '') str += ',';
-                str += dataObject[key][i];
-            }
-            dataObject[key] = str;
-        }
-    }
-    return await dataObject;
-}
 async function deleteRssfromDbNFile(tableName, dataObject, req, res) {
     let sqlQueryString = `SELECT * FROM  
                         ${tableName} WHERE rssid='${dataObject.rssid}' AND (userid=${req.user.id} or ${req.admin} IS TRUE)`;
@@ -258,7 +228,7 @@ async function deleteRssfromDbNFile(tableName, dataObject, req, res) {
             return res.send("Please check your internet connection" + err);
         }
         if (!results.length)
-            return res.send("Record not in Database"); //stringToArray
+            return res.send("Record not in Database"); //common.stringToArray
 
         sqlQueryString = `DELETE FROM ${tableName} 
                         WHERE rssid='${results[0].rssid}'
