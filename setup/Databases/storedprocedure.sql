@@ -126,3 +126,23 @@ BEGIN
     WHERE name=name;
 END$$
 DELIMITER;
+
+DROP PROCEDURE IF EXISTS Upload_dropDown_Details;
+DELIMITER $$
+CREATE PROCEDURE Upload_dropDown_Details(IN name Varchar(20), IN key Varchar(20), IN value Varchar(100), IN updateData Boolean)
+BEGIN
+    if (updateData) then
+    	/* Update Data in dropDownsPool */
+        UPDATE dropDownsPool 
+        SET key=key,
+            value=value,
+            updated=CURRENT_TIMESTAMP()
+        WHERE name=name;	
+    else 
+	    /* Insert the data into dropDownsPool*/
+	    INSERT INTO 
+        dropDownsPool( name, key, value)
+        VALUES( name, key, value);
+    end if;
+END$$
+DELIMITER;
