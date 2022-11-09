@@ -35,12 +35,12 @@ api.get('/*/new', verify.checkAuthentication, (req, res) => {
 
 api.get('/profile/*', (req, res) => {
     res.render('controllers/profileController', {
-        user: req.user
+        user: req.user, dataObject, paginator
     });
 })
 //api.get('/profile/*', verify.checkAuthentication, (req, res) => {
 //    res.render('controllers/profileController', {
-//        user: req.user
+//        user: req.user, dataObject, paginator
 //    });
 //})
 
