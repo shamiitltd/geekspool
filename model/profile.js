@@ -5,20 +5,32 @@ let db = require('../config/database');
 const common = require('./common');
 
 //exports.profile = async function (req, res) {
-
 //    res.render('controllers/profileController', {
 //        user: req.user, dataObject, paginator
 //    });
 //}
-const {
-    language,
-} = require('../data/staticData');
 
 const {
     finalRssGeneration
 } = require('./sitemapscanner');
 
-async function profileUi(req, res, tableName, fileLocation, id) {
+exports.languages = async function () {
+    let queryString = `CALL Get_dropDown_Details('language');`;
+    db.mysql.query(queryString, async (perr, results, fields) => {
+        if (perr) {
+            return res.send("Please check your internet connection " + perr);
+        }
+        if (!results.length)
+            console.log(results[0]);
+        return {
+            name: common.stringToArray(results[0].key),
+            code: common.stringToArray(results[0].value)
+        };
+    });
+}
+const language =language();
+
+async function profileUi(req, res, fileLocation, id) {
     const queryVals = req.query;
     let pageNumber = parseInt(queryVals.page ? queryVals.page : 1);
     let lim = parseInt(queryVals.limit ? queryVals.limit : 15);
@@ -95,7 +107,7 @@ async function profileUi(req, res, tableName, fileLocation, id) {
     }
 }
 
-async function toolsUiLoader(tableName, fileLocation, id, req, res) {
+async function toolsUiLoader(fileLocation, id, req, res) {
     if (req.admin || req.editor) {
         if (!id) {
             return res.render(fileLocation, {
@@ -106,9 +118,8 @@ async function toolsUiLoader(tableName, fileLocation, id, req, res) {
                 }
             });
         } else {
-            let sqlQueryString = `SELECT * FROM  
-                        ${tableName} WHERE rssid='${id}' AND (userid=${req.user.id} or ${req.admin} IS TRUE)`;
-            db.mysql.query(sqlQueryString, (err, results, fields) => {
+            let queryString = `CALL Get_RssForm_load(${id}, ${req.user.id}, ${req.admin});`;
+            db.mysql.query(queryString, (err, results, fields) => {
                 if (err) {
                     return res.send("Please check your internet connection" + err);
                 }
@@ -146,36 +157,21 @@ async function toolsUiLoader(tableName, fileLocation, id, req, res) {
     }
 }
 
-async function uploadtoolInfoData(tableName, dataObject, res) {
+async function uploadtoolInfoData(dataObject, res) {
     dataObject = await common.arrayToStringObjectTool(dataObject);
-    let sqlQueryString;
-    if (dataObject.rssid) {
-        sqlQueryString = `UPDATE ${tableName} 
-                        SET userid='${dataObject.userid}',
-                        emails = '${dataObject.emails ? dataObject.emails : ''}',
-                        urls = '${dataObject.urls ? dataObject.urls : ''}',
-                        included = '${dataObject.included ? dataObject.included : ''}',
-                        excluded = '${dataObject.excluded ? dataObject.excluded : ''}',
-                        remarks = '${dataObject.remarks ? dataObject.remarks : ''}',
-                        language='${dataObject.language}',
-                        frequency = '${dataObject.frequency ? dataObject.frequency : 0}',
-                        ndtype='${dataObject.ndtype}',
-                        updated = DATE_ADD( CURRENT_TIMESTAMP(), INTERVAL ${dataObject.frequency != '0' ? 1400 / dataObject.frequency : 5256000} MINUTE )
-                        WHERE rssid='${dataObject.rssid}'
-                        `;
-    } else {
-        let rssid = shortid.generate();
-        const d = new Date();
-        let year = d.getFullYear();
-        let month = d.getMonth();
-        dataObject.rssid = rssid;
-        dataObject.directorypath = `/feeds/${year}/${month}/`;
-        sqlQueryString = `INSERT INTO 
-                        ${tableName}( rssid, userid, emails, urls, included, excluded, remarks, directorypath, language, frequency, ndtype)
-                        VALUES( '${dataObject.rssid}', '${dataObject.userid}', '${dataObject.emails ? dataObject.emails : ''}', '${dataObject.urls ? dataObject.urls : ''}', '${dataObject.included ? dataObject.included : ''}', '${dataObject.excluded ? dataObject.excluded : ''}', '${dataObject.remarks ? dataObject.remarks : ''}', '${dataObject.directorypath}', '${dataObject.language}', '${dataObject.frequency}', '${dataObject.ndtype}' )
-                        `;
-    }
-    db.mysql.query(sqlQueryString, async (cerr, cresults, cfields) => {
+    let rssid = shortid.generate();
+    const d = new Date();
+    let year = d.getFullYear();
+    let month = d.getMonth();
+    let update = dataObject.rssid ? true : false;
+    dataObject.rssid = dataObject.rssid ? dataObject.rssid : rssid;
+    dataObject.directorypath = `/feeds/${year}/${month}/`;
+    let queryString = `CALL Upload_rss_InfoData(${dataObject.rssid}, ${dataObject.userid}, ${dataObject.emails ? dataObject.emails : ''},
+                                                ${dataObject.urls ? dataObject.urls : ''}, ${dataObject.included ? dataObject.included : ''}, 
+                                                ${dataObject.excluded ? dataObject.excluded : ''}, ${dataObject.remarks ? dataObject.remarks : ''},
+                                                ${dataObject.directorypath}, ${dataObject.language}, ${dataObject.frequency}, ${dataObject.ndtype},
+                                                ${update});`;
+    db.mysql.query(queryString, async (cerr, cresults, cfields) => {
         if (cerr) {
             // console.log( "Not connected !!! " + err );
             return res.send('Course not upload !!!' + cerr);
@@ -194,20 +190,17 @@ async function uploadtoolInfoData(tableName, dataObject, res) {
     });
 }
 
-async function deleteRssfromDbNFile(tableName, dataObject, req, res) {
-    let sqlQueryString = `SELECT * FROM  
-                        ${tableName} WHERE rssid='${dataObject.rssid}' AND (userid=${req.user.id} or ${req.admin} IS TRUE)`;
-    db.mysql.query(sqlQueryString, (err, results, fields) => {
+async function deleteRssfromDbNFile(dataObject, req, res) {
+    let queryString = `CALL Get_RssForm_load(${dataObject.rssid}, ${req.user.id}, ${req.admin});`;
+    db.mysql.query(queryString, (err, results, fields) => {
         if (err) {
             return res.send("Please check your internet connection" + err);
         }
         if (!results.length)
-            return res.send("Record not in Database"); //common.stringToArray
+            return res.send("Record not in Database");
 
-        sqlQueryString = `DELETE FROM ${tableName} 
-                        WHERE rssid='${results[0].rssid}'
-                        `;
-        db.mysql.query(sqlQueryString, async (cerr, cresults, cfields) => {
+        queryString = `CALL Delete_ByRssId(${results[0].rssid});`;
+        db.mysql.query(queryString, async (cerr, cresults, cfields) => {
             if (cerr) {
                 return res.send("Not connected !!! " + cerr);
             }

@@ -80,6 +80,9 @@
     <Content Include="config\payment.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="help\helpfile.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="help\helpfile.sql">
       <SubType>Code</SubType>
     </Content>
@@ -1860,6 +1863,9 @@
     <Content Include="public\stylesheets\shared\screensize.css" />
     <Content Include="public\stylesheets\components\spinner.css" />
     <Content Include="public\sw.js" />
+    <Content Include="setup\Databases\data.sql">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="setup\setup.js">
       <SubType>Code</SubType>
     </Content>

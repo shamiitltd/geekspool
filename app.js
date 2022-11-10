@@ -9,7 +9,8 @@ const session = require('cookie-session');
 const app = express();
 const api = require('./api/index');
 const passport = require('passport');
-const { initializePassport }= require('./config/auth');
+const { initializePassport } = require('./config/auth');
+const setupDB = require('./setup/Databases/database');
 require('dotenv').config();
 
 

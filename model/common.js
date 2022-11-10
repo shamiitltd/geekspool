@@ -1,5 +1,5 @@
 
-exports.stringToArray = function (str) { //make array unique
+exports.stringToArray = function (str) { 
     if (!str || str.length == 0)
         return [];
     return str.split(',');
