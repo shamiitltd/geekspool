@@ -28,7 +28,7 @@ BEGIN
 	WHERE smaptorss_logs.rssid IS NULL;
 
 END$$
-DELIMITER;
+DELIMITER ;
 
 /*https://dev.mysql.com/doc/refman/8.0/en/create-procedure.html*/
 
@@ -39,6 +39,8 @@ DELIMITER $$
 CREATE PROCEDURE Get_RssRecord_Profile(IN searchAll TEXT, IN userid Varchar(20), IN admin Boolean, IN lim INT, IN pageNumber INT, OUT totalposts INT)
 BEGIN
     DECLARE totalposts INT;
+    DECLARE offsetVal INT;
+    SET offsetVal = (lim * (pageNumber - 1));
     if (!STRCMP(searchAll,"") = 0) then
         SELECT COUNT(*) INTO  totalposts
         FROM smaptorss WHERE (
@@ -50,20 +52,19 @@ BEGIN
         FROM smaptorss WHERE (
         MATCH( rssid, userid, emails, urls, included, excluded, remarks ) 
         AGAINST( searchAll IN NATURAL LANGUAGE MODE ) or urls LIKE CONCAT('%', searchAll, '%') or emails LIKE CONCAT('%', searchAll, '%')
-        ) and (userid=${req.user.id} or ${req.admin} IS TRUE) 
-        ORDER BY updated ASC LIMIT lim  OFFSET (lim * (pageNumber - 1));
+        ) and (userid=userid or admin IS TRUE) 
+        ORDER BY updated ASC LIMIT lim  OFFSET offsetVal;
 
     else 
         SELECT COUNT(*) INTO totalposts 
         FROM smaptorss WHERE  userid=userid or admin IS TRUE;
 
-        SELECT * FROM  
-        smaptorss WHERE userid=userid or admin IS TRUE 
-        ORDER BY updated ASC 
-        LIMIT lim  OFFSET (lim * (pageNumber - 1));
+        SELECT * 
+        FROM  smaptorss WHERE userid=userid or admin IS TRUE 
+        ORDER BY updated ASC LIMIT lim  OFFSET offsetVal;
     end if;
 END$$
-DELIMITER;
+DELIMITER ;
 
 /* Tool form load*/
 DROP PROCEDURE IF EXISTS Get_RssForm_load;
@@ -73,7 +74,7 @@ BEGIN
     SELECT * FROM  
     smaptorss WHERE rssid=rssid AND (userid=userid or admin IS TRUE);
 END$$
-DELIMITER;
+DELIMITER ;
 
 /*Update Rss table */
 DROP PROCEDURE IF EXISTS Upload_rss_InfoData;
@@ -104,7 +105,7 @@ BEGIN
     end if;
 
 END$$
-DELIMITER;
+DELIMITER ;
 
 /* Delete from Rss table*/
 DROP PROCEDURE IF EXISTS Delete_ByRssId;
@@ -114,7 +115,7 @@ BEGIN
     DELETE FROM smaptorss 
     WHERE rssid=rssid;
 END$$
-DELIMITER;
+DELIMITER ;
 
 
 /* load Drop Down Data for Rss table*/
@@ -125,7 +126,7 @@ BEGIN
     SELECT * FROM  dropDownsPool
     WHERE name=name;
 END$$
-DELIMITER;
+DELIMITER ;
 
 DROP PROCEDURE IF EXISTS Upload_dropDown_Details;
 DELIMITER $$
@@ -145,4 +146,4 @@ BEGIN
         VALUES( name, key, value);
     end if;
 END$$
-DELIMITER;
+DELIMITER ;

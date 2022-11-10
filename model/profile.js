@@ -18,7 +18,7 @@ const {
     finalRssGeneration
 } = require('./sitemapscanner');
 
-async function profileUi(req, res, tableName, fileLocation, id ) {
+async function profileUi(req, res, tableName, fileLocation, id) {
     const queryVals = req.query;
     let pageNumber = parseInt(queryVals.page ? queryVals.page : 1);
     let lim = parseInt(queryVals.limit ? queryVals.limit : 15);
@@ -26,96 +26,71 @@ async function profileUi(req, res, tableName, fileLocation, id ) {
     if (!id) {
         return res.redirect('/nopage');
     } else {
-        let totalRecords;
-        if (searchAll) {
-            totalRecords = `SELECT  count(*) as totalposts FROM  
-                            ${tableName} WHERE (MATCH( rssid, userid, emails, urls, included, excluded, remarks ) 
-                            AGAINST( '${searchAll}' IN NATURAL LANGUAGE MODE ) or urls LIKE '%${searchAll}%' or emails LIKE '%${searchAll}%') and (userid=${req.user.id} or ${req.admin} IS TRUE)`;
-        } else {
-            totalRecords = `SELECT count(*) as totalposts FROM  
-                        ${tableName} WHERE  userid=${req.user.id} or ${req.admin} IS TRUE`;
-        }
-
-        db.mysql.query(totalRecords, async (perr, postResult, fields) => {
+        let totalposts;
+        let queryString = `CALL Get_RssRecord_Profile(${searchAll}, ${req.user.id}, ${req.admin}, ${lim}, ${pageNumber}, ${totalposts});`;
+        db.mysql.query(queryString, async (err, results, fields) => {
             if (perr) {
-                return res.send("Please check your internet connection 1" + perr);
+                return res.send("Please check your internet connection " + err);
             }
-            // console.log( 'Getting data from table is: \n', postResult[ 0 ] );
-            if (!postResult.length)
+            // console.log( 'Getting data from table is: \n', results[ 0 ] );
+            if (!results.length)
                 return res.redirect('/nopage');
-            let totalposts = postResult[0].totalposts;
+            console.log(totalposts, postResult);
+            //totalposts = results[0].totalposts;
             let totalPages = Math.ceil(totalposts / lim);
             pageNumber = Math.min(pageNumber, totalPages);
             pageNumber = Math.max(pageNumber, 1);
-            let sqlQueryString;
-            if (searchAll) {
-                sqlQueryString = `SELECT * FROM  
-                            ${tableName} WHERE (MATCH( rssid, userid, emails, urls, included, excluded, remarks ) 
-                            AGAINST( '${searchAll}' IN NATURAL LANGUAGE MODE ) or urls LIKE '%${searchAll}%' or emails LIKE '%${searchAll}%') and (userid=${req.user.id} or ${req.admin} IS TRUE) 
-                            ORDER BY updated ASC 
-                            LIMIT ${lim}  OFFSET ${lim * (pageNumber - 1)}`;
-            } else {
-                sqlQueryString = `SELECT * FROM  
-                        ${tableName} WHERE userid=${req.user.id} or ${req.admin} IS TRUE 
-                        ORDER BY updated ASC 
-                        LIMIT ${lim}  OFFSET ${lim * (pageNumber - 1)}`;
-            }
 
-            db.mysql.query(sqlQueryString, async (err, results, postfields) => {
-                if (err) {
-                    return res.send("Please check your internet connection 2" + err);
-                }
-                let companiesData = {
-                    hasPrevPage: (pageNumber - 1 > 0 ? true : false),
-                    hasNextPage: (pageNumber + 1 <= totalPages ? true : false),
-                    prevPage: (pageNumber - 1 > 0 ? pageNumber - 1 : 0),
-                    nextPage: (pageNumber + 1 <= totalPages ? pageNumber + 1 : 0),
-                    totalPages: totalPages,
-                    page: pageNumber,
-                    postperpage: lim,
-                };
-                // console.log( companiesData );
-                dataObject = {
-                    admin: req.admin ? "admin" : "",
-                    uid: req.user.id,
-                    username: req.user.name,
-                    imgurl: req.user.imgurl,
-                    searchAll: searchAll,
-                    totalposts: totalposts,
-                };
-                let table = [];
-                for (let i = 0; i < results.length; i++) {
-                    let diffMs = results[i].updated - new Date();
-                    let diffDays = Math.floor(diffMs / 86400000);
-                    let diffHrs = Math.floor((diffMs % 86400000) / 3600000);
-                    let diffMins = Math.floor(((diffMs % 86400000) % 3600000) / 60000);
-                    // console.log( diffDays, diffHrs, diffMins );
-                    diffDays = diffDays > 0 ? diffDays : 0;
-                    diffHrs = diffHrs > 0 ? diffHrs : 0;
-                    diffMins = diffMins > 0 ? diffMins : 0;
-                    table.push({
-                        rssid: results[i].rssid,
-                        emails: results[i].emails.split(',').join(", "),
-                        urls: common.stringToArray(results[i].urls),
-                        included: results[i].included.split(',').join(", "),
-                        excluded: results[i].excluded.split(',').join(", "),
-                        remarks: results[i].remarks.split(',').join(", "),
-                        language: results[i].language,
-                        frequency: results[i].frequency,
-                        rsslength: results[i].rsslength,
-                        ndtype: results[i].ndtype,
-                        path: results[i].directorypath,
-                        nextUpdate: `${diffDays} Days : ${diffHrs} Hour : ${diffMins} Minutes`,
-                    });
-                }
-                dataObject.table = table;
-                return res.render(fileLocation, {
-                    languages: language,
-                    dataObject,
-                    companiesData
+            let companiesData = {
+                hasPrevPage: (pageNumber - 1 > 0 ? true : false),
+                hasNextPage: (pageNumber + 1 <= totalPages ? true : false),
+                prevPage: (pageNumber - 1 > 0 ? pageNumber - 1 : 0),
+                nextPage: (pageNumber + 1 <= totalPages ? pageNumber + 1 : 0),
+                totalPages: totalPages,
+                page: pageNumber,
+                postperpage: lim,
+            };
+            // console.log( companiesData );
+            dataObject = {
+                admin: req.admin ? "admin" : "",
+                uid: req.user.id,
+                username: req.user.name,
+                imgurl: req.user.imgurl,
+                searchAll: searchAll,
+                totalposts: totalposts,
+            };
+            let table = [];
+            for (let i = 0; i < results.length; i++) {
+                let diffMs = results[i].updated - new Date();
+                let diffDays = Math.floor(diffMs / 86400000);
+                let diffHrs = Math.floor((diffMs % 86400000) / 3600000);
+                let diffMins = Math.floor(((diffMs % 86400000) % 3600000) / 60000);
+                // console.log( diffDays, diffHrs, diffMins );
+                diffDays = diffDays > 0 ? diffDays : 0;
+                diffHrs = diffHrs > 0 ? diffHrs : 0;
+                diffMins = diffMins > 0 ? diffMins : 0;
+                table.push({
+                    rssid: results[i].rssid,
+                    emails: results[i].emails.split(',').join(", "),
+                    urls: common.stringToArray(results[i].urls),
+                    included: results[i].included.split(',').join(", "),
+                    excluded: results[i].excluded.split(',').join(", "),
+                    remarks: results[i].remarks.split(',').join(", "),
+                    language: results[i].language,
+                    frequency: results[i].frequency,
+                    rsslength: results[i].rsslength,
+                    ndtype: results[i].ndtype,
+                    path: results[i].directorypath,
+                    nextUpdate: `${diffDays} Days : ${diffHrs} Hour : ${diffMins} Minutes`,
                 });
-
+            }
+            dataObject.table = table;
+            return res.render(fileLocation, {
+                languages: language,
+                dataObject,
+                companiesData
             });
+
         });
     }
 }
