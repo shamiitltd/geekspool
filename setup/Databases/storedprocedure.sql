@@ -36,7 +36,7 @@ DELIMITER ;
 
 DROP PROCEDURE IF EXISTS Get_RssRecord_Profile;
 DELIMITER $$
-CREATE PROCEDURE Get_RssRecord_Profile(IN searchAll TEXT, IN userid Varchar(20), IN admin Boolean, IN lim INT, IN pageNumber INT, OUT totalposts INT)
+CREATE PROCEDURE Get_RssRecord_Profile(IN searchAll TEXT, IN iuserid Varchar(20), IN admin Boolean, IN lim INT, IN pageNumber INT, OUT totalposts INT)
 BEGIN
     DECLARE totalposts INT;
     DECLARE offsetVal INT;
@@ -46,21 +46,21 @@ BEGIN
         FROM smaptorss WHERE (
         MATCH( rssid, userid, emails, urls, included, excluded, remarks ) 
         AGAINST( searchAll IN NATURAL LANGUAGE MODE ) or urls LIKE CONCAT('%', searchAll, '%') or emails LIKE CONCAT('%', searchAll, '%')
-        ) and (userid=userid or admin IS TRUE);
+        ) and (userid=iuserid or admin IS TRUE);
         
         SELECT * 
         FROM smaptorss WHERE (
         MATCH( rssid, userid, emails, urls, included, excluded, remarks ) 
         AGAINST( searchAll IN NATURAL LANGUAGE MODE ) or urls LIKE CONCAT('%', searchAll, '%') or emails LIKE CONCAT('%', searchAll, '%')
-        ) and (userid=userid or admin IS TRUE) 
+        ) and (userid=iuserid or admin IS TRUE) 
         ORDER BY updated ASC LIMIT lim  OFFSET offsetVal;
 
     else 
         SELECT COUNT(*) INTO totalposts 
-        FROM smaptorss WHERE  userid=userid or admin IS TRUE;
+        FROM smaptorss WHERE  userid=iuserid or admin IS TRUE;
 
         SELECT * 
-        FROM  smaptorss WHERE userid=userid or admin IS TRUE 
+        FROM  smaptorss WHERE userid=iuserid or admin IS TRUE 
         ORDER BY updated ASC LIMIT lim  OFFSET offsetVal;
     end if;
 END$$
@@ -69,24 +69,24 @@ DELIMITER ;
 /* Tool form load*/
 DROP PROCEDURE IF EXISTS Get_RssForm_load;
 DELIMITER $$
-CREATE PROCEDURE Get_RssForm_load(IN rssid Varchar(20), IN userid Varchar(20), IN admin Boolean)
+CREATE PROCEDURE Get_RssForm_load(IN rssid Varchar(20), IN iuserid Varchar(20), IN admin Boolean)
 BEGIN
     SELECT * FROM  
-    smaptorss WHERE rssid=rssid AND (userid=userid or admin IS TRUE);
+    smaptorss WHERE rssid=rssid AND (userid=iuserid or admin IS TRUE);
 END$$
 DELIMITER ;
 
 /*Update Rss table */
 DROP PROCEDURE IF EXISTS Upload_rss_InfoData;
 DELIMITER $$
-CREATE PROCEDURE Upload_rss_InfoData(IN rssid Varchar(20), IN userid Varchar(20), IN emails Varchar(100), IN urls Varchar(200),
+CREATE PROCEDURE Upload_rss_InfoData(IN rssid Varchar(20), IN iuserid Varchar(20), IN emails Varchar(100), IN urls Varchar(200),
                                      IN included TEXT, IN excluded TEXT, IN remarks TEXT, IN directorypath Varchar(200),
                                      IN language char(10), IN frequency INT, IN ndtype char(5), IN updateData Boolean)
 BEGIN
     if (updateData) then
     	/* Update Data in smaptorss */
         UPDATE smaptorss 
-        SET userid=userid,
+        SET userid=iuserid,
             emails=emails,
             urls=urls,
             included=included,
@@ -101,7 +101,7 @@ BEGIN
 	    /* Insert the data into smaptorss*/
 	    INSERT INTO 
         smaptorss( rssid, userid, emails, urls, included, excluded, remarks, directorypath, language, frequency, ndtype)
-        VALUES( rssid, userid, emails, urls, included, excluded, remarks, directorypath, language, frequency, ndtype);
+        VALUES( rssid, iuserid, emails, urls, included, excluded, remarks, directorypath, language, frequency, ndtype);
     end if;
 
 END$$
