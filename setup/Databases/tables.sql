@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS `userlogin` (
-  `id` char(30) NOT NULL,
+  `id` char(30) NOT NULL PRIMARY KEY,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` text NOT NULL,
@@ -10,15 +10,15 @@ CREATE TABLE IF NOT EXISTS `userlogin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --#
 CREATE TABLE IF NOT EXISTS `dropDownsPool` (
-  `id` varchar(50) NOT NULL,
-  `name` varchar(50) NOT NULL, 
+  `id`  BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(50) NOT NULL UNIQUE, 
   `key` text DEFAULT NULL,
   `value` text DEFAULT NULL,
   `updated` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --#
 CREATE TABLE IF NOT EXISTS `smaptorss` (
-  `rssid` varchar(50) NOT NULL,
+  `rssid` varchar(50) NOT NULL PRIMARY KEY,
   `userid` char(30) DEFAULT NULL,
   `emails` text DEFAULT NULL,
   `urls` text DEFAULT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `smaptorss` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --#
 CREATE TABLE IF NOT EXISTS `smaptorss_logs` (
-  `rssid` varchar(50) NOT NULL,
+  `rssid` varchar(50) NOT NULL PRIMARY KEY,
   `userid` char(30) DEFAULT NULL,
   `emails` text DEFAULT NULL,
   `urls` text DEFAULT NULL,

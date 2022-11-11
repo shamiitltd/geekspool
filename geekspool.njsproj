@@ -1868,7 +1868,8 @@
     <Content Include="setup\application\scripts.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="setup\Databases\clearall.sql">
+    <Content Include="setup\Databases\clearall.sql" />
+    <Content Include="setup\Databases\deleteall.sql">
       <SubType>Code</SubType>
     </Content>
     <Content Include="setup\Databases\data.sql">

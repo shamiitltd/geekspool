@@ -24,6 +24,10 @@ async function runSqlFile(path) {
 
 /* Use --# to seperate two different mysql query, otherwise it will show you the error */
 
+exports.deleteTablesAndSP = async function () {
+    await runSqlFile('./setup/Databases/deleteall.sql');
+}
+
 exports.clearDB = async function () {
     await runSqlFile('./setup/Databases/clearall.sql');
 }

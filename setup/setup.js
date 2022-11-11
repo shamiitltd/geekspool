@@ -1,5 +1,11 @@
-const { clearDB, createTablesAndSp, loadTables } = require("./Databases/database");
+const { clearDB, createTablesAndSp, loadTables, deleteTablesAndSP } = require("./Databases/database");
 
-//clearDB();
+/*Your should run these database functions in 3 steps, after uncommenting */
+//Step Danger:
+//deleteTablesAndSP();
+//Step 1:
 //createTablesAndSp();
-loadTables();
+//Step 2:
+//clearDB();
+//Step 3:
+//loadTables();

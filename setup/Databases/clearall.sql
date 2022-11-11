@@ -1,21 +1,11 @@
-DROP PROCEDURE IF EXISTS BackupDataSmaptorss;
+DELETE FROM  `smaptorss`
+WHERE 1;
 --#
-DROP PROCEDURE IF EXISTS Get_RssRecord_Profile;
+DELETE FROM  `smaptorss_logs`
+WHERE 1;
 --#
-DROP PROCEDURE IF EXISTS Get_RssForm_load;
+DELETE FROM  `dropDownsPool`
+WHERE 1;
 --#
-DROP PROCEDURE IF EXISTS Upload_rss_InfoData;
---#
-DROP PROCEDURE IF EXISTS Delete_ByRssId;
---#
-DROP PROCEDURE IF EXISTS Get_dropDown_Details;
---#
-DROP PROCEDURE IF EXISTS Upload_dropDown_Details;
---#
-DROP TABLE IF EXISTS userlogin;
---#
-DROP TABLE IF EXISTS dropDownsPool;
---#
-DROP TABLE IF EXISTS smaptorss;
---#
-DROP TABLE IF EXISTS smaptorss_logs;
+DELETE FROM  `userlogin`
+WHERE 1;
