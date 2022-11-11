@@ -1,4 +1,7 @@
-CREATE PROCEDURE IF NOT EXISTS BackupDataSmaptorss()
+DROP PROCEDURE IF EXISTS BackupDataSmaptorss;
+--#
+DELIMITER $$
+CREATE PROCEDURE BackupDataSmaptorss()
 BEGIN
 	/* All updated Data in smaptorss is transfer smaptorss_logs */
 	UPDATE smaptorss_logs
@@ -25,13 +28,17 @@ BEGIN
 	ON smaptorss.rssid = smaptorss_logs.rssid
 	WHERE smaptorss_logs.rssid IS NULL;
 
-END;
+END$$
+DELIMITER ;
 
 --#
 /*https://dev.mysql.com/doc/refman/8.0/en/create-procedure.html*/
 
 /*for profile*/
-CREATE PROCEDURE IF NOT EXISTS Get_RssRecord_Profile(IN searchAll TEXT, IN iuserid Varchar(20), IN admin Boolean, IN lim INT, IN pageNumber INT, OUT totalposts INT)
+
+DROP PROCEDURE IF EXISTS Get_RssRecord_Profile;
+DELIMITER $$
+CREATE PROCEDURE Get_RssRecord_Profile(IN searchAll TEXT, IN iuserid Varchar(20), IN admin Boolean, IN lim INT, IN pageNumber INT, OUT totalposts INT)
 BEGIN
     DECLARE offsetVal INT;
     SET offsetVal = (lim * (pageNumber - 1));
@@ -57,19 +64,25 @@ BEGIN
         FROM  smaptorss WHERE userid=iuserid or admin IS TRUE 
         ORDER BY updated ASC LIMIT lim  OFFSET offsetVal;
     end if;
-END;
+END$$
+DELIMITER ;
 
 --#
 /* Tool form load*/
-CREATE PROCEDURE IF NOT EXISTS Get_RssForm_load(IN irssid Varchar(20), IN iuserid Varchar(20), IN admin Boolean)
+DROP PROCEDURE IF EXISTS Get_RssForm_load;
+DELIMITER $$
+CREATE PROCEDURE Get_RssForm_load(IN irssid Varchar(20), IN iuserid Varchar(20), IN admin Boolean)
 BEGIN
     SELECT * FROM  
     smaptorss WHERE rssid=irssid AND (userid=iuserid or admin IS TRUE);
-END;
+END$$
+DELIMITER ;
 
 --#
 /*Update Rss table */
-CREATE PROCEDURE IF NOT EXISTS Upload_rss_InfoData(IN irssid Varchar(20), IN iuserid Varchar(20), IN iemails Varchar(100), IN iurls Varchar(200),
+DROP PROCEDURE IF EXISTS Upload_rss_InfoData;
+DELIMITER $$
+CREATE PROCEDURE Upload_rss_InfoData(IN irssid Varchar(20), IN iuserid Varchar(20), IN iemails Varchar(100), IN iurls Varchar(200),
                                      IN iincluded TEXT, IN iexcluded TEXT, IN iremarks TEXT, IN idirectorypath Varchar(200),
                                      IN ilanguage char(10), IN ifrequency INT, IN indtype char(5), IN updateData Boolean)
 BEGIN
@@ -94,30 +107,37 @@ BEGIN
         VALUES( irssid, iuserid, iemails, iurls, iincluded, iexcluded, iremarks, idirectorypath, ilanguage, ifrequency, indtype);
     end if;
 
-END;
+END$$
+DELIMITER ;
 
 --#
 /* Delete from Rss table*/
-
-CREATE PROCEDURE IF NOT EXISTS Delete_ByRssId(IN irssid Varchar(20))
+DROP PROCEDURE IF EXISTS Delete_ByRssId;
+DELIMITER $$
+CREATE PROCEDURE Delete_ByRssId(IN irssid Varchar(20))
 BEGIN
     DELETE FROM smaptorss 
     WHERE rssid=irssid;
-END;
+END$$
+DELIMITER ;
 
 --#
 
 /* load Drop Down Data for Rss table*/
-CREATE PROCEDURE IF NOT EXISTS Get_dropDown_Details(IN iname Varchar(50))
+DROP PROCEDURE IF EXISTS Get_dropDown_Details;
+DELIMITER $$
+CREATE PROCEDURE Get_dropDown_Details(IN iname Varchar(50))
 BEGIN
     SELECT * FROM  dropDownsPool
     WHERE name=iname;
-END;
+END$$
+DELIMITER ;
 
 --#
 
-
-CREATE PROCEDURE IF NOT EXISTS Upload_dropDown_Details(IN iname Varchar(20), IN ikey Varchar(20), IN ivalue Varchar(100), IN updateData Boolean)
+DROP PROCEDURE IF EXISTS Upload_dropDown_Details;
+DELIMITER $$
+CREATE PROCEDURE Upload_dropDown_Details(IN iname Varchar(20), IN ikey Varchar(20), IN ivalue Varchar(100), IN updateData Boolean)
 BEGIN
     if (updateData) then
     	/* Update Data in dropDownsPool */
@@ -132,5 +152,6 @@ BEGIN
         dropDownsPool( name, `key`, `value`)
         VALUES( iname, ikey, ivalue);
     end if;
-END;
+END$$
+DELIMITER ;
 

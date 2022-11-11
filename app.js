@@ -10,7 +10,7 @@ const app = express();
 const api = require('./api/index');
 const passport = require('passport');
 const { initializePassport } = require('./config/auth');
-const setupDB = require('./setup/Databases/database');
+const setup = require('./setup/setup');
 require('dotenv').config();
 
 

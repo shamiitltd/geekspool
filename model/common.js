@@ -1,8 +1,8 @@
 
-exports.stringToArray = function (str) { 
+exports.stringToArray = function (str, separator=',') {
     if (!str || str.length == 0)
         return [];
-    return str.split(',');
+    return str.split(separator);
 }
 
 exports.makeArrRecordUniqueNormal = async function (arrOld) {

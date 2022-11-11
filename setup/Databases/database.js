@@ -1,51 +1,40 @@
 let fs = require('fs');
-let readline = require('readline');
 let db = require('../../config/database');
-const path = require('path');
+const { stringToArray } = require('../../model/common');
 
-let storedprocedures = readline.createInterface({
-    input: fs.createReadStream('./setup/Databases/storedprocedure.sql'),
-    terminal: false
-});
-
-let tables = readline.createInterface({
-    input: fs.createReadStream('./setup/Databases/tables.sql'),
-    terminal: false
-});
-
-//let path = './setup/Databases/tables.sql';storedprocedure
-const users = fs.readFileSync(path.join(__dirname, './tables.sql')).toString();
-db.mysql.query(users, function (err, rows) {
-    if (!err) {
-        console.log(rows);
-    } else {
-        console.log(err);
-    }
-});
-//storedprocedures.on('line', function (chunk) {
-//    db.mysql.query(chunk.toString('ascii'), function (err, sets, fields) {
-//        if (err) console.log(err);
-
-//        storedprocedures.on('close', function () {
-//            console.log("finished storedprocedures");
-//        });
-//    });
-//});
-
-//tables.on('line', function (chunk) {
-//    db.mysql.query(chunk.toString('ascii'), function (err, sets, fields) {
-//        if (err) console.log(err);
-
-//        tables.on('close', function () {
-//            console.log("finished tables");
-//            db.mysql.end();
-//        });
-
-//    });
-//});
-
-
-module.exports = {
-    storedprocedures,
-    tables
+/* Use --# to seperate two different mysql query, otherwise it will show you the error */
+async function runSqlFile(path) {
+    /*const path = require('path');
+     *path.join(__dirname, './storedprocedure.sql') 
+     * */
+    const fileData = fs.readFileSync(path).toString();
+    const arr = stringToArray(fileData, '#');
+    await arr.forEach((sqlquery) => {
+        db.mysql.query(sqlquery, async function (err, rows) {
+            if (!err) {
+                console.log(rows);
+                return await true;
+            } else {
+                console.log(err);
+                return await false;
+            }
+        });
+    });
 }
+
+/* Use --# to seperate two different mysql query, otherwise it will show you the error */
+
+exports.clearDB = async function () {
+    await runSqlFile('./setup/Databases/clearall.sql');
+}
+
+exports.createTablesAndSp = async function () {
+    await runSqlFile('./setup/Databases/tables.sql');
+    await runSqlFile('./setup/Databases/storedprocedure.sql');
+}
+
+exports.loadTables = async function () {
+    await runSqlFile('./setup/Databases/data.sql');
+}
+
+exports.runSqlFile = runSqlFile;
