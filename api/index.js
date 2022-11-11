@@ -1,6 +1,7 @@
 const express = require('express');
 const api = express.Router();
 const verify = require('../middleware/verify');
+const { profileUi } = require('../model/profile');
 const authRoutes = require('./auth');
 
 api.use('/', authRoutes); // Routing path
@@ -27,13 +28,26 @@ api.get('/', async (req, res) => {
     });
 })
 
-api.get('/*/new', verify.checkAuthentication, (req, res) => {
-    res.render('controllers/containerWithSearchForm', {
-        user: req.user
+
+api.get('/rss/new', verify.checkAuthentication, (req, res) => {
+
+    res.render('controllers/rssController', {
+        user: req.user,
+        
     });
 })
 
-api.get('/profile/*', (req, res) => {
+//api.get('/*/new', verify.checkAuthentication, (req, res) => {
+//    res.render('controllers/containerWithSearchForm', {
+//        user: req.user
+//    });
+//})
+
+api.get('/profile/:id/', (req, res) => {
+    const {
+        id
+    } = req.params;
+    profileUi(req, res, 'controllers/profileController', id);
     res.render('controllers/profileController', {
         user: req.user, dataObject, paginator
     });

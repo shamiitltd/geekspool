@@ -1,34 +1,26 @@
 const fs = require("fs");
 const shortid = require('shortid');
 shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
-let db = require('../config/database');
-const common = require('./common');
+let { mysql } = require('../config/database');
+const { stringToArray, arrayToStringObjectTool } = require('./common');
+const { finalRssGeneration } = require("./rssgenerator");
 
-//exports.profile = async function (req, res) {
-//    res.render('controllers/profileController', {
-//        user: req.user, dataObject, paginator
-//    });
-//}
-
-const {
-    finalRssGeneration
-} = require('./sitemapscanner');
-
-exports.languages = async function () {
+async function languages() {
     let queryString = `CALL Get_dropDown_Details('language');`;
-    db.mysql.query(queryString, async (perr, results, fields) => {
+    mysql.query(queryString, async (perr, results, fields) => {
         if (perr) {
             return res.send("Please check your internet connection " + perr);
         }
         if (!results.length)
             console.log(results[0]);
         return {
-            name: common.stringToArray(results[0].key),
-            code: common.stringToArray(results[0].value)
+            name: stringToArray(results[0].key),
+            code: stringToArray(results[0].value)
         };
     });
 }
-const language =language();
+
+const language = languages();
 
 async function profileUi(req, res, fileLocation, id) {
     const queryVals = req.query;
@@ -40,20 +32,19 @@ async function profileUi(req, res, fileLocation, id) {
     } else {
         let totalposts;
         let queryString = `CALL Get_RssRecord_Profile(${searchAll}, ${req.user.id}, ${req.admin}, ${lim}, ${pageNumber}, ${totalposts});`;
-        db.mysql.query(queryString, async (err, results, fields) => {
+        mysql.query(queryString, async (err, results, fields) => {
             if (perr) {
                 return res.send("Please check your internet connection " + err);
             }
-            // console.log( 'Getting data from table is: \n', results[ 0 ] );
+            console.log('Getting data from table is: \n', totalposts, results[0] );
             if (!results.length)
                 return res.redirect('/nopage');
-            console.log(totalposts, postResult);
             //totalposts = results[0].totalposts;
             let totalPages = Math.ceil(totalposts / lim);
             pageNumber = Math.min(pageNumber, totalPages);
             pageNumber = Math.max(pageNumber, 1);
 
-            let companiesData = {
+            let paginator = {
                 hasPrevPage: (pageNumber - 1 > 0 ? true : false),
                 hasNextPage: (pageNumber + 1 <= totalPages ? true : false),
                 prevPage: (pageNumber - 1 > 0 ? pageNumber - 1 : 0),
@@ -84,7 +75,7 @@ async function profileUi(req, res, fileLocation, id) {
                 table.push({
                     rssid: results[i].rssid,
                     emails: results[i].emails.split(',').join(", "),
-                    urls: common.stringToArray(results[i].urls),
+                    urls: stringToArray(results[i].urls),
                     included: results[i].included.split(',').join(", "),
                     excluded: results[i].excluded.split(',').join(", "),
                     remarks: results[i].remarks.split(',').join(", "),
@@ -98,19 +89,21 @@ async function profileUi(req, res, fileLocation, id) {
             }
             dataObject.table = table;
             return res.render(fileLocation, {
+                user: req.user,
                 languages: language,
                 dataObject,
-                companiesData
+                paginator
             });
 
         });
     }
 }
 
-async function toolsUiLoader(fileLocation, id, req, res) {
+async function toolsUiLoader(req, res, fileLocation, id) {
     if (req.admin || req.editor) {
         if (!id) {
             return res.render(fileLocation, {
+                user: req.user,
                 language,
                 dataObject: {
                     uid: req.user.id,
@@ -119,27 +112,28 @@ async function toolsUiLoader(fileLocation, id, req, res) {
             });
         } else {
             let queryString = `CALL Get_RssForm_load(${id}, ${req.user.id}, ${req.admin});`;
-            db.mysql.query(queryString, (err, results, fields) => {
+            mysql.query(queryString, (err, results, fields) => {
                 if (err) {
                     return res.send("Please check your internet connection" + err);
                 }
                 // console.log( 'Getting data from table is: \n', results[ 0 ] );
                 if (!results.length)
                     return res.render(fileLocation, {
+                        user: req.user,
                         language,
                         dataObject: {
                             uid: req.user.id,
                             username: req.user.name
                         }
-                    }); //common.stringToArray
+                    }); //stringToArray
                 dataObject = {
                     rssid: results[0].rssid,
                     uid: results[0].userid,
-                    emails: common.stringToArray(results[0].emails),
-                    urls: common.stringToArray(results[0].urls),
-                    included: common.stringToArray(results[0].included),
-                    excluded: common.stringToArray(results[0].excluded),
-                    remarks: common.stringToArray(results[0].remarks),
+                    emails: stringToArray(results[0].emails),
+                    urls: stringToArray(results[0].urls),
+                    included: stringToArray(results[0].included),
+                    excluded: stringToArray(results[0].excluded),
+                    remarks: stringToArray(results[0].remarks),
                     directorypath: results[0].directorypath,
                     username: req.user.name,
                     language: results[0].language,
@@ -147,6 +141,7 @@ async function toolsUiLoader(fileLocation, id, req, res) {
                     ndtype: results[0].ndtype
                 };
                 return res.render(fileLocation, {
+                    user: req.user,
                     language,
                     dataObject
                 });
@@ -157,8 +152,8 @@ async function toolsUiLoader(fileLocation, id, req, res) {
     }
 }
 
-async function uploadtoolInfoData(dataObject, res) {
-    dataObject = await common.arrayToStringObjectTool(dataObject);
+async function uploadtoolInfoData(res, dataObject) {
+    dataObject = await arrayToStringObjectTool(dataObject);
     let rssid = shortid.generate();
     const d = new Date();
     let year = d.getFullYear();
@@ -171,7 +166,7 @@ async function uploadtoolInfoData(dataObject, res) {
                                                 ${dataObject.excluded ? dataObject.excluded : ''}, ${dataObject.remarks ? dataObject.remarks : ''},
                                                 ${dataObject.directorypath}, ${dataObject.language}, ${dataObject.frequency}, ${dataObject.ndtype},
                                                 ${update});`;
-    db.mysql.query(queryString, async (cerr, cresults, cfields) => {
+    mysql.query(queryString, async (cerr, cresults, cfields) => {
         if (cerr) {
             // console.log( "Not connected !!! " + err );
             return res.send('Course not upload !!!' + cerr);
@@ -184,15 +179,15 @@ async function uploadtoolInfoData(dataObject, res) {
             path: dataObject.directorypath,
             urls: dataObject.urls ? dataObject.urls.split(',').join(", ") : ''
         }
-        await finalRssGeneration(dataObject.rssid, dataObject.language, common.stringToArray(dataObject.urls), common.stringToArray(dataObject.included), common.stringToArray(dataObject.excluded), mailObj);
+        await finalRssGeneration(dataObject.rssid, dataObject.language, stringToArray(dataObject.urls), stringToArray(dataObject.included), stringToArray(dataObject.excluded), mailObj);
         let path = await dataObject.directorypath + dataObject.rssid + '.xml';
         return await res.redirect(path);
     });
 }
 
-async function deleteRssfromDbNFile(dataObject, req, res) {
+async function deleteRssfromDbNFile(req, res, dataObject) {
     let queryString = `CALL Get_RssForm_load(${dataObject.rssid}, ${req.user.id}, ${req.admin});`;
-    db.mysql.query(queryString, (err, results, fields) => {
+    mysql.query(queryString, (err, results, fields) => {
         if (err) {
             return res.send("Please check your internet connection" + err);
         }
@@ -200,7 +195,7 @@ async function deleteRssfromDbNFile(dataObject, req, res) {
             return res.send("Record not in Database");
 
         queryString = `CALL Delete_ByRssId(${results[0].rssid});`;
-        db.mysql.query(queryString, async (cerr, cresults, cfields) => {
+        mysql.query(queryString, async (cerr, cresults, cfields) => {
             if (cerr) {
                 return res.send("Not connected !!! " + cerr);
             }
@@ -222,5 +217,6 @@ module.exports = {
     toolsUiLoader,
     uploadtoolInfoData,
     profileUi,
-    deleteRssfromDbNFile
+    deleteRssfromDbNFile,
+    language
 };
