@@ -4,8 +4,16 @@
     <div class="main-content"></div>
     <div class="main-content flex-column" id="mainContent">
         <span class="su-desc error"><%=messages.info %></span>
-        <%- include("../components/profilePage", {dataObject, paginator, languages}) %>
+        <div class="flex-column offline">
+            <div>
+                <span>This Page is not available</span>
+            </div>
+            <div>
+                <span>Go Back to <a href="/"><b class="goback">Home Page</b></a>.</span>
+            </div>
+        </div>
     </div>
     <div class="main-content"></div>
 </main>
 <%- include("../shared/footer") %>
+

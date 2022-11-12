@@ -395,7 +395,7 @@ if ( window.location.pathname === '/' ) {
 } else if ( keyPathMatch( '/privacypolicy' ) ) {
     loadSimplePage( 'privpolicy' );
 } else {
-    loadSimplePage( 'nopage' );
+    //loadSimplePage( 'nopage' );
 }
 
 

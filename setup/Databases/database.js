@@ -1,5 +1,5 @@
 let fs = require('fs');
-let db = require('../../config/database');
+const { mysql } = require('../../config/database');
 const { stringToArray } = require('../../model/common');
 
 /* Use --# to seperate two different mysql query, otherwise it will show you the error */
@@ -8,18 +8,19 @@ async function runSqlFile(path) {
      *path.join(__dirname, './storedprocedure.sql') 
      * */
     const fileData = fs.readFileSync(path).toString();
-    const arr = stringToArray(fileData, '#');
-    await arr.forEach((sqlquery) => {
-        db.mysql.query(sqlquery, async function (err, rows) {
-            if (!err) {
-                console.log(rows);
-                return await true;
-            } else {
-                console.log(err);
-                return await false;
-            }
+    const arr = await stringToArray(fileData, '#');
+    if (arr)
+        await arr.forEach((sqlquery) => {
+            mysql.query(sqlquery, async function (err, rows) {
+                if (!err) {
+                    console.log(rows);
+                    return await true;
+                } else {
+                    console.log(err);
+                    return await false;
+                }
+            });
         });
-    });
 }
 
 /* Use --# to seperate two different mysql query, otherwise it will show you the error */
@@ -33,12 +34,19 @@ exports.clearDB = async function () {
 }
 
 exports.createTablesAndSp = async function () {
-    await runSqlFile('./setup/Databases/tables.sql');
-    await runSqlFile('./setup/Databases/storedprocedure.sql');
+    await runSqlFile('./setup/Databases/createtables.sql');
+    await runSqlFile('./setup/Databases/createstoredprocedure.sql');
 }
 
-exports.loadTables = async function () {
-    await runSqlFile('./setup/Databases/data.sql');
+exports.insertData = async function () {
+    await runSqlFile('./setup/Databases/insertdata.sql');
+}
+exports.insertnewData = async function () {
+    await runSqlFile('./setup/Databases/insertnewdata.sql');
+}
+
+exports.updateData = async function () {
+    await runSqlFile('./setup/Databases/updatedata.sql');
 }
 
 exports.runSqlFile = runSqlFile;

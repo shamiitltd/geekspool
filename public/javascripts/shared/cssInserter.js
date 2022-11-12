@@ -4,7 +4,6 @@ function loadCssFiles() { // detecting path using if else will make a longer del
         "/stylesheets/components/spinner.css",
         "/stylesheets/controllers/landingpage.css",
         "/stylesheets/controllers/newjobform.css",
-        "/stylesheets/controllers/profile.css",
         "/stylesheets/controllers/signin.css",
         "/stylesheets/libraries/fontAwsomeCustom.css",
         "/stylesheets/libraries/popovers.css",

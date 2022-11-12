@@ -81,8 +81,8 @@
                 </div>
                 <div class="flex-row-imp" role="cell"><%-tablerow.remarks %></div>
                 <div class="flex-row-imp" role="cell">
-                    <% languages.name.forEach(function(language, j){ %>
-                    <% if(languages.code[j] === tablerow.language){ %>
+                    <% languages && languages.name && languages.name.forEach(function(language, j){ %>
+                    <% if(languages.code[j] == tablerow.language){ %>
                     <%-language %>
                     <% } %>
                     <% }); %>

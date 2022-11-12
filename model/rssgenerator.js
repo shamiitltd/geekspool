@@ -7,9 +7,9 @@ const { siteTitle, siteUrl } = require('../static/constants');
 require('dotenv').config();
 const { stringToArray } = require('../model/common');
 const { mysql } = require('../config/database');
-const {
-    responseMsgRss
-} = require('./nodemailer');
+//const {
+//    responseMsgRss
+//} = require('./nodemailer');
 
 function headerRss(generatorurl, sitetitle, siteurl, sitemapFileName, language) {
     return `<rss xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -186,7 +186,7 @@ async function finalRssGeneration(sitemapFileName, languageCode, smapUrls, inclu
         if (included.length)
             mailObj["countUrls"] = "Urls, Includes: " + included.join(", ") + " " + mailObj["countUrls"];
         mailObj["countUrls"] = "Total: " + validLength + " " + mailObj["countUrls"];
-        responseMsgRss(mailObj);
+        //responseMsgRss(mailObj);
         return validLength;
     });
 }
@@ -212,7 +212,7 @@ function jobSchedular(min = 60, tableName = 'smaptorss') {
                     urls: results[i].urls ? results[i].urls.split(',').join(", ") : ''
                 }
                 if (results[i].frequency != '0')
-                    await finalRssGeneration(results[i].rssid, results[i].language, stringToArray(results[i].urls), stringToArray(results[i].included), stringToArray(results[i].excluded), mailObj);
+                    await finalRssGeneration(results[i].rssid, results[i].language, await stringToArray(results[i].urls), await stringToArray(results[i].included), await stringToArray(results[i].excluded), mailObj);
                 let sqlQueryString = `UPDATE ${tableName} 
                         SET updated = DATE_ADD( CURRENT_TIMESTAMP(), INTERVAL ${results[i].frequency != '0' ? 1400 / results[i].frequency : 5256000} MINUTE )
                         WHERE rssid='${results[i].rssid}'

@@ -42,12 +42,25 @@ for (let i = 0; i < searchFields.length; i++) {
     }
 }
 
+function closeAllDropdown() {
+    const allDropDown = document.querySelectorAll(".search-suggestions");
+    for (let i = 0; i < allDropDown.length; i++) {
+        allDropDown[i].classList.remove("active");
+    }
+}
+
+
+async function stringToArray(str, separator = ',') {
+    if (!str || str.length == 0)
+        return [];
+    return await str.split(separator);
+}
 async function handleSearchInput(searchField, autocomBox, name) {
     const inputBox = searchField.querySelector('input');
     let data = [];
     if (name) {
         let res = await axios.get(`/dropdown/${name}/`);
-        data = res.data;
+        data = await stringToArray(res.data.value);
     }
     inputBox.addEventListener('focus', (event) => {
         let emptyArray = [];
@@ -142,3 +155,23 @@ function filterInputTag(textVal, lastSibling) {
     lastSibling.insertAdjacentElement('beforebegin', newLi);
     removeParentByChild(newAnchor);
 }
+
+function stringMatching(str1, str2) {
+    if (str1[str1.length - 1] === '/')
+        str1 = str1.slice(0, -1);
+    return str1 === str2;
+}
+
+function stringMatchWithPath(str) {
+    return stringMatching(window.location.pathname, str);
+}
+
+
+window.addEventListener("click", function (event) {
+    if (!event.target.closest(".chosen-container")) {
+        closeAllDropdown();
+    }
+    if (!event.target.closest(".popper-button, .popper-popup")) {
+        closeAll();
+    }
+});

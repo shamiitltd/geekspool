@@ -12,14 +12,14 @@ CREATE TABLE IF NOT EXISTS `userlogin` (
 CREATE TABLE IF NOT EXISTS `dropDownsPool` (
   `id`  BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(50) NOT NULL UNIQUE, 
-  `key` text DEFAULT NULL,
-  `value` text DEFAULT NULL,
+  `key` LONGTEXT DEFAULT NULL,
+  `value` LONGTEXT DEFAULT NULL,
   `updated` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --#
 CREATE TABLE IF NOT EXISTS `smaptorss` (
   `rssid` varchar(50) NOT NULL PRIMARY KEY,
-  `userid` char(30) DEFAULT NULL,
+  `userid` char(30) NOT NULL,
   `emails` text DEFAULT NULL,
   `urls` text DEFAULT NULL,
   `included` text DEFAULT NULL,
@@ -30,12 +30,13 @@ CREATE TABLE IF NOT EXISTS `smaptorss` (
   `frequency` int(11) DEFAULT NULL,
   `rsslength` int(11) NOT NULL DEFAULT 0,
   `ndtype` char(10) DEFAULT NULL,
-  `updated` datetime DEFAULT current_timestamp()
+  `updated` datetime DEFAULT current_timestamp(),
+   FOREIGN KEY( `userid` ) REFERENCES `userlogin`( `id` )
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --#
 CREATE TABLE IF NOT EXISTS `smaptorss_logs` (
   `rssid` varchar(50) NOT NULL PRIMARY KEY,
-  `userid` char(30) DEFAULT NULL,
+  `userid` char(30) NOT NULL,
   `emails` text DEFAULT NULL,
   `urls` text DEFAULT NULL,
   `included` text DEFAULT NULL,
@@ -46,5 +47,6 @@ CREATE TABLE IF NOT EXISTS `smaptorss_logs` (
   `frequency` int(11) DEFAULT NULL,
   `rsslength` int(11) NOT NULL DEFAULT 0,
   `ndtype` char(10) DEFAULT NULL,
-  `updated` datetime DEFAULT current_timestamp()
+  `updated` datetime DEFAULT current_timestamp(),
+   FOREIGN KEY( `userid` ) REFERENCES `userlogin`( `id` )
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1

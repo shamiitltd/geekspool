@@ -31,12 +31,13 @@ END;
 /*https://dev.mysql.com/doc/refman/8.0/en/create-procedure.html*/
 
 /*for profile*/
-CREATE PROCEDURE IF NOT EXISTS Get_RssRecord_Profile(IN searchAll TEXT, IN iuserid Varchar(20), IN admin Boolean, IN lim INT, IN pageNumber INT, OUT totalposts INT)
+
+CREATE PROCEDURE IF NOT EXISTS Get_RssRecord_Profile(IN searchAll TEXT, IN iuserid char(30), IN admin Boolean, IN lim INT, IN pageNumber INT)
 BEGIN
     DECLARE offsetVal INT;
     SET offsetVal = (lim * (pageNumber - 1));
     if (!STRCMP(searchAll,"") = 0) then
-        SELECT COUNT(*) INTO  totalposts
+        SELECT COUNT(*) as totalposts
         FROM smaptorss WHERE (
         MATCH( rssid, userid, emails, urls, included, excluded, remarks ) 
         AGAINST( searchAll IN NATURAL LANGUAGE MODE ) or urls LIKE CONCAT('%', searchAll, '%') or emails LIKE CONCAT('%', searchAll, '%')
@@ -50,7 +51,7 @@ BEGIN
         ORDER BY updated ASC LIMIT lim  OFFSET offsetVal;
 
     else 
-        SELECT COUNT(*) INTO totalposts 
+        SELECT COUNT(*) as totalposts 
         FROM smaptorss WHERE  userid=iuserid or admin IS TRUE;
 
         SELECT * 
@@ -61,7 +62,7 @@ END;
 
 --#
 /* Tool form load*/
-CREATE PROCEDURE IF NOT EXISTS Get_RssForm_load(IN irssid Varchar(20), IN iuserid Varchar(20), IN admin Boolean)
+CREATE PROCEDURE IF NOT EXISTS Get_RssForm_load(IN irssid Varchar(50), IN iuserid char(30), IN admin Boolean)
 BEGIN
     SELECT * FROM  
     smaptorss WHERE rssid=irssid AND (userid=iuserid or admin IS TRUE);
@@ -69,15 +70,14 @@ END;
 
 --#
 /*Update Rss table */
-CREATE PROCEDURE IF NOT EXISTS Upload_rss_InfoData(IN irssid Varchar(20), IN iuserid Varchar(20), IN iemails Varchar(100), IN iurls Varchar(200),
+CREATE PROCEDURE IF NOT EXISTS Upload_rss_InfoData(IN irssid Varchar(50), IN iuserid char(30), IN iemails TEXT, IN iurls TEXT,
                                      IN iincluded TEXT, IN iexcluded TEXT, IN iremarks TEXT, IN idirectorypath Varchar(200),
-                                     IN ilanguage char(10), IN ifrequency INT, IN indtype char(5), IN updateData Boolean)
+                                     IN ilanguage Varchar(10), IN ifrequency INT, IN indtype char(10), IN updateData Boolean)
 BEGIN
     if (updateData) then
     	/* Update Data in smaptorss */
         UPDATE smaptorss 
-        SET userid=iuserid,
-            emails=iemails,
+        SET emails=iemails,
             urls=iurls,
             included=iincluded,
             excluded=iexcluded,
@@ -86,7 +86,7 @@ BEGIN
             frequency=ifrequency,
             ndtype=indtype,
             updated = DATE_ADD( CURRENT_TIMESTAMP(), INTERVAL IF(ifrequency != 0 , 1400/ifrequency, 5256000) MINUTE )
-        WHERE rssid=irssid;	
+        WHERE rssid=irssid AND (userid=iuserid OR (SELECT COUNT(*) FROM `userlogin` WHERE userid=iuserid AND `role`='admin')=1);
     else 
 	    /* Insert the data into smaptorss*/
 	    INSERT INTO 
@@ -99,10 +99,10 @@ END;
 --#
 /* Delete from Rss table*/
 
-CREATE PROCEDURE IF NOT EXISTS Delete_ByRssId(IN irssid Varchar(20))
+CREATE PROCEDURE IF NOT EXISTS Delete_ByRssId(IN irssid Varchar(50), IN iuserid char(30))
 BEGIN
     DELETE FROM smaptorss 
-    WHERE rssid=irssid;
+    WHERE rssid=irssid AND (userid=iuserid OR (SELECT COUNT(*) FROM `userlogin` WHERE userid=iuserid AND `role`='admin')=1);
 END;
 
 --#
@@ -117,7 +117,7 @@ END;
 --#
 
 
-CREATE PROCEDURE IF NOT EXISTS Upload_dropDown_Details(IN iname Varchar(20), IN ikey Varchar(20), IN ivalue Varchar(100), IN updateData Boolean)
+CREATE PROCEDURE IF NOT EXISTS Upload_dropDown_Details(IN iname Varchar(50), IN ikey LONGTEXT, IN ivalue LONGTEXT, IN updateData Boolean)
 BEGIN
     if (updateData) then
     	/* Update Data in dropDownsPool */

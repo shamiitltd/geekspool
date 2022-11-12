@@ -9,13 +9,17 @@ let language;
 (async function () {
     language = await getDropDown('language');
     language = {
-        name: language.key,
-        code: language.value
+        name: await stringToArray(language.key, ';'),
+        code: await stringToArray(language.value, ';')
     };
 })();
 
 
 async function profileUi(req, res, fileLocation, id) {
+    req.user = {};
+    req.user.id = id;
+    req.admin = true;
+
     const queryVals = req.query;
     let pageNumber = parseInt(queryVals.page ? queryVals.page : 1);
     let lim = parseInt(queryVals.limit ? queryVals.limit : 15);
@@ -24,19 +28,18 @@ async function profileUi(req, res, fileLocation, id) {
         return res.redirect('/nopage');
     } else {
         let totalposts;
-        let queryString = `CALL Get_RssRecord_Profile(${searchAll}, ${req.user.id}, ${req.admin}, ${lim}, ${pageNumber}, ${totalposts});`;
+        let queryString = `CALL Get_RssRecord_Profile('${searchAll}', '${req.user.id}', ${req.admin}, ${lim}, ${pageNumber});`;
         mysql.query(queryString, async (err, results, fields) => {
-            if (perr) {
+            if (err) {
                 return res.send("Please check your internet connection " + err);
             }
-            console.log('Getting data from table is: \n', totalposts, results[0] );
             if (!results.length)
                 return res.redirect('/nopage');
-            //totalposts = results[0].totalposts;
+            totalposts = results[0][0].totalposts;
             let totalPages = Math.ceil(totalposts / lim);
             pageNumber = Math.min(pageNumber, totalPages);
             pageNumber = Math.max(pageNumber, 1);
-
+            //console.log('Getting data from table is: \n', totalposts, results);
             let paginator = {
                 hasPrevPage: (pageNumber - 1 > 0 ? true : false),
                 hasNextPage: (pageNumber + 1 <= totalPages ? true : false),
@@ -46,7 +49,6 @@ async function profileUi(req, res, fileLocation, id) {
                 page: pageNumber,
                 postperpage: lim,
             };
-            // console.log( companiesData );
             dataObject = {
                 admin: req.admin ? "admin" : "",
                 uid: req.user.id,
@@ -56,30 +58,32 @@ async function profileUi(req, res, fileLocation, id) {
                 totalposts: totalposts,
             };
             let table = [];
-            for (let i = 0; i < results.length; i++) {
-                let diffMs = results[i].updated - new Date();
-                let diffDays = Math.floor(diffMs / 86400000);
-                let diffHrs = Math.floor((diffMs % 86400000) / 3600000);
-                let diffMins = Math.floor(((diffMs % 86400000) % 3600000) / 60000);
-                // console.log( diffDays, diffHrs, diffMins );
-                diffDays = diffDays > 0 ? diffDays : 0;
-                diffHrs = diffHrs > 0 ? diffHrs : 0;
-                diffMins = diffMins > 0 ? diffMins : 0;
-                table.push({
-                    rssid: results[i].rssid,
-                    emails: results[i].emails.split(',').join(", "),
-                    urls: stringToArray(results[i].urls),
-                    included: results[i].included.split(',').join(", "),
-                    excluded: results[i].excluded.split(',').join(", "),
-                    remarks: results[i].remarks.split(',').join(", "),
-                    language: results[i].language,
-                    frequency: results[i].frequency,
-                    rsslength: results[i].rsslength,
-                    ndtype: results[i].ndtype,
-                    path: results[i].directorypath,
-                    nextUpdate: `${diffDays} Days : ${diffHrs} Hour : ${diffMins} Minutes`,
-                });
-            }
+            try {
+                results = results[1];
+                for (let i = 0; i < results.length; i++) {
+                    let diffMs = results[i].updated - new Date();
+                    let diffDays = Math.floor(diffMs / 86400000);
+                    let diffHrs = Math.floor((diffMs % 86400000) / 3600000);
+                    let diffMins = Math.floor(((diffMs % 86400000) % 3600000) / 60000);
+                    diffDays = diffDays > 0 ? diffDays : 0;
+                    diffHrs = diffHrs > 0 ? diffHrs : 0;
+                    diffMins = diffMins > 0 ? diffMins : 0;
+                    table.push({
+                        rssid: results[i].rssid,
+                        emails: results[i].emails.split(',').join(", "),
+                        urls: await stringToArray(results[i].urls),
+                        included: results[i].included.split(',').join(", "),
+                        excluded: results[i].excluded.split(',').join(", "),
+                        remarks: results[i].remarks.split(',').join(", "),
+                        language: results[i].language,
+                        frequency: results[i].frequency,
+                        rsslength: results[i].rsslength,
+                        ndtype: results[i].ndtype,
+                        path: results[i].directorypath,
+                        nextUpdate: `${diffDays} Days : ${diffHrs} Hour : ${diffMins} Minutes`,
+                    });
+                }
+            } catch (err) { }
             dataObject.table = table;
             return res.render(fileLocation, {
                 user: req.user,
@@ -93,6 +97,10 @@ async function profileUi(req, res, fileLocation, id) {
 }
 
 async function toolsUiLoader(req, res, fileLocation, id) {
+    req.user = {};
+    req.user.id = id;
+    req.admin = true;
+
     if (req.admin || req.editor) {
         if (!id) {
             return res.render(fileLocation, {
@@ -105,7 +113,7 @@ async function toolsUiLoader(req, res, fileLocation, id) {
             });
         } else {
             let queryString = `CALL Get_RssForm_load(${id}, ${req.user.id}, ${req.admin});`;
-            mysql.query(queryString, (err, results, fields) => {
+            mysql.query(queryString, async (err, results, fields) => {
                 if (err) {
                     return res.send("Please check your internet connection" + err);
                 }
@@ -118,15 +126,15 @@ async function toolsUiLoader(req, res, fileLocation, id) {
                             uid: req.user.id,
                             username: req.user.name
                         }
-                    }); //stringToArray
+                    }); //await stringToArray
                 dataObject = {
                     rssid: results[0].rssid,
                     uid: results[0].userid,
-                    emails: stringToArray(results[0].emails),
-                    urls: stringToArray(results[0].urls),
-                    included: stringToArray(results[0].included),
-                    excluded: stringToArray(results[0].excluded),
-                    remarks: stringToArray(results[0].remarks),
+                    emails: await stringToArray(results[0].emails),
+                    urls: await stringToArray(results[0].urls),
+                    included: await stringToArray(results[0].included),
+                    excluded: await stringToArray(results[0].excluded),
+                    remarks: await stringToArray(results[0].remarks),
                     directorypath: results[0].directorypath,
                     username: req.user.name,
                     language: results[0].language,
@@ -172,7 +180,7 @@ async function uploadtoolInfoData(res, dataObject) {
             path: dataObject.directorypath,
             urls: dataObject.urls ? dataObject.urls.split(',').join(", ") : ''
         }
-        await finalRssGeneration(dataObject.rssid, dataObject.language, stringToArray(dataObject.urls), stringToArray(dataObject.included), stringToArray(dataObject.excluded), mailObj);
+        await finalRssGeneration(dataObject.rssid, dataObject.language, await stringToArray(dataObject.urls), await stringToArray(dataObject.included), await stringToArray(dataObject.excluded), mailObj);
         let path = await dataObject.directorypath + dataObject.rssid + '.xml';
         return await res.redirect(path);
     });

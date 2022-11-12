@@ -39,6 +39,9 @@
     <Content Include="api\auth.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="api\common.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="api\form.js">
       <SubType>Code</SubType>
     </Content>
@@ -52,6 +55,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="api\payment.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="api\profile.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="api\rss.js">
@@ -78,6 +84,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="config\payment.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="help\data.sql">
       <SubType>Code</SubType>
     </Content>
     <Content Include="help\helpfile.js">
@@ -1872,7 +1881,9 @@
     <Content Include="setup\Databases\deleteall.sql">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="setup\Databases\data.sql">
+    <Content Include="setup\Databases\insertnewdata.sql" />
+    <Content Include="setup\Databases\updatedata.sql" />
+    <Content Include="setup\Databases\insertdata.sql">
       <SubType>Code</SubType>
     </Content>
     <Content Include="setup\setup.js">
@@ -1929,10 +1940,10 @@
     <Content Include="setup\Databases\database.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="setup\Databases\storedprocedure.sql">
+    <Content Include="setup\Databases\createstoredprocedure.sql">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="setup\Databases\tables.sql">
+    <Content Include="setup\Databases\createtables.sql">
       <SubType>Code</SubType>
     </Content>
     <Content Include="static\constants.js">
@@ -1948,6 +1959,7 @@
     <Content Include="views\components\resetpass.ejs" />
     <Content Include="views\componentsmini\searchform.ejs" />
     <Content Include="views\components\sitemapscanner.ejs" />
+    <Content Include="views\controllers\nopageController.ejs" />
     <Content Include="views\controllers\profileController.ejs" />
     <Content Include="views\controllers\landingController.ejs" />
     <Content Include="views\controllers\offlineController.ejs" />
@@ -1963,6 +1975,7 @@
   <ItemGroup>
     <Folder Include="middleware\" />
     <Folder Include="help\" />
+    <Folder Include="public\stylesheets\compressed\" />
     <Folder Include="static\" />
     <Folder Include="public\fonts\" />
     <Folder Include="public\fonts\css\" />

@@ -1,27 +1,26 @@
 const { mysql } = require("../config/database");
 
-exports.getDropDown = async function (name) {
-    let queryString = `CALL Get_dropDown_Details(${name});`;
-    mysql.query(queryString, async (perr, results, fields) => {
-        if (perr) {
-            return res.send("Please check your internet connection " + perr);
-        }
-        if (!results.length)
-            console.log(results[0]);
-        return {
-            key: stringToArray(results[0].key),
-            value: stringToArray(results[0].value)
-        };
+async function getDropDown(name) {
+    const returnValue = new Promise(function (resolve, reject) {
+        let queryString = `CALL Get_dropDown_Details('${name}');`;
+        mysql.query(queryString, async (err, results, fields) => {
+            if (err) {
+                reject(err);
+            }
+            if (results && results.length)
+                resolve(results[0][0]);
+        });
     });
+    return returnValue;
 }
 
-exports.stringToArray = function (str, separator=',') {
+async function stringToArray(str, separator = ',') {
     if (!str || str.length == 0)
         return [];
-    return str.split(separator);
+    return await str.split(separator);
 }
 
-exports.makeArrRecordUniqueNormal = async function (arrOld) {
+async function makeArrRecordUniqueNormal(arrOld) {
     let tempObj = {};
     await arrOld.forEach((record) => {
         record = record.trim();
@@ -32,17 +31,38 @@ exports.makeArrRecordUniqueNormal = async function (arrOld) {
     return arrNew;
 }
 
-exports.arrayToStringObjectTool = async function (dataObject) {
+async function arrayToStringObjectTool(dataObject, separator=',') {
     for (let key in dataObject) {
         if (Array.isArray(dataObject[key])) {
             dataObject[key] = await makeArrRecordUniqueNormal(dataObject[key]);
             let str = '';
             for (let i = 0; i < dataObject[key].length; i++) {
-                if (str != '') str += ',';
+                if (str != '') str += separator;
                 str += dataObject[key][i];
             }
             dataObject[key] = str;
         }
     }
     return await dataObject;
+}
+async function arrayToStringObjectToolWithDuplicates(dataObject, separator = ',') {
+    for (let key in dataObject) {
+        if (Array.isArray(dataObject[key])) {
+            let str = '';
+            for (let i = 0; i < dataObject[key].length; i++) {
+                if (str != '') str += separator;
+                str += dataObject[key][i];
+            }
+            dataObject[key] = str;
+        }
+    }
+    return await dataObject;
+}
+
+module.exports = {
+    stringToArray,
+    arrayToStringObjectTool,
+    arrayToStringObjectToolWithDuplicates,
+    makeArrRecordUniqueNormal,
+    getDropDown
 }
