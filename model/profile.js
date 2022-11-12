@@ -1,26 +1,19 @@
 const fs = require("fs");
 const shortid = require('shortid');
 shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
-let { mysql } = require('../config/database');
-const { stringToArray, arrayToStringObjectTool } = require('./common');
+const { mysql } = require('../config/database');
+const { stringToArray, arrayToStringObjectTool, getDropDown } = require('./common');
 const { finalRssGeneration } = require("./rssgenerator");
 
-async function languages() {
-    let queryString = `CALL Get_dropDown_Details('language');`;
-    mysql.query(queryString, async (perr, results, fields) => {
-        if (perr) {
-            return res.send("Please check your internet connection " + perr);
-        }
-        if (!results.length)
-            console.log(results[0]);
-        return {
-            name: stringToArray(results[0].key),
-            code: stringToArray(results[0].value)
-        };
-    });
-}
+let language;
+(async function () {
+    language = await getDropDown('language');
+    language = {
+        name: language.key,
+        code: language.value
+    };
+})();
 
-const language = languages();
 
 async function profileUi(req, res, fileLocation, id) {
     const queryVals = req.query;

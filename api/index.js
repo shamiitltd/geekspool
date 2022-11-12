@@ -1,12 +1,12 @@
 const express = require('express');
 const api = express.Router();
-const verify = require('../middleware/verify');
+const { checkAuthentication, checkNotAuthenticated } = require('../middleware/verify');
 const { profileUi } = require('../model/profile');
 const authRoutes = require('./auth');
 
 api.use('/', authRoutes); // Routing path
 
-api.get('/signin', verify.checkNotAuthenticated, async (req, res) => {
+api.get('/signin', checkNotAuthenticated, async (req, res) => {
     res.render('controllers/signinController', {
         user: ''
     });
@@ -29,7 +29,7 @@ api.get('/', async (req, res) => {
 })
 
 
-api.get('/rss/new', verify.checkAuthentication, (req, res) => {
+api.get('/rss/new', checkAuthentication, (req, res) => {
 
     res.render('controllers/rssController', {
         user: req.user,
@@ -37,7 +37,7 @@ api.get('/rss/new', verify.checkAuthentication, (req, res) => {
     });
 })
 
-//api.get('/*/new', verify.checkAuthentication, (req, res) => {
+//api.get('/*/new', checkAuthentication, (req, res) => {
 //    res.render('controllers/containerWithSearchForm', {
 //        user: req.user
 //    });
@@ -52,13 +52,13 @@ api.get('/profile/:id/', (req, res) => {
         user: req.user, dataObject, paginator
     });
 })
-//api.get('/profile/*', verify.checkAuthentication, (req, res) => {
+//api.get('/profile/*', checkAuthentication, (req, res) => {
 //    res.render('controllers/profileController', {
 //        user: req.user, dataObject, paginator
 //    });
 //})
 
-api.get('/*/edit', verify.checkAuthentication, (req, res) => {
+api.get('/*/edit', checkAuthentication, (req, res) => {
     res.render('controllers/containerWithSearchForm', {
         user: req.user
     });
