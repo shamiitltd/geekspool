@@ -8,9 +8,6 @@ require('dotenv').config();
 const { stringToArray } = require('../model/common');
 const { mysql } = require('../config/database');
 const {
-    mysql
-} = require('../database/mysqlDB');
-const {
     responseMsgRss
 } = require('./nodemailer');
 
