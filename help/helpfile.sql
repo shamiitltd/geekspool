@@ -33,3 +33,7 @@ DELIMITER;
 SELECT smaptorss.* FROM smaptorss LEFT JOIN smaptorss_logs 
 on smaptorss.rssid = smaptorss_logs.rssid
 WHERE smaptorss_logs.rssid IS NULL
+
+SELECT * 
+        FROM  smaptorss WHERE userid='1648694674409' or (SELECT COUNT(*) FROM `userlogin` WHERE id='1648694674409' AND `role`='admin') 
+        ORDER BY updated ASC LIMIT 200
