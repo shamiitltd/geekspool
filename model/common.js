@@ -5,7 +5,7 @@ async function getDropDown(name) {
         let queryString = `CALL Get_dropDown_Details('${name}');`;
         mysql.query(queryString, async (err, results, fields) => {
             if (err) {
-                reject(err);
+                reject("Error: Get_dropDown_Details is deleted please add this Stored Procedure again, Error location: model/common.js");
             }
             if (results && results.length)
                 resolve(results[0][0]);

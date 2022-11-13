@@ -50,4 +50,4 @@ CREATE TABLE IF NOT EXISTS `smaptorss_logs` (
   `ndtype` char(10) DEFAULT NULL,
   `updated` datetime DEFAULT current_timestamp(),
    FOREIGN KEY( `userid` ) REFERENCES `userlogin`( `id` )
-) ENGINE=InnoDB DEFAULT CHARSET=latin1
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

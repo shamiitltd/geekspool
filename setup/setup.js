@@ -1,4 +1,4 @@
-const { clearDB, createTablesAndSp, deleteTablesAndSP, insertData, updateData, insertnewData } = require("./Databases/database");
+const { clearDB, createTablesAndSp, deleteTablesAndSP, insertData, updateData, insertnewData, insertForeignKeyData } = require("./Databases/database");
 
 /*Your should run these database functions in 3 steps, after uncommenting */
 //Step Danger:
@@ -10,6 +10,8 @@ const { clearDB, createTablesAndSp, deleteTablesAndSP, insertData, updateData, i
 //Step 3:
 //insertData();
 //Step 4:
+//insertForeignKeyData();
+//Step 5:
 //insertnewData();
-//Step 4:
+//Step 6:
 //updateData();

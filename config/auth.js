@@ -78,7 +78,7 @@ function initializePassport(passport) {
     }); 
 
     passport.deserializeUser(async function (id, done) {
-        let queryString = `CALL Get_userInfoById(${id});`;
+        let queryString = `CALL Get_userInfoById('${id}');`;
         await mysql.query(queryString, (err, details, fields) => {
             if (err) {
                 return done(null, false, {
@@ -120,15 +120,12 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
             userData.id = profile.id;
             userData.provider = profile.provider;
             userData.imgurl = profile.photos ? profile.photos[0].value : '/images/logo.jpeg'
-            let queryString = `INSERT INTO 
-                        userlogin( id, name, email, password, imgurl, provider )
-                        VALUES( '${userData.id}',
-                         "${userData.name}",
-                          "${userData.email}", 
-                          "${userData.password}",
-                          "${userData.imgurl}",
-                          "${userData.provider}" )
-                        `;
+            let queryString = `CALL Upload_User_Details( '${userData.id}',
+                                                         "${userData.name}",
+                                                         "${userData.email}", 
+                                                         "${userData.password}",
+                                                         "${userData.imgurl}",
+                                                         "${userData.provider}", false);`;
             await mysql.query(queryString, (err, results, fields) => {
                 if (err) {
                     // console.log( "Not connected !!! " + err );

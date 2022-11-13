@@ -12,6 +12,12 @@ DROP PROCEDURE IF EXISTS Get_dropDown_Details;
 --#
 DROP PROCEDURE IF EXISTS Upload_dropDown_Details;
 --#
+DROP PROCEDURE IF EXISTS Upload_User_Details;
+--#
+DROP PROCEDURE IF EXISTS Get_userInfoById;
+--#
+DROP PROCEDURE IF EXISTS Get_userInfoByEmail;
+--#
 DROP TABLE IF EXISTS userlogin;
 --#
 DROP TABLE IF EXISTS dropDownsPool;

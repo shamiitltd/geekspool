@@ -1885,6 +1885,7 @@
     <Content Include="setup\Databases\deleteall.sql">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="setup\Databases\insertFKdata.sql" />
     <Content Include="setup\Databases\insertnewdata.sql" />
     <Content Include="setup\Databases\updatedata.sql" />
     <Content Include="setup\Databases\insertdata.sql">

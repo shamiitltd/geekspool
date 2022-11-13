@@ -1,7 +1,6 @@
 const express = require('express');
 const api = express.Router();
 const { checkAuthentication } = require('../middleware/verify');
-const { getDropDown } = require('../model/common');
 const { toolsUiLoader, uploadtoolInfoData, deleteRssfromDbNFile } = require('../model/profile');
 
 api.get('/rss/new', (req, res) => {

@@ -41,6 +41,11 @@ exports.createTablesAndSp = async function () {
 exports.insertData = async function () {
     await runSqlFile('./setup/Databases/insertdata.sql');
 }
+
+exports.insertForeignKeyData = async function () {
+    await runSqlFile('./setup/Databases/insertFKdata.sql');
+}
+
 exports.insertnewData = async function () {
     await runSqlFile('./setup/Databases/insertnewdata.sql');
 }
