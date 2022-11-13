@@ -32,7 +32,7 @@ END;
 
 /*for profile*/
 
-CREATE PROCEDURE IF NOT EXISTS Get_RssRecord_Profile(IN searchAll TEXT, IN iuserid char(30), IN admin Boolean, IN lim INT, IN pageNumber INT)
+CREATE PROCEDURE IF NOT EXISTS Get_RssRecord_Profile(IN searchAll TEXT, IN iuserid char(30), IN lim INT, IN pageNumber INT)
 BEGIN
     DECLARE offsetVal INT;
     SET offsetVal = (lim * (pageNumber - 1));
@@ -41,31 +41,31 @@ BEGIN
         FROM smaptorss WHERE (
         MATCH( rssid, userid, emails, urls, included, excluded, remarks ) 
         AGAINST( searchAll IN NATURAL LANGUAGE MODE ) or urls LIKE CONCAT('%', searchAll, '%') or emails LIKE CONCAT('%', searchAll, '%')
-        ) and (userid=iuserid or admin IS TRUE);
+        ) and (userid=iuserid or (SELECT COUNT(*) FROM `userlogin` WHERE id=iuserid AND `role`='admin')=1);
         
         SELECT * 
         FROM smaptorss WHERE (
         MATCH( rssid, userid, emails, urls, included, excluded, remarks ) 
         AGAINST( searchAll IN NATURAL LANGUAGE MODE ) or urls LIKE CONCAT('%', searchAll, '%') or emails LIKE CONCAT('%', searchAll, '%')
-        ) and (userid=iuserid or admin IS TRUE) 
+        ) and (userid=iuserid or (SELECT COUNT(*) FROM `userlogin` WHERE id=iuserid AND `role`='admin')=1) 
         ORDER BY updated ASC LIMIT lim  OFFSET offsetVal;
 
     else 
         SELECT COUNT(*) as totalposts 
-        FROM smaptorss WHERE  userid=iuserid or admin IS TRUE;
+        FROM smaptorss WHERE  userid=iuserid or (SELECT COUNT(*) FROM `userlogin` WHERE id=iuserid AND `role`='admin')=1;
 
         SELECT * 
-        FROM  smaptorss WHERE userid=iuserid or admin IS TRUE 
+        FROM  smaptorss WHERE userid=iuserid or (SELECT COUNT(*) FROM `userlogin` WHERE id=iuserid AND `role`='admin')=1 
         ORDER BY updated ASC LIMIT lim  OFFSET offsetVal;
     end if;
 END;
 
 --#
 /* Tool form load*/
-CREATE PROCEDURE IF NOT EXISTS Get_RssForm_load(IN irssid Varchar(50), IN iuserid char(30), IN admin Boolean)
+CREATE PROCEDURE IF NOT EXISTS Get_RssForm_load(IN irssid Varchar(50), IN iuserid char(30))
 BEGIN
     SELECT * FROM  
-    smaptorss WHERE rssid=irssid AND (userid=iuserid or admin IS TRUE);
+    smaptorss WHERE rssid=irssid AND (userid=iuserid or (SELECT COUNT(*) FROM `userlogin` WHERE id=iuserid AND `role`='admin')=1);
 END;
 
 --#
@@ -86,7 +86,7 @@ BEGIN
             frequency=ifrequency,
             ndtype=indtype,
             updated = DATE_ADD( CURRENT_TIMESTAMP(), INTERVAL IF(ifrequency != 0 , 1400/ifrequency, 5256000) MINUTE )
-        WHERE rssid=irssid AND (userid=iuserid OR (SELECT COUNT(*) FROM `userlogin` WHERE userid=iuserid AND `role`='admin')=1);
+        WHERE rssid=irssid AND (userid=iuserid OR (SELECT COUNT(*) FROM `userlogin` WHERE id=iuserid AND `role`='admin')=1);
     else 
 	    /* Insert the data into smaptorss*/
 	    INSERT INTO 
@@ -102,7 +102,7 @@ END;
 CREATE PROCEDURE IF NOT EXISTS Delete_ByRssId(IN irssid Varchar(50), IN iuserid char(30))
 BEGIN
     DELETE FROM smaptorss 
-    WHERE rssid=irssid AND (userid=iuserid OR (SELECT COUNT(*) FROM `userlogin` WHERE userid=iuserid AND `role`='admin')=1);
+    WHERE rssid=irssid AND (userid=iuserid OR (SELECT COUNT(*) FROM `userlogin` WHERE id=iuserid AND `role`='admin')=1);
 END;
 
 --#

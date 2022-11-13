@@ -18,7 +18,6 @@ let language;
 async function profileUi(req, res, fileLocation, id) {
     req.user = {};
     req.user.id = id;
-    req.admin = true;
 
     const queryVals = req.query;
     let pageNumber = parseInt(queryVals.page ? queryVals.page : 1);
@@ -28,7 +27,7 @@ async function profileUi(req, res, fileLocation, id) {
         return res.redirect('/nopage');
     } else {
         let totalposts;
-        let queryString = `CALL Get_RssRecord_Profile('${searchAll}', '${req.user.id}', ${req.admin}, ${lim}, ${pageNumber});`;
+        let queryString = `CALL Get_RssRecord_Profile('${searchAll}', '${req.user.id}', ${lim}, ${pageNumber});`;
         mysql.query(queryString, async (err, results, fields) => {
             if (err) {
                 return res.send("Please check your internet connection " + err);
@@ -99,7 +98,6 @@ async function profileUi(req, res, fileLocation, id) {
 async function toolsUiLoader(req, res, fileLocation, id) {
     req.user = {};
     req.user.id = id;
-    req.admin = true;
 
     if (req.admin || req.editor) {
         if (!id) {
@@ -112,7 +110,7 @@ async function toolsUiLoader(req, res, fileLocation, id) {
                 }
             });
         } else {
-            let queryString = `CALL Get_RssForm_load(${id}, ${req.user.id}, ${req.admin});`;
+            let queryString = `CALL Get_RssForm_load(${id}, ${req.user.id});`;
             mysql.query(queryString, async (err, results, fields) => {
                 if (err) {
                     return res.send("Please check your internet connection" + err);
@@ -187,7 +185,7 @@ async function uploadtoolInfoData(res, dataObject) {
 }
 
 async function deleteRssfromDbNFile(req, res, dataObject) {
-    let queryString = `CALL Get_RssForm_load(${dataObject.rssid}, ${req.user.id}, ${req.admin});`;
+    let queryString = `CALL Get_RssForm_load(${dataObject.rssid}, ${req.user.id});`;
     mysql.query(queryString, (err, results, fields) => {
         if (err) {
             return res.send("Please check your internet connection" + err);
@@ -195,7 +193,7 @@ async function deleteRssfromDbNFile(req, res, dataObject) {
         if (!results.length)
             return res.send("Record not in Database");
 
-        queryString = `CALL Delete_ByRssId(${results[0].rssid});`;
+        queryString = `CALL Delete_ByRssId(${results[0].rssid}, ${req.user.id});`;
         mysql.query(queryString, async (cerr, cresults, cfields) => {
             if (cerr) {
                 return res.send("Not connected !!! " + cerr);
