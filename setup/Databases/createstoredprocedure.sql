@@ -99,7 +99,7 @@ END;
 --#
 /* Delete from Rss table*/
 
-CREATE PROCEDURE IF NOT EXISTS Delete_ByRssId(IN irssid Varchar(50), IN iuserid char(30))
+CREATE PROCEDURE IF NOT EXISTS Delete_RssById(IN irssid Varchar(50), IN iuserid char(30))
 BEGIN
     DELETE FROM smaptorss 
     WHERE rssid=irssid AND (userid=iuserid OR (SELECT COUNT(*) FROM `userlogin` WHERE id=iuserid AND `role`='admin')=1);
@@ -134,3 +134,35 @@ BEGIN
     end if;
 END;
 
+--#
+/* get user information by email*/
+CREATE PROCEDURE IF NOT EXISTS Get_userInfoByEmail(IN iemail Varchar(100))
+BEGIN
+    SELECT * FROM userlogin WHERE email = iemail;
+END;
+
+--#
+/* get user information by id*/
+CREATE PROCEDURE IF NOT EXISTS Get_userInfoById(IN iid char(30))
+BEGIN
+    SELECT * FROM userlogin WHERE id = iid;
+END;
+
+--#
+/* Update user information*/
+
+CREATE PROCEDURE IF NOT EXISTS Upload_User_Details(IN iid char(30), IN iname Varchar(100), IN iemail varchar(100), IN ipassword text , IN iimgurl varchar(200), IN iprovider char(20), IN updateData Boolean)
+BEGIN
+    if (updateData) then
+    	/* Update Data in userlogin */
+        UPDATE userlogin 
+        SET name=iname, email=iemail, imgurl=imgurl,
+            updated=CURRENT_TIMESTAMP()
+        WHERE id=iid;	
+    else 
+	    /* Insert the data into userlogin*/
+        INSERT INTO 
+        userlogin( id, name, email, password, imgurl, provider )
+        VALUES( iid, iname, iemail, ipassword, iimgurl, iprovider );
+    end if;
+END;

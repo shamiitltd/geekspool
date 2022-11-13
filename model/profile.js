@@ -193,7 +193,7 @@ async function deleteRssfromDbNFile(req, res, dataObject) {
         if (!results.length)
             return res.send("Record not in Database");
 
-        queryString = `CALL Delete_ByRssId(${results[0].rssid}, ${req.user.id});`;
+        queryString = `CALL Delete_RssById(${results[0].rssid}, ${req.user.id});`;
         mysql.query(queryString, async (cerr, cresults, cfields) => {
             if (cerr) {
                 return res.send("Not connected !!! " + cerr);

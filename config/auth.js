@@ -2,16 +2,17 @@ const LocalStrategy = require('passport-local').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 const LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
+const { isObjEmpty } = require('../model/common');
 require('dotenv').config();
 const bcrypt = require('bcrypt');
 
-const db = require('../config/database');
+const { mysql } = require('../config/database');
 
 function initializePassport(passport) {
     const authenticateUser = async (email, password, done) => {
 
-        let usersQueryString = `SELECT * FROM usersBasicInfo WHERE email = \'${email}\'`;
-        await db.mysql.query(usersQueryString, async (err, details, fields) => {
+        let queryString = `CALL Get_userInfoByEmail('${email}');`;
+        await mysql.query(queryString, async (err, details, fields) => {
             if (err) {
                 return done(null, false, {
                     message: 'Server error, try another login method'
@@ -20,7 +21,8 @@ function initializePassport(passport) {
             let user = {
                 ...details[0]
             };
-            if (isEmpty(user)) {
+            
+            if (isObjEmpty(user)) {
                 return done(null, false, {
                     message: 'No user with that email'
                 });
@@ -73,11 +75,11 @@ function initializePassport(passport) {
 
     passport.serializeUser(function (user, done) {
         return done(null, user.id);
-    });
+    }); 
 
     passport.deserializeUser(async function (id, done) {
-        let usersQueryString = `SELECT * FROM usersBasicInfo WHERE id = ${id}`;
-        await db.mysql.query(usersQueryString, (err, details, fields) => {
+        let queryString = `CALL Get_userInfoById(${id});`;
+        await mysql.query(queryString, (err, details, fields) => {
             if (err) {
                 return done(null, false, {
                     message: 'Some error, try another login method'
@@ -102,8 +104,8 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
     } else {
         email = `${profile.id}@offcampuscareer.com`;
     }
-    let usersQueryString = `SELECT * FROM usersBasicInfo WHERE email = \'${email}\'`;
-    await db.mysql.query(usersQueryString, async (err, details, fields) => {
+    let queryString = `CALL Get_userInfoByEmail('${email}');`;
+    await mysql.query(queryString, async (err, details, fields) => {
         if (err) {
             return done(null, false, {
                 message: 'Some query error, try another login method'
@@ -118,8 +120,8 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
             userData.id = profile.id;
             userData.provider = profile.provider;
             userData.imgurl = profile.photos ? profile.photos[0].value : '/images/logo.jpeg'
-            let usersQueryString = `INSERT INTO 
-                        usersBasicInfo( id, name, email, password, imgurl, provider )
+            let queryString = `INSERT INTO 
+                        userlogin( id, name, email, password, imgurl, provider )
                         VALUES( '${userData.id}',
                          "${userData.name}",
                           "${userData.email}", 
@@ -127,7 +129,7 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
                           "${userData.imgurl}",
                           "${userData.provider}" )
                         `;
-            await db.mysql.query(usersQueryString, (err, results, fields) => {
+            await mysql.query(queryString, (err, results, fields) => {
                 if (err) {
                     // console.log( "Not connected !!! " + err );
                     return done(null, false, {
@@ -151,13 +153,6 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
             }
         }
     })
-}
-
-function isEmpty(obj) {
-    for (let x in obj) {
-        return false;
-    }
-    return true;
 }
 
 module.exports = {

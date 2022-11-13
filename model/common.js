@@ -59,10 +59,19 @@ async function arrayToStringObjectToolWithDuplicates(dataObject, separator = ','
     return await dataObject;
 }
 
+
+async function isObjEmpty(obj) {
+    for (let x in obj) {
+        return await false;
+    }
+    return await true;
+}
+
 module.exports = {
     stringToArray,
     arrayToStringObjectTool,
     arrayToStringObjectToolWithDuplicates,
     makeArrRecordUniqueNormal,
+    isObjEmpty,
     getDropDown
 }

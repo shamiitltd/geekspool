@@ -6,7 +6,8 @@ CREATE TABLE IF NOT EXISTS `userlogin` (
   `imgurl` varchar(200) NOT NULL DEFAULT '/images/logo.jpeg',
   `role` varchar(20) NOT NULL DEFAULT 'viewer',
   `provider` char(20) NOT NULL,
-  `secure` tinyint(1) NOT NULL DEFAULT 1
+  `secure` tinyint(1) NOT NULL DEFAULT 1,
+  `updated` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --#
 CREATE TABLE IF NOT EXISTS `dropDownsPool` (
