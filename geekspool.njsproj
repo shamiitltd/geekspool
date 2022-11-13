@@ -1976,6 +1976,8 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\shared\navbar.ejs" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="middleware\" />
