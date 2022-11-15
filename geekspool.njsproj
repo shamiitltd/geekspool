@@ -76,6 +76,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="app.js" />
+    <Content Include="commands.sh" />
     <Content Include="config\auth.js" />
     <Content Include="config\database.js">
       <SubType>Code</SubType>
@@ -87,6 +88,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="help\data.sql">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="help\documentation.txt">
       <SubType>Code</SubType>
     </Content>
     <Content Include="help\helpfile.js">

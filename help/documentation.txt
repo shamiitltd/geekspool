@@ -1,0 +1,18 @@
+#This command will you in finding the empty port
+$ curl http://127.0.0.1:3002
+
+#Also you have to setup your application in [application manager] of cpanel.
+
+#Command to run app for test environment
+$ nohup NODE_ENV=dev node app.js --production & exit
+
+#Command to run app for Prod environment
+$ nohup NODE_ENV=prod node app.js --production & exit
+
+#to use script file to run commands
+#step1:
+$ chmod +x ./commands.sh
+#step2
+$ ./commands.sh
+#step3
+$ nohup ./commands.sh

@@ -1,0 +1,1 @@
+NODE_ENV=prod npm start --production & exit

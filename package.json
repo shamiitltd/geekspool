@@ -5,9 +5,10 @@
   "scripts": {
     "stop": "pkill node",
     "setup": "node setup/setup",
-    "start": "NODE_ENV=dev node app.js",
-    "test": "NODE_ENV=dev nodemon app.js",
-    "prod": "nohup NODE_ENV=prod npm start --production & exit"
+    "dev": "NODE_ENV=dev nodemon app.js",
+    "start": "NODE_ENV=prod node app.js",
+    "test": "NODE_ENV=dev node app.js --production & exit",
+    "prod": "nohup ./commands.sh"
   },
   "description": "geekspool",
   "author": {
