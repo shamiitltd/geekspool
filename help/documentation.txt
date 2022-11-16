@@ -17,6 +17,9 @@ $ ./commands.sh
 #step3
 $ nohup ./commands.sh
 
+#for windows npm run dev will show the error for NODE_ENV is not recognized, the run this commmand.
+$ npm install -g win-node-env
+
 
 #Some Important log info
 #1637896550

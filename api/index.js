@@ -1,7 +1,6 @@
 const express = require('express');
 const api = express.Router();
 const { checkAuthentication, checkNotAuthenticated } = require('../middleware/verify');
-const { profileUi, toolsUiLoader } = require('../model/profile');
 const commonRoutes = require('./common');
 const authRoutes = require('./auth');
 const formRoutes = require('./form');

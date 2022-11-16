@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = express.Router();
 const passport = require('passport');
+const { callbackAuthenticator } = require('../model/auth');
 
 routes.get('/auth/facebook',
     passport.authenticate('facebook', {
