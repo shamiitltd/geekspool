@@ -7,11 +7,18 @@ const { finalRssGeneration } = require("./rssgenerator");
 
 let language;
 (async function () {
-    language = await getDropDown('language');
-    language = {
-        name: await stringToArray(language.key, ';'),
-        code: await stringToArray(language.value, ';')
-    };
+    try {
+        language = await getDropDown('language');
+        language = {
+            name: await stringToArray(language.key, ';'),
+            code: await stringToArray(language.value, ';')
+        };
+    } catch (err) {
+        language = {
+            name: [],
+            code: []
+        };
+    }
 })();
 
 
