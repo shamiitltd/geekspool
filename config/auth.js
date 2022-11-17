@@ -10,17 +10,15 @@ const { mysql } = require('../config/database');
 
 function initializePassport(passport) {
     const authenticateUser = async (email, password, done) => {
-
         let queryString = `CALL Get_userInfoByEmail('${email}');`;
         await mysql.query(queryString, async (err, details, fields) => {
-            console.log(err, details);
             if (err) {
                 return done(null, false, {
                     message: 'Server error, try another login method'
                 });
             }
             let user = {
-                ...details[0]
+                ...details[0][0]
             };
             
             if (isObjEmpty(user)) {
@@ -81,8 +79,6 @@ function initializePassport(passport) {
     passport.deserializeUser(async function (id, done) {
         let queryString = `CALL Get_userInfoById('${id}');`;
         await mysql.query(queryString, (err, details, fields) => {
-            console.log(err, details);
-
             if (err) {
                 return done(null, false, {
                     message: 'Some error, try another login method'
@@ -93,7 +89,7 @@ function initializePassport(passport) {
                     message: 'No user with that email'
                 });
             return done(null, {
-                ...details[0]
+                ...details[0][0]
             });
         })
     });
@@ -109,8 +105,6 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
     }
     let queryString = `CALL Get_userInfoByEmail('${email}');`;
     await mysql.query(queryString, async (err, details, fields) => {
-        console.log(err, details);
-
         if (err) {
             return done(null, false, {
                 message: 'Some query error, try another login method'
@@ -132,8 +126,6 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
                                                          "${userData.imgurl}",
                                                          "${userData.provider}", false);`;
             await mysql.query(queryString, (err, results, fields) => {
-                console.log(err, results);
-
                 if (err) {
                     // console.log( "Not connected !!! " + err );
                     return done(null, false, {
@@ -146,7 +138,7 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
 
         } else {
             let userData = {
-                ...details[0]
+                ...details[0][0]
             }
             if (userData.provider == profile.provider)
                 return done(null, userData);

@@ -1,8 +1,11 @@
 #This command will you in finding the empty port
 $ curl http://127.0.0.1:3002
 
-#Also you have to setup your application in [application manager] of cpanel.
+#latest version of passport will show you error on running with cookie-session, otherwise use express-session.
+$ npm uninstall passport
+$ npm install --save passport@0.5
 
+#Also you have to setup your application in [application manager] of cpanel.
 #Command to run app for test environment
 $ nohup NODE_ENV=dev node app.js --production & exit
 

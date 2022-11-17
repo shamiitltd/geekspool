@@ -31,4 +31,9 @@ routes.get('/auth/linkedin/callback', function (req, res, next) {
     callbackAuthenticator('linkedin', req, res, next);
 });
 
+routes.get('/signOutPath', async (req, res) => {
+    req.logOut();
+    res.redirect('/signin');
+})
+
 module.exports = routes;
