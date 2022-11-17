@@ -34,11 +34,11 @@ api.get('/', async (req, res) => {
 })
 
 
-//api.get('/*/new', checkAuthentication, (req, res) => {
-//    res.render('controllers/containerWithSearchForm', {
-//        user: req.user
-//    });
-//})
+api.get('/privacy-policy', (req, res) => {
+    res.render('controllers/privacyPolicyController', {
+        user: req.user
+    });
+})
 
 
 api.get('/*/edit', checkAuthentication, (req, res) => {

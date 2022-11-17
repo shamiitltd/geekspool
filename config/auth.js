@@ -13,6 +13,7 @@ function initializePassport(passport) {
 
         let queryString = `CALL Get_userInfoByEmail('${email}');`;
         await mysql.query(queryString, async (err, details, fields) => {
+            console.log(err, details);
             if (err) {
                 return done(null, false, {
                     message: 'Server error, try another login method'
@@ -80,6 +81,8 @@ function initializePassport(passport) {
     passport.deserializeUser(async function (id, done) {
         let queryString = `CALL Get_userInfoById('${id}');`;
         await mysql.query(queryString, (err, details, fields) => {
+            console.log(err, details);
+
             if (err) {
                 return done(null, false, {
                     message: 'Some error, try another login method'
@@ -106,6 +109,8 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
     }
     let queryString = `CALL Get_userInfoByEmail('${email}');`;
     await mysql.query(queryString, async (err, details, fields) => {
+        console.log(err, details);
+
         if (err) {
             return done(null, false, {
                 message: 'Some query error, try another login method'
@@ -127,6 +132,8 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
                                                          "${userData.imgurl}",
                                                          "${userData.provider}", false);`;
             await mysql.query(queryString, (err, results, fields) => {
+                console.log(err, results);
+
                 if (err) {
                     // console.log( "Not connected !!! " + err );
                     return done(null, false, {

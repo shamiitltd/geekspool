@@ -1970,6 +1970,7 @@
     <Content Include="views\componentsmini\searchform.ejs" />
     <Content Include="views\components\sitemapscanner.ejs" />
     <Content Include="views\controllers\nopageController.ejs" />
+    <Content Include="views\controllers\privacyPolicyController.ejs" />
     <Content Include="views\controllers\profileController.ejs" />
     <Content Include="views\controllers\landingController.ejs" />
     <Content Include="views\controllers\offlineController.ejs" />
