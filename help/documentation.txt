@@ -23,6 +23,11 @@ $ nohup ./commands.sh
 #for windows npm run dev will show the error for NODE_ENV is not recognized, the run this commmand.
 $ npm install -g win-node-env
 
+#For localhost
+HOST_URL=http://localhost:3004
+#For Production
+HOST_URL=https://geekspool.com
+
 
 #Some Important log info
 #1637896550
