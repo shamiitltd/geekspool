@@ -31,12 +31,8 @@ function callbackAuthenticator(provider, req, res, next) {
 
 
 function registerUserFunction(dataObject, res) {
-    // console.log( dataObject );
-    let usersQueryString = `INSERT INTO 
-                        usersBasicInfo( id, name, email, password, provider )
-                        VALUES( '${dataObject.id}', '${dataObject.name}', '${dataObject.email}', '${dataObject.password}', 'offcampuscareer' )
-                        `;
-    usersDB.query(usersQueryString, (err, results, fields) => {
+    let queryString = `CALL Upload_User_Details('${dataObject.id}', '${dataObject.name}', '${dataObject.email}', '${dataObject.password}', '${process.env.PROVIDER}', false);`;
+    mysql.query(queryString, (err, results, fields) => {
         if (err) {
             // console.log( "Not connected !!! " + err );
             return res.send('User already exists with this email');
@@ -86,26 +82,26 @@ function sendresetpassmail(email, res) {
         let token = results[0].password;
         let messgeText = `Hello ${results[0].name},
                           
-                          Follow this link to reset your Offcampuscareer password for your ${email} account.
+                          Follow this link to reset your ${process.env.PROVIDER} password for your ${email} account.
                           
-                          https: //offcampuscareer.com/auth/resetpass?email=${email}&token=${token}
+                          ${process.env.HOST_URL}/auth/resetpass?email=${email}&token=${token}
                           
                           If you didn’t ask to reset your password, you can ignore this email.
                           
                           Thanks,
                           
-                          Your Offcampuscareer team`;
+                          Your ${process.env.PROVIDER} team`;
         let messageHtml = `<p><strong>Hello ${results[0].name},</strong></p>
                           
-                          <p>Follow this link to reset your Offcampuscareer password for your ${email} account.</p>
+                          <p>Follow this link to reset your ${process.env.PROVIDER} password for your ${email} account.</p>
                           
-                          <p><a href="https://offcampuscareer.com/auth/resetpass?email=${email}&token=${token}">https://offcampuscareer.com/auth/resetpass?email=${email}&token=${token}</a></p>
+                          <p><a href="${process.env.HOST_URL}/auth/resetpass?email=${email}&token=${token}">${process.env.HOST_URL}/auth/resetpass?email=${email}&token=${token}</a></p>
                           
                           <p>If you didn&rsquo;t ask to reset your password, you can ignore this email.</p>
                           
                           <p><strong>Thanks,</strong></p>
                           
-                          <p><strong>Your Offcampuscareer team</strong></p>`;
+                          <p><strong>Your ${process.env.PROVIDER} team</strong></p>`;
         sendMailResetPassWithEmail(results[0].email, messgeText, messageHtml, res);
     });
 }

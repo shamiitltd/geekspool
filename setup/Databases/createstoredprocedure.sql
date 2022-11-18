@@ -159,11 +159,16 @@ BEGIN
         SET name=iname, email=iemail, imgurl=imgurl,
             updated=CURRENT_TIMESTAMP()
         WHERE id=iid;	
-    else 
-	    /* Insert the data into userlogin*/
+    elseif (!STRCMP(iimgurl,"") = 0) then
+	    /* Insert the data into userlogin when image EXISTS*/
         INSERT INTO 
         userlogin( id, name, email, password, imgurl, provider )
         VALUES( iid, iname, iemail, ipassword, iimgurl, iprovider );
+    else 
+	    /* Insert the data into userlogin when image not EXISTS*/
+        INSERT INTO 
+        userlogin( id, name, email, password, provider )
+        VALUES( iid, iname, iemail, ipassword, iprovider );
     end if;
 END;
 
