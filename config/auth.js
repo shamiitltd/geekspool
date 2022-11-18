@@ -17,8 +17,9 @@ function initializePassport(passport) {
                     message: 'Server error, try another login method'
                 });
             }
+            details = details[0];//because stored procedure returns as array
             let user = {
-                ...details[0][0]
+                ...details[0]
             };
             
             if (isObjEmpty(user)) {
@@ -27,7 +28,7 @@ function initializePassport(passport) {
                 });
             }
             try {
-                if (user.provider === 'offcampuscareer') {
+                if (user.provider === process.env.PROVIDER) {
                     if (await bcrypt.compare(password, user.password)) {
                         return done(null, user);
                     } else {
@@ -84,12 +85,13 @@ function initializePassport(passport) {
                     message: 'Some error, try another login method'
                 });
             }
+            details = details[0];//because stored procedure returns as array
             if (!details || !details.length)
                 return done(null, false, {
                     message: 'No user with that email'
                 });
             return done(null, {
-                ...details[0][0]
+                ...details[0]
             });
         })
     });
@@ -101,7 +103,7 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
     if (profile.emails && profile.emails[0].value) {
         email = profile.emails[0].value;
     } else {
-        email = `${profile.id}@offcampuscareer.com`;
+        email = `${profile.id}@${process.env.DOMAIN}`;
     }
     let queryString = `CALL Get_userInfoByEmail('${email}');`;
     await mysql.query(queryString, async (err, details, fields) => {
@@ -110,6 +112,7 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
                 message: 'Some query error, try another login method'
             });
         }
+        details = details[0];//because stored procedure returns as array
         if (!details || !details.length) {
             let userData = {
                 password: accessToken
@@ -138,7 +141,7 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
 
         } else {
             let userData = {
-                ...details[0][0]
+                ...details[0]
             }
             if (userData.provider == profile.provider)
                 return done(null, userData);

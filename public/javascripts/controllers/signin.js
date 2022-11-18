@@ -88,7 +88,7 @@ async function signUpViaEmail( name, email, password ) {
                 setCookieLifeTime( 'PRURL', '', -1 );
                 window.location.href = strurl;
             } else {
-                if ( document.referrer && document.referrer.indexOf( 'offcampuscareer' ) !== -1 )
+                if ( document.referrer && document.referrer.indexOf( 'geekspool' ) !== -1 )
                     window.location.href = document.referrer;
                 else
                     window.location.href = '/';
@@ -123,7 +123,7 @@ async function signInViaEmail( email, password ) {
             setCookieLifeTime( 'PRURL', '', -1 );
             window.location.href = strurl;
         } else {
-            if ( document.referrer && document.referrer.indexOf( 'offcampuscareer' ) !== -1 )
+            if ( document.referrer && document.referrer.indexOf( 'geekspool' ) !== -1 )
                 window.location.href = document.referrer;
             else
                 window.location.href = '/';
@@ -147,7 +147,7 @@ async function resetpassFunct( email ) {
             setCookieLifeTime( 'PRURL', '', -1 );
             window.location.href = strurl;
         } else {
-            if ( document.referrer && document.referrer.indexOf( 'offcampuscareer' ) !== -1 )
+            if ( document.referrer && document.referrer.indexOf( 'geekspool' ) !== -1 )
                 window.location.href = document.referrer;
             else
                 window.location.href = '/';

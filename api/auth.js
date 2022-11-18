@@ -1,7 +1,7 @@
 const express = require('express');
 const routes = express.Router();
 const passport = require('passport');
-const { callbackAuthenticator } = require('../model/auth');
+const { callbackAuthenticator, registerUserFunction, resetNewPasswordFunction, resetPassWithEmail, sendresetpassmail } = require('../model/auth');
 
 routes.get('/auth/facebook',
     passport.authenticate('facebook', {
@@ -44,7 +44,7 @@ routes.get('/authresetpass', async (req, res) => {
         token
     } = req.query;
     if (email && token) {
-        const fileLocation = 'boxes/dataUploadForms/resetpass';
+        const fileLocation = 'controllers/resetpassController';
         resetPassWithEmail(fileLocation, email, token, res);
     } else {
         res.redirect('/nopage');

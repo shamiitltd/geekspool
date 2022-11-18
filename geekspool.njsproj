@@ -1966,7 +1966,6 @@
     <Content Include="views\componentsmini\paginationbox.ejs" />
     <Content Include="views\components\privacyPolicy.ejs" />
     <Content Include="views\components\profilePage.ejs" />
-    <Content Include="views\components\resetpass.ejs" />
     <Content Include="views\componentsmini\searchform.ejs" />
     <Content Include="views\components\sitemapscanner.ejs" />
     <Content Include="views\controllers\nopageController.ejs" />
@@ -1974,6 +1973,7 @@
     <Content Include="views\controllers\profileController.ejs" />
     <Content Include="views\controllers\landingController.ejs" />
     <Content Include="views\controllers\offlineController.ejs" />
+    <Content Include="views\controllers\resetpassController.ejs" />
     <Content Include="views\controllers\signinController.ejs" />
     <Content Include="views\controllers\rssController.ejs" />
     <Content Include="views\shared\footer.ejs" />

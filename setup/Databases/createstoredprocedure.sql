@@ -166,3 +166,15 @@ BEGIN
         VALUES( iid, iname, iemail, ipassword, iimgurl, iprovider );
     end if;
 END;
+
+--#
+/* Reset password user information*/
+
+CREATE PROCEDURE IF NOT EXISTS Upload_Reset_Password(IN iemail varchar(100), IN ipassword text , IN iprovider char(20))
+BEGIN
+    /* Update Data in userlogin */
+    UPDATE userlogin 
+    SET password=ipassword
+        updated=CURRENT_TIMESTAMP()
+    WHERE email=iemail and provider = iprovider;	   
+END;
