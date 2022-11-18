@@ -174,7 +174,7 @@ CREATE PROCEDURE IF NOT EXISTS Upload_Reset_Password(IN iemail varchar(100), IN 
 BEGIN
     /* Update Data in userlogin */
     UPDATE userlogin 
-    SET password=ipassword
+    SET password=ipassword,
         updated=CURRENT_TIMESTAMP()
     WHERE email=iemail and provider = iprovider;	   
 END;
