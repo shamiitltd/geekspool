@@ -3,7 +3,7 @@ const api = express.Router();
 const { checkAuthentication, checkNotAuthenticated } = require('../middleware/verify');
 const { profileUi } = require('../model/profile');
 
-api.get('/profile/:id/', (req, res) => {
+api.get('/profile/:id/', checkAuthentication, (req, res) => {
     const {
         id
     } = req.params;

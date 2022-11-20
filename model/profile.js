@@ -90,6 +90,7 @@ async function profileUi(req, res, fileLocation, id) {
                     });
                 }
             } catch (err) { }
+            console.log(dataObject);
             dataObject.table = table;
             return res.render(fileLocation, {
                 user: req.user,
