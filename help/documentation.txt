@@ -1,5 +1,5 @@
 #This command will you in finding the empty port
-$ curl http://127.0.0.1:3002
+$ curl http://127.0.0.1:3004
 
 #latest version of passport will show you error on running with cookie-session, otherwise use express-session.
 $ npm uninstall passport

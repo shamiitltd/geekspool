@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "stop": "pkill node",
+    "stopall": "pkill node",
     "setup": "node setup/setup",
     "dev": "NODE_ENV=dev nodemon app.js",
     "start": "NODE_ENV=prod node app.js",
-    "test": "NODE_ENV=dev node app.js --production & exit",
+    "test": "NODE_ENV=dev node app.js --production",
     "prod": "nohup ./commands.sh"
   },
   "description": "geekspool",
