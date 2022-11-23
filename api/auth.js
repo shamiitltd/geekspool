@@ -1,6 +1,8 @@
 const express = require('express');
 const routes = express.Router();
 const passport = require('passport');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 const { callbackAuthenticator, registerUserFunction, resetNewPasswordFunction, resetPassWithEmail, sendresetpassmail } = require('../model/auth');
 
 routes.get('/auth/facebook',
@@ -59,6 +61,7 @@ routes.get('/signOutPath', async (req, res) => {
 
 routes.post('/signinUser', function (req, res, next) {
     passport.authenticate('local', function (err, user, info) {
+        console.log(err, user, info);
         if (err) {
             return res.send(info.message);
         }

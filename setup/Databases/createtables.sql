@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS `userlogin` (
   `id` char(30) NOT NULL PRIMARY KEY,
   `name` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL UNIQUE,
   `password` text NOT NULL,
   `imgurl` text NOT NULL DEFAULT '/images/logo.jpeg',
   `role` varchar(20) NOT NULL DEFAULT 'viewer',

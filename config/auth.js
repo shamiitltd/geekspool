@@ -3,8 +3,8 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 const LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 const { isObjEmpty } = require('../model/common');
-require('dotenv').config();
 const bcrypt = require('bcrypt');
+require('dotenv').config();
 
 const { mysql } = require('../config/database');
 
@@ -22,7 +22,7 @@ function initializePassport(passport) {
                 ...details[0]
             };
             
-            if (isObjEmpty(user)) {
+            if (await isObjEmpty(user)) {
                 return done(null, false, {
                     message: 'No user with that email'
                 });

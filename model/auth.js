@@ -31,14 +31,14 @@ function callbackAuthenticator(provider, req, res, next) {
 
 
 function registerUserFunction(dataObject, res) {
-    let queryString = `CALL Upload_User_Details('${dataObject.id}', '${dataObject.name}', '${dataObject.email}', '${dataObject.password}', '${process.env.PROVIDER}', false);`;
+    let queryString = `CALL Upload_User_Details('${dataObject.id}', '${dataObject.name}', '${dataObject.email}', '${dataObject.password}','', '${process.env.PROVIDER}', false);`;
     mysql.query(queryString, (err, results, fields) => {
         if (err) {
-            // console.log( "Not connected !!! " + err );
+            //console.log( "Not connected !!! " + err );
             return res.send('User already exists with this email');
         }
 
-        // console.log( 'The Inserted in table is: \n', results, fields );
+        //console.log( 'The Inserted in table is: \n', results, fields );
         return res.send('success');
     });
 }
