@@ -109,7 +109,7 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
     await mysql.query(queryString, async (err, details, fields) => {
         if (err) {
             return done(null, false, {
-                message: 'Some query error, try another login method'
+                message: 'Some query error, try another login method'+err
             });
         }
         details = details[0];//because stored procedure returns as array

@@ -151,7 +151,7 @@ END;
 --#
 /* Update user information*/
 
-CREATE PROCEDURE IF NOT EXISTS Upload_User_Details(IN iid char(30), IN iname Varchar(100), IN iemail varchar(100), IN ipassword text , IN iimgurl varchar(200), IN iprovider char(20), IN updateData Boolean)
+CREATE PROCEDURE IF NOT EXISTS Upload_User_Details(IN iid char(30), IN iname Varchar(100), IN iemail varchar(100), IN ipassword text , IN iimgurl text, IN iprovider char(20), IN updateData Boolean)
 BEGIN
     if (updateData) then
     	/* Update Data in userlogin */

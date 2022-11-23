@@ -23,9 +23,6 @@ let language;
 
 
 async function profileUi(req, res, fileLocation, id) {
-    req.user = {};
-    req.user.id = id;
-
     const queryVals = req.query;
     let pageNumber = parseInt(queryVals.page ? queryVals.page : 1);
     let lim = parseInt(queryVals.limit ? queryVals.limit : 15);
@@ -90,7 +87,6 @@ async function profileUi(req, res, fileLocation, id) {
                     });
                 }
             } catch (err) { }
-            console.log(dataObject);
             dataObject.table = table;
             return res.render(fileLocation, {
                 user: req.user,
@@ -104,9 +100,6 @@ async function profileUi(req, res, fileLocation, id) {
 }
 
 async function toolsUiLoader(req, res, fileLocation, id) {
-    req.user = {};
-    req.user.id = id;
-
     if (req.admin || req.editor) {
         if (!id) {
             return res.render(fileLocation, {

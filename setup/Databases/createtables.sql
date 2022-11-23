@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS `userlogin` (
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` text NOT NULL,
-  `imgurl` varchar(200) NOT NULL DEFAULT '/images/logo.jpeg',
+  `imgurl` text NOT NULL DEFAULT '/images/logo.jpeg',
   `role` varchar(20) NOT NULL DEFAULT 'viewer',
   `provider` char(20) NOT NULL,
   `secure` tinyint(1) NOT NULL DEFAULT 1,
