@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "stop": "pkill node",
+    "stopall": "pkill node",
     "setup": "node setup/setup",
-    "start": "NODE_ENV=dev node app.js",
-    "test": "NODE_ENV=dev nodemon app.js",
-    "prod": "nohup NODE_ENV=prod npm start --production & exit"
+    "dev": "NODE_ENV=dev nodemon app.js",
+    "start": "NODE_ENV=prod node app.js",
+    "test": "NODE_ENV=dev node app.js --production",
+    "prod": "nohup ./commands.sh"
   },
   "description": "geekspool",
   "author": {
@@ -33,7 +34,7 @@
     "mysql": "^2.18.1",
     "node-schedule": "^2.1.0",
     "nodemailer": "^6.8.0",
-    "passport": "^0.6.0",
+    "passport": "^0.5.3",
     "passport-facebook": "^3.0.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-linkedin-oauth2": "^2.0.0",
@@ -42,6 +43,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "express-session": "^1.17.3",
     "nodemon": "^2.0.20"
   }
 }

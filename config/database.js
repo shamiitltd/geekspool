@@ -4,8 +4,8 @@ require('dotenv').config();
 let testDb = mysql.createPool({
     connectionLimit: process.env.MAX_CONNECTION_MYSQL,
     host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER_TEST_DBGP,
-    password: process.env.MYSQL_PASSWORD_TEST_DBGP,
+    user: process.env.MYSQL_USER_DBGP,
+    password: process.env.MYSQL_PASSWORD_DBGP,
     database: process.env.MYSQL_DATABASE_TEST_DBGP,
     timezone: 'utc',
     debug: false
@@ -13,8 +13,8 @@ let testDb = mysql.createPool({
 let prodDb = mysql.createPool({
     connectionLimit: process.env.MAX_CONNECTION_MYSQL,
     host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER_PROD_DBGP,
-    password: process.env.MYSQL_PASSWORD_PROD_DBGP,
+    user: process.env.MYSQL_USER_DBGP,
+    password: process.env.MYSQL_PASSWORD_DBGP,
     database: process.env.MYSQL_DATABASE_PROD_DBGP,
     timezone: 'utc',
     debug: false

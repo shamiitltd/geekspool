@@ -1,0 +1,40 @@
+<div class="pagination flex-row">
+    <%  if(paginator.hasPrevPage || paginator.hasPrevPage == true){ %>
+    <button class="prevPage" data-pageNumber="<%-paginator.prevPage  %> ">Previous</button>
+    <% } %>
+    <%  if(paginator.hasNextPage || paginator.hasNextPage == true){ %>
+    <button class="nextPage" data-pageNumber="<%-paginator.nextPage  %> ">Next</button>
+    <% } %>
+    <span class="flex-column">
+        Current
+        <span>
+            <select class="curPage">
+                <% for(let page=1; page <= paginator.totalPages; page++){ %>
+                <%  if(page === paginator.page){ %>
+                <option selected="selected" value="<%- page  %>"><%- page  %></option>
+                <% }else{ %>
+                <option value="<%- page  %>"><%- page  %></option>
+                <% } %>
+                <% } %>
+            </select>
+        </span>
+        Pages <%-paginator.totalPages  %>
+    </span>
+    <%  if(paginator.postperpage){ %>
+    <span class="flex-column">
+        Post/Page
+        <span>
+            <select class="postPerPage ">
+                <% for(let postperpage=10; postperpage <= 100; postperpage+=5){ %>
+                <%  if(postperpage == paginator.postperpage){ %>
+                <option selected="selected" value="<%- postperpage  %>"><%- postperpage  %></option>
+                <% }else{ %>
+                <option value="<%- postperpage  %>"><%- postperpage  %></option>
+                <% } %>
+                <% } %>
+            </select>
+        </span>
+    </span>
+    <% } %>
+</div>
+<script type="text/javascript" src="/javascripts/components/paginator.js"></script>

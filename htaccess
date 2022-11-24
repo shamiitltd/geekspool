@@ -1,0 +1,10 @@
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^$ http://127.0.0.1:3004/  [P,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule (.*)$ http://127.0.0.1:3004/$1  [P,L]
+RewriteCond %{SERVER_PORT} 3004
+RewriteRule ^(.*)$ https://www.geekspool.com/$1 [R,L]

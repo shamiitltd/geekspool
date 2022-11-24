@@ -22,7 +22,7 @@
     <OutputPath>.</OutputPath>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
-    <NodejsPort>1337</NodejsPort>
+    <NodejsPort>3004</NodejsPort>
     <StartWebBrowser>True</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -33,10 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include=".env" />
-    <Content Include="api\account.js">
+    <Content Include="api\auth.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="api\auth.js">
+    <Content Include="api\common.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="api\form.js">
@@ -54,22 +54,17 @@
     <Content Include="api\payment.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="api\rss.js">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="api\search.js">
+    <Content Include="api\profile.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="api\setup.js">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="api\sitemap.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="api\user.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="app.js" />
+    <Content Include="commands.sh" />
     <Content Include="config\auth.js" />
     <Content Include="config\database.js">
       <SubType>Code</SubType>
@@ -80,13 +75,34 @@
     <Content Include="config\payment.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="help\data.sql">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="help\documentation.txt">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="help\helpfile.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="help\helpfile.sql">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="help\storedprocedure.sql" />
+    <Content Include="help\tables.sql" />
+    <Content Include="htaccess" />
     <Content Include="middleware\roles.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="middleware\verify.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="model\common.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="model\profile.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="model\schedulers.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="public\browserconfig.xml" />
@@ -1802,6 +1818,7 @@
     <Content Include="public\images\icon\apple-touch-icon.png" />
     <Content Include="public\images\icon\favicon-16x16.png" />
     <Content Include="public\images\icon\favicon-32x32.png" />
+    <Content Include="public\images\icon\favicon-96x96.png" />
     <Content Include="public\images\icon\maskable_icon.png" />
     <Content Include="public\images\icon\maskable_icon_x128.png" />
     <Content Include="public\images\icon\maskable_icon_x192.png" />
@@ -1810,7 +1827,10 @@
     <Content Include="public\images\icon\maskable_icon_x512.png" />
     <Content Include="public\images\icon\maskable_icon_x72.png" />
     <Content Include="public\images\icon\maskable_icon_x96.png" />
-    <Content Include="public\images\icon\mstile-150x150.png" />
+    <Content Include="public\images\icon\ms-icon-144x144.png" />
+    <Content Include="public\images\icon\ms-icon-150x150.png" />
+    <Content Include="public\images\icon\ms-icon-310x310.png" />
+    <Content Include="public\images\icon\ms-icon-70x70.png" />
     <Content Include="public\images\icon\safari-pinned-tab.svg" />
     <Content Include="public\images\logo.avif" />
     <Content Include="public\images\logo.jpeg" />
@@ -1840,6 +1860,7 @@
     <Content Include="public\sitemaps\sitemap_scholarships_v1.xml" />
     <Content Include="public\stylesheets\components\navbar.css" />
     <Content Include="public\stylesheets\components\searchform.css" />
+    <Content Include="public\stylesheets\controllers\landingpage.css" />
     <Content Include="public\stylesheets\controllers\newjobform.css" />
     <Content Include="public\stylesheets\controllers\profile.css" />
     <Content Include="public\stylesheets\controllers\signin.css" />
@@ -1850,6 +1871,19 @@
     <Content Include="public\stylesheets\shared\screensize.css" />
     <Content Include="public\stylesheets\components\spinner.css" />
     <Content Include="public\sw.js" />
+    <Content Include="setup\application\scripts.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="setup\Databases\clearall.sql" />
+    <Content Include="setup\Databases\deleteall.sql">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="setup\Databases\insertFKdata.sql" />
+    <Content Include="setup\Databases\insertnewdata.sql" />
+    <Content Include="setup\Databases\updatedata.sql" />
+    <Content Include="setup\Databases\insertdata.sql">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="setup\setup.js">
       <SubType>Code</SubType>
     </Content>
@@ -1867,7 +1901,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="model\payment.js" />
-    <Content Include="model\rss.js" />
+    <Content Include="model\rssgenerator.js" />
     <Content Include="model\search.js" />
     <Content Include="model\setup.js" />
     <Content Include="model\sitemap.js" />
@@ -1904,29 +1938,46 @@
     <Content Include="setup\Databases\database.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="setup\Databases\storedprocedure.sql">
+    <Content Include="setup\Databases\createstoredprocedure.sql">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="setup\Databases\tables.sql">
+    <Content Include="setup\Databases\createtables.sql">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="static\constants.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="test\routes\shared\homeTest.js">
       <SubType>Code</SubType>
       <TestFramework>Mocha</TestFramework>
     </Content>
-    <Content Include="views\controllers\containerWithSearchForm.ejs" />
+    <Content Include="views\componentsmini\paginationbox.ejs" />
+    <Content Include="views\components\privacyPolicy.ejs" />
+    <Content Include="views\components\profilePage.ejs" />
+    <Content Include="views\componentsmini\searchform.ejs" />
+    <Content Include="views\components\sitemapscanner.ejs" />
+    <Content Include="views\controllers\nopageController.ejs" />
+    <Content Include="views\controllers\privacyPolicyController.ejs" />
+    <Content Include="views\controllers\profileController.ejs" />
+    <Content Include="views\controllers\landingController.ejs" />
     <Content Include="views\controllers\offlineController.ejs" />
-    <Content Include="views\controllers\signin.ejs" />
+    <Content Include="views\controllers\resetpassController.ejs" />
+    <Content Include="views\controllers\signinController.ejs" />
+    <Content Include="views\controllers\rssController.ejs" />
     <Content Include="views\shared\footer.ejs" />
     <Content Include="views\shared\header.ejs" />
     <Content Include="views\shared\error.ejs">
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\shared\navbar.ejs" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="middleware\" />
     <Folder Include="help\" />
+    <Folder Include="public\stylesheets\compressed\" />
+    <Folder Include="static\" />
     <Folder Include="public\fonts\" />
     <Folder Include="public\fonts\css\" />
     <Folder Include="public\fonts\js\" />
@@ -1985,6 +2036,7 @@
     <Folder Include="views\" />
     <Folder Include="views\controllers\" />
     <Folder Include="views\components\" />
+    <Folder Include="views\componentsmini\" />
     <Folder Include="views\shared\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />

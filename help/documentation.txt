@@ -1,0 +1,258 @@
+#This command will you in finding the empty port
+$ curl http://127.0.0.1:3004
+
+#latest version of passport will show you error on running with cookie-session, otherwise use express-session.
+$ npm uninstall passport
+$ npm install --save passport@0.5
+
+#Also you have to setup your application in [application manager] of cpanel.
+#Command to run app for test environment
+$ nohup NODE_ENV=dev node app.js --production & exit
+
+#Command to run app for Prod environment
+$ nohup NODE_ENV=prod node app.js --production & exit
+
+#to use script file to run commands
+#step1:
+$ chmod +x ./commands.sh
+#step2
+$ ./commands.sh
+#step3
+$ nohup ./commands.sh
+
+#for windows npm run dev will show the error for NODE_ENV is not recognized, the run this commmand.
+$ npm install -g win-node-env
+
+# Error: req.session.regenerate is not a function 
+$ npm uninstall passport
+$ npm install passport@0.5
+
+#For localhost
+HOST_URL=http://localhost:3004
+#For Production
+HOST_URL=https://geekspool.com
+
+#Reset Pass Url format
+http://localhost:3004/auth/resetpass?email=naresh03961999@gmail.com&token=$2b$10$87zF7HDK90cyL2k.25HYHuT6ElJMXFcoZ/S/3E/r0R9nfgerpfHOW
+
+#Some Important log info
+#1637896550
+ls
+#1637917995
+ls public_html
+#1637918090
+node -v
+#1637928229
+cd /home/offcam17/offcampuscareer && npm install
+#1637928247
+npm install
+#1637933779
+cd ~
+#1637933828
+wget https://nodejs.org/dist/v6.9.1/node-v6.9.1-linux-x64.tar.xz
+#1637933866
+tar xvf node-v6.9.1-linux-x64.tar.xz
+#1637933898
+sudo tar xvf node-v6.9.1-linux-x64.tar.xz
+#1637934017
+ls
+#1637934371
+tar -xzvf node-v6.9.1-linux-x64.tar.xz
+#1637934388
+ls
+#1637935065
+mkdir ~/bin
+#1637935081
+cp nodejs/bin/node ~/bin
+#1637935102
+cd ~/bin
+#1637935117
+ln -s ../nodejs/lib/node_modules/npm/bin/npm-cli.js npm
+#1637935135
+node --version
+#1637935477
+stat /home/offcam17/bin/node  | grep Access
+#1637935618
+chmod 755 /home/offcam17/bin/node
+#1637935642
+node --version
+#1637935659
+npm --version
+#1637935704
+chmod 755 /home/offcam17/bin/npm
+#1637935712
+npm --version
+#1637935886
+ls
+#1637935906
+cd offcampuscareer
+#1637935919
+npm --version
+#1637935937
+npm install
+#1637935977
+node index.js
+#1637936361
+npm  start
+#1637941055
+curl http://127.0.0.1:3000
+#1637941069
+curl http://127.0.0.1:3200
+#1637938338
+ls
+#1637938388
+mkdir ~/bin
+#1637938401
+cp nodejs/bin/node ~/bin
+#1637938426
+cd ~/bin
+#1637938444
+ln -s ../nodejs/lib/node_modules/npm/bin/npm-cli.js npm
+#1637938460
+node --version
+#1637938523
+ls /home/offcam17/bin
+#1637938551
+chmod 755 /home/offcam17/bin/node
+#1637938558
+chmod 755 /home/offcam17/bin/npm
+#1637938583
+cd offcampuscareer
+#1637938604
+cd ~
+#1637938613
+cd offcampuscareer
+#1637938621
+npm start
+#1637938695
+cd ~
+#1637938703
+npm install -g npm@8.1.4
+#1637938845
+ls
+#1637938858
+npm install -g npm@8.1.4
+#1637938975
+npm start
+#1637939001
+cd offcampuscareer
+#1637939005
+npm start
+#1637939242
+npm install
+#1637939293
+npm audit
+#1637939316
+npm audit fix
+#1637939335
+npm install
+#1637941016
+npm start
+#1637941452
+ps aux | grep index.js
+#1637941720
+kill -9 35412
+#1637941741
+kill -9 9108
+#1637941753
+kill -9 904
+#1637941787
+kill -9 36376
+#1637941800
+ps aux | grep index.js
+#1637941826
+kill -9 24796
+#1637941836
+ps aux | grep index.js
+#1637982443
+ yum install liblsapi liblsapi-deve
+#1637984082
+nohup npm start --production &
+#1637984233
+nohup npm start --production
+#1637984246
+nohup npm start --production &
+#1637984277
+ls
+#1637984290
+cd offcampuscareer
+#1637984295
+nohup npm start --production &
+#1637984758
+pkill node
+#1638082920
+curl 127.0.0.1:3002
+#1638082840
+node app.js
+#1638082876
+cd offcampuscareer && node app.js
+#1638083980
+curl 127.0.0.1:3002
+#1638083998
+cd offcampuscareer
+#1638084045
+nohup npm start --production &
+#1638084085
+curl 127.0.0.1:3002
+#1639063387
+curl http://127.0.0.1:3002
+#1639063539
+ps aux | grep app.js
+#1639063587
+kill -9 9794
+#1639063596
+ps aux | grep app.js
+#1639063738
+pkill node
+#1639063763
+nohup node my_app.js &
+#1639063772
+pkill node
+#1639063786
+nohup node app.js &
+#1639063933
+node app.js
+#1639063972
+cd offcampuscareer
+#1639063976
+ls
+#1639063993
+node app.js
+#1639064009
+nohup node app.js &
+#1639064345
+exit
+#1639063869
+curl http://127.0.0.1:3002
+#1639063890
+curl http://127.0.0.1:3000
+#1639063896
+curl http://127.0.0.1:3001
+#1639063907
+curl http://127.0.0.1:3034
+#1639064020
+curl http://127.0.0.1:3002
+#1639064449
+exit
+#1639189642
+cd offcampuscareer
+#1639189735
+node app.js
+#1639189848
+nohup npm start --production & exit
+#1639977687
+cd offcampuscareer
+#1639977691
+ls
+#1639977716
+nohup npm start --production & exit
+#1640097050
+cd offcampuscareer
+#1640097059
+pkill node
+#1640098306
+nohup npm start --production &
+#1640098330
+npm start
+#1640098546
+nohup npm start --production & exit

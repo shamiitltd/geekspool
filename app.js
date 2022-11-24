@@ -9,7 +9,10 @@ const session = require('cookie-session');
 const app = express();
 const api = require('./api/index');
 const passport = require('passport');
+const { initializePassport } = require('./config/auth');
+const setup = require('./setup/setup');
 require('dotenv').config();
+
 
 //use mehtods
 app.use(compression());
@@ -33,9 +36,10 @@ app.use(session({
         maxAge: 730 * 86400000
     }
 }))
-//initializePassport(passport);
-//app.use(passport.initialize());
-//app.use(passport.session());
+
+initializePassport(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 //set methods
 app.set('views', path.join(__dirname, 'views'));
@@ -60,6 +64,7 @@ if (app.get('env') === 'development') {
     app.use(function (err, req, res, next) {
         res.status(err.status || 500);
         res.render('shared/error', {
+            user: req.user,
             message: err.message,
             error: err
         });
@@ -71,6 +76,7 @@ if (app.get('env') === 'development') {
 app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('shared/error', {
+        user: req.user,
         message: err.message,
         error: {}
     });
@@ -78,6 +84,6 @@ app.use(function (err, req, res, next) {
 
 
 //listening the server
-const server = app.listen(process.env.PORT || 3000, () => {
+const server = app.listen(process.env.PORT || 3008, () => {
     console.log(`Server is running on port ${server.address().port} !!!`);
 })

@@ -1,34 +1,57 @@
 let fs = require('fs');
-let readline = require('readline');
-let db = require('../../config/database');
+const { mysql } = require('../../config/database');
+const { stringToArray } = require('../../model/common');
 
-let storedprocedures = readline.createInterface({
-    input: fs.createReadStream('./storedprocedure.sql'),
-    terminal: false
-});
+/* Use --# to seperate two different mysql query, otherwise it will show you the error */
+async function runSqlFile(path) {
+    /*const path = require('path');
+     *path.join(__dirname, './storedprocedure.sql') 
+     * */
+    const fileData = fs.readFileSync(path).toString();
+    const arr = await stringToArray(fileData, '#');
+    if (arr)
+        await arr.forEach((sqlquery) => {
+            mysql.query(sqlquery, async function (err, rows) {
+                if (!err) {
+                    console.log(rows);
+                    return await true;
+                } else {
+                    console.log(err);
+                    return await false;
+                }
+            });
+        });
+}
 
-let tables = readline.createInterface({
-    input: fs.createReadStream('./tables.sql'),
-    terminal: false
-});
+/* Use --# to seperate two different mysql query, otherwise it will show you the error */
 
-storedprocedures.on('line', function (chunk) {
-    db.mysql.query(chunk.toString('ascii'), function (err, sets, fields) {
-        if (err) console.log(err);
-    });
-});
+exports.deleteTablesAndSP = async function () {
+    await runSqlFile('./setup/Databases/deleteall.sql');
+}
 
-tables.on('line', function (chunk) {
-    db.mysql.query(chunk.toString('ascii'), function (err, sets, fields) {
-        if (err) console.log(err);
-    });
-});
+exports.clearDB = async function () {
+    await runSqlFile('./setup/Databases/clearall.sql');
+}
 
-storedprocedures.on('close', function () {
-    console.log("finished storedprocedures");
-});
+exports.createTablesAndSp = async function () {
+    await runSqlFile('./setup/Databases/createtables.sql');
+    await runSqlFile('./setup/Databases/createstoredprocedure.sql');
+}
 
-tables.on('close', function () {
-    console.log("finished tables");
-    db.mysql.end();
-});
+exports.insertData = async function () {
+    await runSqlFile('./setup/Databases/insertdata.sql');
+}
+
+exports.insertForeignKeyData = async function () {
+    await runSqlFile('./setup/Databases/insertFKdata.sql');
+}
+
+exports.insertnewData = async function () {
+    await runSqlFile('./setup/Databases/insertnewdata.sql');
+}
+
+exports.updateData = async function () {
+    await runSqlFile('./setup/Databases/updatedata.sql');
+}
+
+exports.runSqlFile = runSqlFile;

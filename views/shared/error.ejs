@@ -1,12 +1,17 @@
-var assert = require('assert');
-
-describe('Test Suite 1', function () {
-    it('Test 1', function () {
-        assert.ok(true, "This shouldn't fail");
-    });
-
-    it('Test 2', function () {
-        assert.ok(1 === 1, "This shouldn't fail");
-        assert.ok(false, "This should fail");
-    });
-});
+<%- include("../shared/header") %>
+<%- include("../shared/navbar") %>
+<main class="main flex-row">
+    <div class="main-content"></div>
+    <div class="main-content flex-column">
+        <div class="flex-column offline">
+            <div>
+                <span>We are experiencing <%- message %>. Please wait.</span>
+            </div>
+            <div>
+                <span>Go Back to <a href="/"><b>Home Page</b></a>.</span>
+            </div>
+        </div>
+    </div>
+    <div class="main-content"></div>
+</main>
+<%- include("../shared/footer") %>

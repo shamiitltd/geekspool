@@ -1,0 +1,25 @@
+<section class="popper-section">
+    <button type="button" id="popper-button-jobtype" class="popper-button">
+        <i class="far fa-user"></i>&nbsp;&nbsp;<i class="fas fa-sort-down"></i>
+    </button>
+    <div id="popper-popup-profile" class="popper-popup">
+        <div class="popper-arrow"></div>
+        <fieldset class="popper-popup-box flex-column" id="profile">
+            <div class="data-subbox">
+                <a href="/profile/<%- user.id %>"><i
+                        class="fas fa-info-circle"></i>&nbsp;&nbsp;<%- user.name %>
+                </a>
+            </div>
+            <div class="data-subbox">
+                <a href="/profile/<%- user.id %>/edit"><i class="fas fa-user-edit"></i>&nbsp;&nbsp;Edit
+                    Profile
+                </a>
+            </div>
+            <div class="data-subbox">
+                <a href="/signOutPath"><i class="fas fa-arrow-circle-right"></i>&nbsp;&nbsp;Sign Out
+                </a>
+                <button type="button" class="invisible cancel-button">Cancel</button>
+            </div>
+        </fieldset>
+    </div>
+</section>

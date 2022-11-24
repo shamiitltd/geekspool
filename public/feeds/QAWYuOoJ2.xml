@@ -1,0 +1,25 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+    <channel>
+        <title>
+            <![CDATA[ geekspool.com ]]>
+        </title>
+        <description>
+            <![CDATA[ geekspool.com ]]>
+        </description>
+        <link>https://geekspool.com/rss/new</link>
+        <image>
+            <url>https://geekspool.com/favicon.ico</url>
+            <title>geekspool.com</title>
+            <link>https://geekspool.com/rss/new</link>
+        </image>
+        <generator>https://geekspool.com</generator>
+        <lastBuildDate>Sun, 13 Nov 2022 17:30:50 GMT</lastBuildDate>
+        <atom:link href="https://geekspool.com/feeds/QAWYuOoJ2.xml" rel="self" type="application/rss+xml"/>
+        <language>
+            <![CDATA[ en ]]>
+        </language>
+</channel>
+</rss>

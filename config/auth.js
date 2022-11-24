@@ -2,31 +2,33 @@ const LocalStrategy = require('passport-local').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 const LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
-require('dotenv').config();
+const { isObjEmpty } = require('../model/common');
 const bcrypt = require('bcrypt');
+require('dotenv').config();
 
-const db = require('../config/database');
+const { mysql } = require('../config/database');
 
 function initializePassport(passport) {
     const authenticateUser = async (email, password, done) => {
-
-        let usersQueryString = `SELECT * FROM usersBasicInfo WHERE email = \'${email}\'`;
-        await db.mysql.query(usersQueryString, async (err, details, fields) => {
+        let queryString = `CALL Get_userInfoByEmail('${email}');`;
+        await mysql.query(queryString, async (err, details, fields) => {
             if (err) {
                 return done(null, false, {
-                    message: 'Server error, try another login method'
+                    message: 'Server error, try another login method' + err
                 });
             }
+            details = details[0];//because stored procedure returns as array
             let user = {
                 ...details[0]
             };
-            if (isEmpty(user)) {
+            
+            if (await isObjEmpty(user)) {
                 return done(null, false, {
                     message: 'No user with that email'
                 });
             }
             try {
-                if (user.provider === 'offcampuscareer') {
+                if (user.provider === process.env.PROVIDER) {
                     if (await bcrypt.compare(password, user.password)) {
                         return done(null, user);
                     } else {
@@ -44,9 +46,7 @@ function initializePassport(passport) {
                     message: 'Some error, try another login method'
                 });
             }
-
         })
-
     }
 
     passport.use(new LocalStrategy({
@@ -75,16 +75,17 @@ function initializePassport(passport) {
 
     passport.serializeUser(function (user, done) {
         return done(null, user.id);
-    });
+    }); 
 
     passport.deserializeUser(async function (id, done) {
-        let usersQueryString = `SELECT * FROM usersBasicInfo WHERE id = ${id}`;
-        await db.mysql.query(usersQueryString, (err, details, fields) => {
+        let queryString = `CALL Get_userInfoById('${id}');`;
+        await mysql.query(queryString, (err, details, fields) => {
             if (err) {
                 return done(null, false, {
                     message: 'Some error, try another login method'
                 });
             }
+            details = details[0];//because stored procedure returns as array
             if (!details || !details.length)
                 return done(null, false, {
                     message: 'No user with that email'
@@ -102,15 +103,16 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
     if (profile.emails && profile.emails[0].value) {
         email = profile.emails[0].value;
     } else {
-        email = `${profile.id}@offcampuscareer.com`;
+        email = `${profile.id}@${process.env.DOMAIN}`;
     }
-    let usersQueryString = `SELECT * FROM usersBasicInfo WHERE email = \'${email}\'`;
-    await db.mysql.query(usersQueryString, async (err, details, fields) => {
+    let queryString = `CALL Get_userInfoByEmail('${email}');`;
+    await mysql.query(queryString, async (err, details, fields) => {
         if (err) {
             return done(null, false, {
-                message: 'Some query error, try another login method'
+                message: 'Some query error, try another login method'+err
             });
         }
+        details = details[0];//because stored procedure returns as array
         if (!details || !details.length) {
             let userData = {
                 password: accessToken
@@ -120,16 +122,13 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
             userData.id = profile.id;
             userData.provider = profile.provider;
             userData.imgurl = profile.photos ? profile.photos[0].value : '/images/logo.jpeg'
-            let usersQueryString = `INSERT INTO 
-                        usersBasicInfo( id, name, email, password, imgurl, provider )
-                        VALUES( '${userData.id}',
-                         "${userData.name}",
-                          "${userData.email}", 
-                          "${userData.password}",
-                          "${userData.imgurl}",
-                          "${userData.provider}" )
-                        `;
-            await db.mysql.query(usersQueryString, (err, results, fields) => {
+            let queryString = `CALL Upload_User_Details( '${userData.id}',
+                                                         "${userData.name}",
+                                                         "${userData.email}", 
+                                                         "${userData.password}",
+                                                         "${userData.imgurl}",
+                                                         "${userData.provider}", false);`;
+            await mysql.query(queryString, (err, results, fields) => {
                 if (err) {
                     // console.log( "Not connected !!! " + err );
                     return done(null, false, {
@@ -152,16 +151,9 @@ async function updateUserInfo(accessToken, refreshToken, profile, done) {
                 })
             }
         }
-
     })
 }
 
-function isEmpty(obj) {
-    for (var x in obj) {
-        return false;
-    }
-    return true;
-}
 module.exports = {
     initializePassport
 }
