@@ -60,6 +60,7 @@
     <Content Include="api\setup.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="api\tools.js" />
     <Content Include="api\user.js">
       <SubType>Code</SubType>
     </Content>
@@ -107,6 +108,27 @@
     </Content>
     <Content Include="public\browserconfig.xml" />
     <Content Include="public\favicon.ico" />
+    <Content Include="public\feeds\0P3lhe8hg.xml" />
+    <Content Include="public\feeds\1WnI3aGsq.xml" />
+    <Content Include="public\feeds\6XhqOJIZo.xml" />
+    <Content Include="public\feeds\8%24s8DMZrr.xml" />
+    <Content Include="public\feeds\a3mScOm73.xml" />
+    <Content Include="public\feeds\BJxr8uVd8.xml" />
+    <Content Include="public\feeds\bm%24DHWvss.xml" />
+    <Content Include="public\feeds\cNtwVPIzI.xml" />
+    <Content Include="public\feeds\CQb5%24tUfR.xml" />
+    <Content Include="public\feeds\ESlepfZwx.xml" />
+    <Content Include="public\feeds\FT6yOPnaS.xml" />
+    <Content Include="public\feeds\GuaiKV4Kv.xml" />
+    <Content Include="public\feeds\hUN1kiyIo.xml" />
+    <Content Include="public\feeds\hymGYWjmT.xml" />
+    <Content Include="public\feeds\kRnqPOSOp.xml" />
+    <Content Include="public\feeds\nSyP%24igrA.xml" />
+    <Content Include="public\feeds\QAWYuOoJ2.xml" />
+    <Content Include="public\feeds\sEQpjKGPy.xml" />
+    <Content Include="public\feeds\tWOxLniiG.xml" />
+    <Content Include="public\feeds\ujfKmiqzH.xml" />
+    <Content Include="public\feeds\WmkSWLXh1.xml" />
     <Content Include="public\fonts\attribution.js" />
     <Content Include="public\fonts\css\all.css" />
     <Content Include="public\fonts\css\all.min.css" />
@@ -1952,23 +1974,27 @@
       <TestFramework>Mocha</TestFramework>
     </Content>
     <Content Include="views\componentsmini\paginationbox.ejs" />
+    <Content Include="views\componentsmini\searchform.ejs" />
     <Content Include="views\components\privacyPolicy.ejs" />
     <Content Include="views\components\profilePage.ejs" />
-    <Content Include="views\componentsmini\searchform.ejs" />
+    <Content Include="views\components\profilepopup.ejs" />
     <Content Include="views\components\sitemapscanner.ejs" />
-    <Content Include="views\controllers\nopageController.ejs" />
-    <Content Include="views\controllers\privacyPolicyController.ejs" />
-    <Content Include="views\controllers\profileController.ejs" />
+    <Content Include="views\components\tools\sitescannerform.ejs" />
     <Content Include="views\controllers\landingController.ejs" />
-    <Content Include="views\controllers\offlineController.ejs" />
-    <Content Include="views\controllers\resetpassController.ejs" />
-    <Content Include="views\controllers\signinController.ejs" />
-    <Content Include="views\controllers\rssController.ejs" />
+    <Content Include="views\controllers\profileController.ejs" />
+    <Content Include="views\controllers\static\nopageController.ejs" />
+    <Content Include="views\controllers\static\offlineController.ejs" />
+    <Content Include="views\controllers\static\pricingController.ejs" />
+    <Content Include="views\controllers\static\privacyPolicyController.ejs" />
+    <Content Include="views\controllers\static\resetpassController.ejs" />
+    <Content Include="views\controllers\static\signinController.ejs" />
+    <Content Include="views\controllers\tools\rssController.ejs" />
+    <Content Include="views\controllers\tools\sitemapgenController.ejs" />
+    <Content Include="views\controllers\tools\toolsController.ejs" />
+    <Content Include="views\controllers\tutorials\tutorialsController.ejs" />
+    <Content Include="views\shared\error.ejs" />
     <Content Include="views\shared\footer.ejs" />
     <Content Include="views\shared\header.ejs" />
-    <Content Include="views\shared\error.ejs">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="views\shared\navbar.ejs" />
     <Content Include="Web.config" />
     <None Include="Web.Debug.config" />
@@ -1976,6 +2002,7 @@
   <ItemGroup>
     <Folder Include="middleware\" />
     <Folder Include="help\" />
+    <Folder Include="public\feeds\" />
     <Folder Include="public\stylesheets\compressed\" />
     <Folder Include="static\" />
     <Folder Include="public\fonts\" />
@@ -2034,9 +2061,13 @@
     <Folder Include="setup\Databases\" />
     <Folder Include="setup\application\" />
     <Folder Include="views\" />
-    <Folder Include="views\controllers\" />
-    <Folder Include="views\components\" />
     <Folder Include="views\componentsmini\" />
+    <Folder Include="views\components\" />
+    <Folder Include="views\components\tools\" />
+    <Folder Include="views\controllers\" />
+    <Folder Include="views\controllers\static\" />
+    <Folder Include="views\controllers\tools\" />
+    <Folder Include="views\controllers\tutorials\" />
     <Folder Include="views\shared\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
