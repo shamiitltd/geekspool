@@ -6,7 +6,6 @@ function loadCssFiles() { // detecting path using if else will make a longer del
         "/stylesheets/controllers/newjobform.css",
         "/stylesheets/controllers/signin.css",
         "/stylesheets/libraries/fontAwsomeCustom.css",
-        "/stylesheets/libraries/popovers.css",
         "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/night-owl.min.css",
     ];
     for ( let i = 0; i < arrCss.length; i++ ) {
@@ -16,10 +15,6 @@ function loadCssFiles() { // detecting path using if else will make a longer del
         link.type = 'text/css';
         document.getElementsByTagName( "head" )[ 0 ].appendChild( link );
     }
-    let arr = [
-        "/js/boxFunctManagement/jobBoxClick.js",
-    ];
-    loadJsFileFromArray( arr );
 }
 window.addEventListener( 'load', loadCssFiles );
 
