@@ -32,6 +32,8 @@ HOST_URL=http://localhost:3004
 #For Production
 HOST_URL=https://geekspool.com
 
+#Reset Pass Url format
+http://localhost:3004/auth/resetpass?email=naresh03961999@gmail.com&token=$2b$10$87zF7HDK90cyL2k.25HYHuT6ElJMXFcoZ/S/3E/r0R9nfgerpfHOW
 
 #Some Important log info
 #1637896550
