@@ -111,11 +111,12 @@ async function toolsUiLoader(req, res, fileLocation, id) {
                 }
             });
         } else {
-            let queryString = `CALL Get_RssForm_load(${id}, ${req.user.id});`;
+            let queryString = `CALL Get_RssForm_load('${id}', '${req.user.id}');`;
             mysql.query(queryString, async (err, results, fields) => {
                 if (err) {
                     return res.send("Please check your internet connection" + err);
                 }
+                results = results[0];
                 // console.log( 'Getting data from table is: \n', results[ 0 ] );
                 if (!results.length)
                     return res.render(fileLocation, {
@@ -161,10 +162,10 @@ async function uploadtoolInfoData(res, dataObject) {
     let update = dataObject.rssid ? true : false;
     dataObject.rssid = dataObject.rssid ? dataObject.rssid : rssid;
     dataObject.directorypath = `/feeds/${year}/${month}/`;
-    let queryString = `CALL Upload_rss_InfoData(${dataObject.rssid}, ${dataObject.userid}, ${dataObject.emails ? dataObject.emails : ''},
-                                                ${dataObject.urls ? dataObject.urls : ''}, ${dataObject.included ? dataObject.included : ''}, 
-                                                ${dataObject.excluded ? dataObject.excluded : ''}, ${dataObject.remarks ? dataObject.remarks : ''},
-                                                ${dataObject.directorypath}, ${dataObject.language}, ${dataObject.frequency}, ${dataObject.ndtype},
+    let queryString = `CALL Upload_rss_InfoData('${dataObject.rssid}', '${dataObject.userid}', '${dataObject.emails ? dataObject.emails : ''}',
+                                                '${dataObject.urls ? dataObject.urls : ''}', '${dataObject.included ? dataObject.included : ''}', 
+                                                '${dataObject.excluded ? dataObject.excluded : ''}', '${dataObject.remarks ? dataObject.remarks : ''}',
+                                                '${dataObject.directorypath}', '${dataObject.language}', ${dataObject.frequency}, '${dataObject.ndtype}',
                                                 ${update});`;
     mysql.query(queryString, async (cerr, cresults, cfields) => {
         if (cerr) {
@@ -186,15 +187,16 @@ async function uploadtoolInfoData(res, dataObject) {
 }
 
 async function deleteRssfromDbNFile(req, res, dataObject) {
-    let queryString = `CALL Get_RssForm_load(${dataObject.rssid}, ${req.user.id});`;
+    let queryString = `CALL Get_RssForm_load('${dataObject.rssid}', '${req.user.id}');`;
     mysql.query(queryString, (err, results, fields) => {
         if (err) {
             return res.send("Please check your internet connection" + err);
         }
+        results = results[0];
         if (!results.length)
             return res.send("Record not in Database");
 
-        queryString = `CALL Delete_RssById(${results[0].rssid}, ${req.user.id});`;
+        queryString = `CALL Delete_RssById('${results[0].rssid}', '${req.user.id}');`;
         mysql.query(queryString, async (cerr, cresults, cfields) => {
             if (cerr) {
                 return res.send("Not connected !!! " + cerr);

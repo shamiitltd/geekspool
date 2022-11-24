@@ -94,7 +94,7 @@
                 <div class="flex-row-imp" role="cell"><%-tablerow.ndtype == 'ns'? 'Normal Scan':'Deep Scan'%></div>
                 <div class="flex-row-imp" role="cell"><%-tablerow.nextUpdate %></div>
                 <div class="flex-row-imp" role="cell"><a target="_blank" rel="noopener noreferrer"
-                        href="/sitemapscanner/new?id=<%-tablerow.rssid %>"><button>Edit</button></a>
+                        href="/rss/new?id=<%-tablerow.rssid %>"><button>Edit</button></a>
                 </div>
                 <div class="flex-row-imp" role="cell"><button class="deleteRss"
                         data-id="row<%-i+1 + (paginator.postperpage*(paginator.page-1))%>"
