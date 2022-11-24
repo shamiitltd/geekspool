@@ -18,6 +18,8 @@ DROP PROCEDURE IF EXISTS Get_userInfoById;
 --#
 DROP PROCEDURE IF EXISTS Get_userInfoByEmail;
 --#
+DROP PROCEDURE IF EXISTS Upload_Reset_Password;
+--#
 DROP TABLE IF EXISTS userlogin;
 --#
 DROP TABLE IF EXISTS dropDownsPool;

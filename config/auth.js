@@ -14,7 +14,7 @@ function initializePassport(passport) {
         await mysql.query(queryString, async (err, details, fields) => {
             if (err) {
                 return done(null, false, {
-                    message: 'Server error, try another login method'
+                    message: 'Server error, try another login method' + err
                 });
             }
             details = details[0];//because stored procedure returns as array

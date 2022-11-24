@@ -1,5 +1,6 @@
 const passport = require('passport');
 const { mysql } = require('../config/database');
+const { sendEmail } = require('../config/mail');
 require('dotenv').config();
 
 
@@ -57,10 +58,10 @@ function resetNewPasswordFunction(dataObject, res) {
         } else if (results[0].password !== dataObject.token) {
             return res.send('Password already updated with this link or outdated link');
         }
-        queryString = `CALL Upload_Reset_Password('${dataObject.email}','${dataObject.password}', '${process.env.PROVIDER}',);`;
+        queryString = `CALL Upload_Reset_Password('${dataObject.email}','${dataObject.password}', '${process.env.PROVIDER}');`;
         mysql.query(queryString, (err, results2, fields) => {
             if (err) {
-                return res.send('Some error, Please sign in with another method');
+                return res.send('Some error, Please sign in with another method'+err);
             }
             return res.send('success');
         });
@@ -102,7 +103,8 @@ function sendresetpassmail(email, res) {
                           <p><strong>Thanks,</strong></p>
                           
                           <p><strong>Your ${process.env.PROVIDER} team</strong></p>`;
-        sendMailResetPassWithEmail(results[0].email, messgeText, messageHtml, res);
+        let subjectMsg = `Reset your password for ${process.env.PROVIDER}`;
+        sendEmail(process.env.PROVIDER, process.env.EMAIL_NOREPLY_EMAIL, process.env.EMAIL_NOREPLY_PASS, results[0].email, subjectMsg, messgeText, messageHtml, res);
     });
 }
 
@@ -111,6 +113,7 @@ function resetPassWithEmail(fileLocation, email, token, res) {
     mysql.query(queryString, (err, results, fields) => {
         if (err) {
             return res.render(fileLocation, {
+                user: {},
                 email,
                 token,
                 message: 'Some error, Please login with another method with different email'
@@ -119,6 +122,7 @@ function resetPassWithEmail(fileLocation, email, token, res) {
         results = results[0];
         if (!results || !results[0]) {
             return res.render(fileLocation, {
+                user: {},
                 email,
                 token,
                 message: 'No user with this email'
@@ -126,12 +130,14 @@ function resetPassWithEmail(fileLocation, email, token, res) {
         }
         if (token == results[0].password) {
             return res.render(fileLocation, {
+                user: {},
                 email,
                 token,
                 message: ''
             });
         } else {
             return res.render(fileLocation, {
+                user: {},
                 email,
                 token,
                 message: 'Password already updated with this link or outdated link'

@@ -40,7 +40,7 @@ routes.get('/resetpassword/:email', async (req, res) => {
     sendresetpassmail(email, res);
 })
 
-routes.get('/authresetpass', async (req, res) => {
+routes.get('/auth/resetpass', async (req, res) => {
     const {
         email,
         token
@@ -61,7 +61,7 @@ routes.get('/signOutPath', async (req, res) => {
 
 routes.post('/signinUser', function (req, res, next) {
     passport.authenticate('local', function (err, user, info) {
-        console.log(err, user, info);
+        //console.log(err, user, info);
         if (err) {
             return res.send(info.message);
         }
