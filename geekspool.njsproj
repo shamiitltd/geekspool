@@ -33,9 +33,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include=".env" />
-    <Content Include="api\account.js">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="api\auth.js">
       <SubType>Code</SubType>
     </Content>
@@ -60,16 +57,7 @@
     <Content Include="api\profile.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="api\rss.js">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="api\search.js">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="api\setup.js">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="api\sitemap.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="api\user.js">
