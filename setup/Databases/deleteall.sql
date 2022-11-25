@@ -20,6 +20,10 @@ DROP PROCEDURE IF EXISTS Get_userInfoByEmail;
 --#
 DROP PROCEDURE IF EXISTS Upload_Reset_Password;
 --#
+DROP PROCEDURE IF EXISTS Get_Rss_recordsto_update;
+--#
+DROP PROCEDURE IF EXISTS Upload_Rss_recordsto_update;
+--#
 DROP TABLE IF EXISTS userlogin;
 --#
 DROP TABLE IF EXISTS dropDownsPool;
