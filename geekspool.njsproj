@@ -1860,6 +1860,9 @@
     <Content Include="public\images\logo.webp" />
     <Content Include="public\javascripts\components\paginator.js" />
     <Content Include="public\javascripts\controllers\postDataForms.js" />
+    <Content Include="public\javascripts\controllers\profile.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\javascripts\controllers\signin.js" />
     <Content Include="public\javascripts\libraries\axios.js" />
     <Content Include="public\javascripts\libraries\firebase.js" />

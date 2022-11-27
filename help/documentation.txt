@@ -149,7 +149,7 @@ npm install
 #1637941016
 npm start
 #1637941452
-ps aux | grep index.js
+ps aux | grep app.js
 #1637941720
 kill -9 35412
 #1637941741
