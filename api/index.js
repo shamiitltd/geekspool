@@ -14,19 +14,16 @@ api.use('/', profileRoutes); // Routing path
 api.use('/', toolsRoutes); // Routing path
 
 api.get('/signin', checkNotAuthenticated, async (req, res) => {
-    res.render('controllers/signinController', {
+    res.render('controllers/static/signinController', {
         user: ''
     });
 })
 api.get('/offline', async (req, res) => {
-    res.render('controllers/offlineController', {
+    res.render('controllers/static/offlineController', {
         user: req.user
     });
 })
 
-api.get('/help', (req, res) => {
-    res.render('landing/help');
-})
 
 //set Different routes
 api.get('/', async (req, res) => {
@@ -37,7 +34,7 @@ api.get('/', async (req, res) => {
 
 
 api.get('/privacy-policy', (req, res) => {
-    res.render('controllers/privacyPolicyController', {
+    res.render('controllers/static/privacyPolicyController', {
         user: req.user
     });
 })
@@ -50,7 +47,7 @@ api.get('/tools', checkAuthentication, (req, res) => {
 })
 
 api.get('/pricing', checkAuthentication, (req, res) => {
-    res.render('controllers/pricingController', {
+    res.render('controllers/static/pricingController', {
         user: req.user
     });
 })
@@ -62,7 +59,7 @@ api.get('/tutorials', checkAuthentication, (req, res) => {
 })
 
 api.get('/*', (req, res) => {
-    res.render('controllers/nopageController', {
+    res.render('controllers/static/nopageController', {
         user: req.user
     });
 })

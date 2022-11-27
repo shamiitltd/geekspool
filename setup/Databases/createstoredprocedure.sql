@@ -183,3 +183,23 @@ BEGIN
         `updated`=CURRENT_TIMESTAMP()
     WHERE email=iemail and provider=iprovider;	   
 END;
+
+--#
+/* get rss record to Update files*/
+
+CREATE PROCEDURE IF NOT EXISTS Get_Rss_recordsto_update()
+BEGIN
+    SELECT * FROM smaptorss WHERE updated <= CURRENT_TIMESTAMP();
+END;
+
+--#
+/* Reset password user information*/
+
+CREATE PROCEDURE IF NOT EXISTS Upload_Rss_recordsto_update(IN irssid Varchar(50), IN ifrequency INT)
+BEGIN
+    /* Update Data in smaptorss */
+    UPDATE smaptorss 
+    SET updated = DATE_ADD( CURRENT_TIMESTAMP(), INTERVAL IF(ifrequency != 0 , 1400/ifrequency, 5256000) MINUTE )
+    WHERE rssid=irssid;
+END;
+

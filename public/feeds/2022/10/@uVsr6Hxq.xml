@@ -1,0 +1,2485 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+    <channel>
+        <title>
+            <![CDATA[ geekspool.com ]]>
+        </title>
+        <description>
+            <![CDATA[ geekspool.com ]]>
+        </description>
+        <link>https://geekspool.com/rss/new</link>
+        <image>
+            <url>https://geekspool.com/favicon.ico</url>
+            <title>geekspool.com</title>
+            <link>https://geekspool.com/rss/new</link>
+        </image>
+        <generator>https://geekspool.com</generator>
+        <lastBuildDate>Fri, 25 Nov 2022 17:26:09 GMT</lastBuildDate>
+        <atom:link href="https://geekspool.com/feeds/@uVsr6Hxq.xml" rel="self" type="application/rss+xml"/>
+        <language>
+            <![CDATA[ hi ]]>
+        </language>
+
+        <item>
+            <title>
+                <![CDATA[ होम ]]>
+            </title>
+            <link>https://www.aajtak.in</link>
+            <guid isPermaLink="false">1669397169931</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ বাংলা ]]>
+            </title>
+            <link>https://bangla.aajtak.in/</link>
+            <guid isPermaLink="false">1669397169932</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ GNTTV ]]>
+            </title>
+            <link>https://www.gnttv.com/</link>
+            <guid isPermaLink="false">1669397169933</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Ichowk ]]>
+            </title>
+            <link>https://www.ichowk.in/</link>
+            <guid isPermaLink="false">1669397169934</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Lallantop ]]>
+            </title>
+            <link>https://www.thelallantop.com/</link>
+            <guid isPermaLink="false">1669397169935</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ India Today ]]>
+            </title>
+            <link>https://www.indiatoday.in/</link>
+            <guid isPermaLink="false">1669397169936</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Business Today ]]>
+            </title>
+            <link>https://www.businesstoday.in/</link>
+            <guid isPermaLink="false">1669397169937</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Dailyo ]]>
+            </title>
+            <link>https://www.dailyo.in/</link>
+            <guid isPermaLink="false">1669397169938</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Cosmopolitan ]]>
+            </title>
+            <link>https://www.cosmopolitan.in/</link>
+            <guid isPermaLink="false">1669397169939</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Harper's Bazaar ]]>
+            </title>
+            <link>https://www.harpersbazaar.in/</link>
+            <guid isPermaLink="false">1669397169940</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Reader’s Digest ]]>
+            </title>
+            <link>https://www.readersdigest.in/</link>
+            <guid isPermaLink="false">1669397169941</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ IndiaTodayNE ]]>
+            </title>
+            <link>https://www.indiatodayne.in/</link>
+            <guid isPermaLink="false">1669397169942</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Malayalam ]]>
+            </title>
+            <link>https://malayalam.indiatoday.in/</link>
+            <guid isPermaLink="false">1669397169943</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Sports Tak ]]>
+            </title>
+            <link>https://thesportstak.com/</link>
+            <guid isPermaLink="false">1669397169944</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Crime Tak ]]>
+            </title>
+            <link>https://www.crimetak.in/</link>
+            <guid isPermaLink="false">1669397169945</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ India Today Gaming ]]>
+            </title>
+            <link>https://www.indiatodaygaming.com/</link>
+            <guid isPermaLink="false">1669397169946</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Sign In ]]>
+            </title>
+            <link>https://auth.indiatoday.in/saml_login/other/ahr0chm6ly93d3cuywfqdgfrlmlui3nzb2xvz2lupte=</link>
+            <guid isPermaLink="false">1669397169947</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/entertainment</link>
+            <guid isPermaLink="false">1669397169948</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ FIFA 2022 ]]>
+            </title>
+            <link>https://www.aajtak.in/sports/fifa-football-world-cup-2022</link>
+            <guid isPermaLink="false">1669397169949</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ चुनाव ]]>
+            </title>
+            <link>https://www.aajtak.in/elections</link>
+            <guid isPermaLink="false">1669397169950</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/religion</link>
+            <guid isPermaLink="false">1669397169951</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/lifestyle</link>
+            <guid isPermaLink="false">1669397169952</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ वीडियो ]]>
+            </title>
+            <link>https://www.aajtak.in/videos</link>
+            <guid isPermaLink="false">1669397169953</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/world</link>
+            <guid isPermaLink="false">1669397169954</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/business</link>
+            <guid isPermaLink="false">1669397169955</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/crime</link>
+            <guid isPermaLink="false">1669397169956</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/technology</link>
+            <guid isPermaLink="false">1669397169957</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/sports</link>
+            <guid isPermaLink="false">1669397169958</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ कार्यक्रम ]]>
+            </title>
+            <link>https://www.aajtak.in/programmes</link>
+            <guid isPermaLink="false">1669397169959</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ फैक्ट चेक ]]>
+            </title>
+            <link>https://www.aajtak.in/fact-check</link>
+            <guid isPermaLink="false">1669397169960</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Explained ]]>
+            </title>
+            <link>https://www.aajtak.in/explained</link>
+            <guid isPermaLink="false">1669397169961</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/photos</link>
+            <guid isPermaLink="false">1669397169962</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/education</link>
+            <guid isPermaLink="false">1669397169963</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ इन्टरैक्टिव ]]>
+            </title>
+            <link>https://aajtak.in/interactive/</link>
+            <guid isPermaLink="false">1669397169964</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/science</link>
+            <guid isPermaLink="false">1669397169965</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/india</link>
+            <guid isPermaLink="false">1669397169966</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ ट्रेंडिंग ]]>
+            </title>
+            <link>https://www.aajtak.in/trending</link>
+            <guid isPermaLink="false">1669397169967</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ कृषि समाचार ]]>
+            </title>
+            <link>https://www.aajtak.in/agriculture</link>
+            <guid isPermaLink="false">1669397169968</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ लीगल न्यूज़ ]]>
+            </title>
+            <link>https://www.aajtak.in/legal-news</link>
+            <guid isPermaLink="false">1669397169969</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ कोरोना ]]>
+            </title>
+            <link>https://www.aajtak.in/coronavirus-covid-19-outbreak</link>
+            <guid isPermaLink="false">1669397169970</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/auto</link>
+            <guid isPermaLink="false">1669397169971</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/health</link>
+            <guid isPermaLink="false">1669397169972</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ क्विज़ ]]>
+            </title>
+            <link>https://www.aajtak.in/quiz</link>
+            <guid isPermaLink="false">1669397169973</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ ट्रेंडिंग वीडियो ]]>
+            </title>
+            <link>https://www.aajtak.in/trending-videos</link>
+            <guid isPermaLink="false">1669397169974</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आपका पेज ]]>
+            </title>
+            <link>https://www.aajtak.in/foryou</link>
+            <guid isPermaLink="false">1669397169975</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ मौसम ]]>
+            </title>
+            <link>https://www.aajtak.in/weather/delhi-weather-forecast-today</link>
+            <guid isPermaLink="false">1669397169976</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ हिमाचल चुनाव ]]>
+            </title>
+            <link>https://www.aajtak.in/elections/himachal-pradesh-assembly-elections</link>
+            <guid isPermaLink="false">1669397169977</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ बोर्ड रिजल्ट ]]>
+            </title>
+            <link>https://www.aajtak.in/education/board-exam-results</link>
+            <guid isPermaLink="false">1669397169978</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/literature</link>
+            <guid isPermaLink="false">1669397169979</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/india-today-hindi</link>
+            <guid isPermaLink="false">1669397169980</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Archive ]]>
+            </title>
+            <link>https://www.aajtak.in/archive</link>
+            <guid isPermaLink="false">1669397169981</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ एंकर्स ]]>
+            </title>
+            <link>https://www.aajtak.in/anchors</link>
+            <guid isPermaLink="false">1669397169982</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Rate Card ]]>
+            </title>
+            <link>https://www.aajtak.in/rate-card</link>
+            <guid isPermaLink="false">1669397169983</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Investors ]]>
+            </title>
+            <link>https://www.aajtak.in/investor</link>
+            <guid isPermaLink="false">1669397169984</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ 6:11 PM चीन के शिंजियांग में एक अपार्टमेंट में लगी भीषण आग, 10 की मौत ]]>
+            </title>
+            <link>https://www.aajtak.in/breakingnews/story/25-november-2022-breaking-news-latest-news-in-hindi-ntc-1582924-2022-11-25</link>
+            <guid isPermaLink="false">1669397169986</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ मस्क का बड़ा ऐलान, सिर्फ ब्लू नहीं 3 अलग-अलग रंगों के होंगे ट्विटर के 'वैरिफाइड बैज'      ट्विटर के नए मालिक एलन मस्क (Elon Musk) ने कहा कि अगले हफ्ते से ट्विटर अकाउंट्स के लिए नीले रंग के टिक मार्क के अलावा गोल्डन और ग्रे रंग के टिक मार्क शुरू होंगे. मस्क ने बताया कि कंपनियों के लिए... ]]>
+            </title>
+            <link>https://www.aajtak.in/technology/story/elon-musk-says-twitter-verified-service-with-colors-to-start-next-week-ntc-1583539-2022-11-25</link>
+            <guid isPermaLink="false">1669397169987</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ अगले साल भारत की मेजबानी में वनडे वर्ल्ड कप खेलना जाना है. उससे पहले पाकिस्तान में एशिया कप खेला जाएगा. बीसीसीआई ने... ]]>
+            </title>
+            <link>https://www.aajtak.in/sports/cricket/story/ramiz-raja-warning-to-bcci-for-india-our-of-pakistan-for-asia-cup-odi-world-cup-2023-tspo-1583540-2022-11-25</link>
+            <guid isPermaLink="false">1669397169988</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ 08  नर्मदा तट पर लगाया ध्यान, आरती और भक्ति में लीन राहुल गांधी, दिखा अलग अंदाज... Photos ]]>
+            </title>
+            <link>https://www.aajtak.in/india/politics/photo/rahul-gandhi-narmada-aarti-bharat-jodo-yatra-mp-ntc-1583564-2022-11-25</link>
+            <guid isPermaLink="false">1669397169989</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ 'माल्या-नीरव को भगा दिया, सिसोदिया को जेल भेजना चाहती है बीजेपी' ]]>
+            </title>
+            <link>https://www.aajtak.in/india/delhi/story/panchayat-aajtak-arvind-kejriwal-manish-sisodia-vijay-mallya-ntc-1583526-2022-11-25</link>
+            <guid isPermaLink="false">1669397169990</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ दिल्ली: चांदनी चौक में 24 घंटे से धधक रही आग, अब तक 100 से ज्यादा दुकानें जलीं ]]>
+            </title>
+            <link>https://www.aajtak.in/india/delhi/story/fire-raging-in-delhi-chandni-chowk-for-24-hours-till-now-more-than-100-shops-burnt-bhagirath-palace-ntc-1583563-2022-11-25</link>
+            <guid isPermaLink="false">1669397169991</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आतंकवाद का 'पापा', क्रूरता का दूसरा नाम... पाक आर्मी के सबसे विवादित जनरल की कहानी ]]>
+            </title>
+            <link>https://www.aajtak.in/explained/story/pakistan-army-chief-asim-munir-general-zia-ul-haq-story-in-hindi-ntc-1583451-2022-11-25</link>
+            <guid isPermaLink="false">1669397169992</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ अगर डायनासोर खत्म नहीं होते तो आज कैसे दिखते? जानकर हैरान रह जाएंगे ]]>
+            </title>
+            <link>https://www.aajtak.in/science/photo/what-if-dinosaurs-never-extinct-how-they-look-today-tstr-1583476-2022-11-25</link>
+            <guid isPermaLink="false">1669397169993</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ घरेलू हिंसा के केस में फंसे पाकिस्तानी एक्टर को मिला अवॉर्ड, हुए ट्रोल ]]>
+            </title>
+            <link>https://www.aajtak.in/entertainment/news/story/feroze-khan-trolled-for-winning-best-actor-award-for-khuda-aur-mohabbat-3-at-lux-style-awards-tmovp-1583522-2022-11-25</link>
+            <guid isPermaLink="false">1669397169994</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ 'अब तो दृश्यम-2 आ गई', सवालों के ऐसे जवाब दे रहा आफताब ]]>
+            </title>
+            <link>https://www.aajtak.in/crime/news/story/shraddha-walker-murder-case-aftab-body-language-surprising-police-vicious-person-giving-such-answers-questions-ntc-1583387-2022-11-25</link>
+            <guid isPermaLink="false">1669397169995</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ मेरी कहानी: हां मैं हाउस हसबैंड हूं और इसे मैंने खुद अपनी खुशी से चुना है! ]]>
+            </title>
+            <link>https://www.aajtak.in/interactive/photo-essay/--14-24-11-2022</link>
+            <guid isPermaLink="false">1669397169996</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ 3 लड़कों ने मिलकर लॉन्च की 500Km रेंज वाली इलेक्ट्रिक SUV, BMW से मुकाबला ]]>
+            </title>
+            <link>https://www.aajtak.in/auto/news/story/pravaig-defy-electric-suv-launched-with-500km-range-price-start-at-rs-39-5-lakh-charging-booking-details-1583502-2022-11-25</link>
+            <guid isPermaLink="false">1669397169997</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ वे देश, जहां मुस्लिम आबादी होने के बाद भी मस्जिद बनाने की मनाही ]]>
+            </title>
+            <link>https://www.aajtak.in/explained/story/countries-with-muslim-population-but-without-mosque-amid-jama-musjid-controversy-in-delhi-ntc-1583356-2022-11-25</link>
+            <guid isPermaLink="false">1669397169998</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ कल सुबह ISRO लॉन्च करेगा OceanSat, देखिए तैयारियों की Photos ]]>
+            </title>
+            <link>https://www.aajtak.in/science/photo/isro-bhutansat-oceansat-3-launching-on-26-november-2022-sriharikota-tstr-1583538-2022-11-25</link>
+            <guid isPermaLink="false">1669397169999</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ सिंगर को 13 साल की जेल, लड़कियों को घर बुलाकर नशे में किया रेप ]]>
+            </title>
+            <link>https://www.aajtak.in/entertainment/hollywood/story/kris-wu-chinese-canadian-singer-jailed-to-13-years-for-sex-crimes-raping-three-women-tmovp-1583478-2022-11-25</link>
+            <guid isPermaLink="false">1669397170000</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ बिपाशा बसु ने शेयर किया बेबी गर्ल देवी का पहला फोटो ]]>
+            </title>
+            <link>https://www.aajtak.in/entertainment/bollywood-news/story/bipasha-basu-share-daughter-devi-first-picture-with-karan-singh-grover-tmovb-1583542-2022-11-25</link>
+            <guid isPermaLink="false">1669397170001</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ शॉर्ट वीडियो ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos</link>
+            <guid isPermaLink="false">1669397170002</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ दुल्हन ने अपने डांस से जीता दिल, वायरल हुआ वीडियो ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/bride-won-hearts-with-her-dance-the-video-goes-viral-on-social-media-mmt-1583541-2022-11-25</link>
+            <guid isPermaLink="false">1669397170003</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ न्यूज़ रील ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/e-mail-tracking-to-know-if-someone-is-stalking-you-know-steps-mmt-1583525-2022-11-25</link>
+            <guid isPermaLink="false">1669397170004</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ शादी के 10 साल बाद इस एक्ट्रेस ने सुनाई खुशखबरी ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/gehna-character-of-balika-vadhu-soon-to-me-mother-glamorous-in-real-life-mmt-1583521-2022-11-25</link>
+            <guid isPermaLink="false">1669397170005</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ शख्स की रातों रात बदल गई किस्मत... ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/ulkapind-found-by-a-man-destiny-changed-viral-news-mmt-1583515-2022-11-25</link>
+            <guid isPermaLink="false">1669397170006</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ महिला ने सांप को चप्पल फेंककर मारी, वो चप्पल लेकर भागा ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/snake-took-away-slippers-of-a-women-who-threw-them-video-goes-viral-mmt-1583514-2022-11-25</link>
+            <guid isPermaLink="false">1669397170007</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ गजब हो गया, ट्रेन का इंजन ही चोरी... ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/the-engine-of-the-train-stolen-and-sold-know-how-and-when-mmt-1583511-2022-11-25</link>
+            <guid isPermaLink="false">1669397170008</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आयरा खान अपनी ही सगाई में फोटोग्राफर बन गईं ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/ira-khan-became-a-photographer-in-her-own-engagement-video-viral-mmt-1583484-2022-11-25</link>
+            <guid isPermaLink="false">1669397170009</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ वीडियो कॉल से हो रहा सेक्सटॉर्शन, देखें 6 बड़ी खबरें ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/sextortion-through-video-call-apps-stealing-your-data-5g-in-gujarat-mmt-1583481-2022-11-25</link>
+            <guid isPermaLink="false">1669397170010</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ चैन की नींद सो रहा था शख्स तभी जो हुआ, देखें वीडियो ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/man-sleeping-on-road-sacred-by-a-ghost-like-man-in-a-prank-video-mmt-1583413-2022-11-25</link>
+            <guid isPermaLink="false">1669397170011</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ करोड़ों रेल यात्रियों की बढ़ सकती है चिंता, देखें काम की बड़ी खबरें ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/5g-service-in-gujarat-sextortion-via-video-call-cases-app-data-theft-trending-news-mmt-1583477-2022-11-25</link>
+            <guid isPermaLink="false">1669397170012</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ दुल्हन ने अपने डांस से जीता दिल, देखें Video ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/viral-video-of-bride-dancing-on-bollywood-song-kala-chashma-trending-mmt-1583469-2022-11-25</link>
+            <guid isPermaLink="false">1669397170013</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ 100 करोड़ के क्लब में शामिल हुई 'दृश्यम 2'! ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/drishyam-2-movie-enters-the-100-crore-club-bumper-opening-on-screens-mmt-1583460-2022-11-25</link>
+            <guid isPermaLink="false">1669397170014</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ बेहतरीन परफॉर्मेंस से स्टेज पर लगा दी आग ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/uncle-dance-so-well-on-stage-video-goes-viral-on-social-media-internet-sensation-mmt-1583447-2022-11-25</link>
+            <guid isPermaLink="false">1669397170015</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ "जितना वक्त है दे दो मां-बाप को..." ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/bhuvan-bam-asked-yougsters-to-give-time-to-parents-sahitya-aajtak-2022-mmt-1583446-2022-11-25</link>
+            <guid isPermaLink="false">1669397170016</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ रोते-बिलखते मां-बाप की गुहार... ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/shraddha-murder-girl-eloped-from-home-with-a-boy-parents-concerned-seeking-help-mmt-1583440-2022-11-25</link>
+            <guid isPermaLink="false">1669397170017</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ 2023 में राहु बदलेंगे अपनी चाल, इन राशियों को होगा लाभ ही लाभ ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/news/story/rahu-gochar-2023-rahu-transit-in-pisces-these-zodiac-signs-will-be-lucky-tlifdg-1583403-2022-11-25</link>
+            <guid isPermaLink="false">1669397170018</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ केजरीवाल भ्रष्टाचारियों के सरदार, इसलिए बढ़ाई जाए उनकी सुरक्षा- मनोज तिवारी ]]>
+            </title>
+            <link>https://www.aajtak.in/india/delhi/story/panchayat-aajtak-manoj-tiwari-mcd-election-arvind-kejriwal-ntc-1583547-2022-11-25</link>
+            <guid isPermaLink="false">1669397170019</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ भारत के इस शहर में 'फीफा का फीवर'... हर घर में छाए मेसी-नेमार और रोनाल्डो ]]>
+            </title>
+            <link>https://www.aajtak.in/sports/football/photo/fifa-world-cup-2022-fever-in-thiruvananthapuram-colony-chengal-choola-neymar-lionel-messi-cristiano-ronaldo-posters-paintings-in-india-tspo-1583461-2022-11-25</link>
+            <guid isPermaLink="false">1669397170020</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ VIP दर्शन करने को लेकर काशी विश्वनाथ मंदिर में बवाल, पुलिस ने लेखपाल को पीटा ]]>
+            </title>
+            <link>https://www.aajtak.in/crime/news/story/varanasi-uproar-in-kashi-vishwanath-temple-for-vip-darshan-up-police-thrashed-tempal-lekhpal-lclcn-1583533-2022-11-25</link>
+            <guid isPermaLink="false">1669397170021</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ सर्दियों में जोड़ों के दर्द से हैं परेशान? राहत के लिए शुरू करें ये काम ]]>
+            </title>
+            <link>https://www.aajtak.in/lifestyle/news/photo/arthritis-problems-in-winter-know-how-to-prevent-joint-pain-tlifs-1583245-2022-11-25</link>
+            <guid isPermaLink="false">1669397170022</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ अर्चना गौतम के लिये सलमान खान ने प्रियंका चौधरी को लगाई फटकार ]]>
+            </title>
+            <link>https://www.aajtak.in/entertainment/bigg-boss-season-16-2022/story/bigg-boss-16-salman-khan-bashes-priyanka-choudhary-for-not-supporting-archana-gautam-in-fight-with-sajid-khan-tmovb-1583505-2022-11-25</link>
+            <guid isPermaLink="false">1669397170023</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ बुमराह ने दी टीम इंडिया को खुशखबरी, मैदान में उतरने को तैयार! VIDEO ]]>
+            </title>
+            <link>https://www.aajtak.in/sports/cricket/story/injured-jasprit-bumrah-returns-to-training-after-missing-t20-world-cup-2022-bumrah-in-team-india-tspo-1583424-2022-11-25</link>
+            <guid isPermaLink="false">1669397170024</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ 'सत्येंद्र जैन ने 6 महीने से अन्न नहीं खाया', देखें केजरीवाल ने क्या बताया ]]>
+            </title>
+            <link>https://www.aajtak.in/india/delhi/video/mcd-election-2022-satyendar-jain-videos-surfaced-arvind-kejriwal-explained-news-in-hindi-1583494-2022-11-25</link>
+            <guid isPermaLink="false">1669397170025</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ हिंदी सवालों के अंग्रेजी में जवाब, पूछताछ में हंसने भी लगा आफताब! ]]>
+            </title>
+            <link>https://www.aajtak.in/india/news/video/shraddha-murder-case-accused-aftab-is-trying-to-avoid-answering-questions-during-police-interrogation-1583217-2022-11-25</link>
+            <guid isPermaLink="false">1669397170026</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ कूड़े के पहाड़ को बीजेपी खत्म नहीं कर पाई, AAP कैसे करेगी? केजरीवाल ने बताया 7:42 ]]>
+            </title>
+            <link>https://www.aajtak.in/india/delhi/video/delhi-panchayat-aajtak-cm-arvind-kejriwal-replies-on-question-over-landfill-mismanagement-ahead-of-mcd-elections-2022-1583507-2022-11-25</link>
+            <guid isPermaLink="false">1669397170027</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ मनीष सिसोदिया को किसने की थी खरीदने की कोशिश? ]]>
+            </title>
+            <link>https://www.aajtak.in/india/delhi/video/mcd-election-delhi-who-tried-to-buy-manish-sisodia-deputy-cm-answered-1583394-2022-11-25</link>
+            <guid isPermaLink="false">1669397170028</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ गुजरात के एक गांव, जहां चुनावों को लेकर है अपनेे अलग नियम-कानून ]]>
+            </title>
+            <link>https://www.aajtak.in/elections/gujarat-assembly-elections/video/gujarat-election-2022-raj-samadhiyala-village-in-gujarat-has-its-own-rules-and-regulations-regarding-polls-1583242-2022-11-25</link>
+            <guid isPermaLink="false">1669397170029</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ भारत के इस शहर में छाए मेसी-नेमार और रोनाल्डो ]]>
+            </title>
+            <link>https://www.aajtak.in/visualstories/sports/fifa-world-cup-2022-fever-in-india-thiruvananthapuram-colony-chengal-choola-neymar-lionel-messi-cristiano-ronaldo-posters-tspo-13930-25-11-2022</link>
+            <guid isPermaLink="false">1669397170030</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ चर्चा में गुलशन कुमार की बेटी, रियल लाइफ में हैं ग्लैमरस ]]>
+            </title>
+            <link>https://www.aajtak.in/visualstories/entertainment/gulshan-kumar-daughter-khushali-kumar-glamorous-pictures-r-madhavan-dhokha-round-d-corner-actress-tmovb-13928-25-11-2022</link>
+            <guid isPermaLink="false">1669397170031</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ सपना चौधरी का हाल हुआ ऐसा, लगानी पड़ रही झाड़ू, फिर हुआ ये ]]>
+            </title>
+            <link>https://www.aajtak.in/visualstories/entertainment/sapna-choudhary-ne-lagayi-jhaadu-glamorous-look-green-saree-video-tmovp-13925-25-11-2022</link>
+            <guid isPermaLink="false">1669397170032</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आधी कीमत पर मिल रहा iPhone, जबरदस्त है ऑफर ]]>
+            </title>
+            <link>https://www.aajtak.in/visualstories/technology/apple-iphone-12-mini-discount-on-flipkart-ttec-13920-25-11-2022</link>
+            <guid isPermaLink="false">1669397170033</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ सारा को किसका डर! पैपराजी को देख छिपाया मुंह ]]>
+            </title>
+            <link>https://www.aajtak.in/visualstories/entertainment/sara-ali-khan-hides-her-face-seeing-paparazzi-funny-video-tmovh-13907-25-11-2022</link>
+            <guid isPermaLink="false">1669397170034</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ पति संग PAK एक्ट्रेस ने कराया ऐसा शूट, यूजर्स बोले- शर्म करो ]]>
+            </title>
+            <link>https://www.aajtak.in/visualstories/entertainment/pakistan-actress-ayeza-khan-get-troll-for-romantic-photoshoot-with-husband-danish-taimoor-tmovb-13916-25-11-2022</link>
+            <guid isPermaLink="false">1669397170035</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ सूर्या को खरीदने की हैसियत नहीं: ऑस्ट्रेलियाई स्टार ]]>
+            </title>
+            <link>https://www.aajtak.in/visualstories/sports/glenn-maxwell-on-suryakumar-yadav-for-big-bash-league-bbl-maxwell-on-suryakumar-tspo-13873-25-11-2022</link>
+            <guid isPermaLink="false">1669397170036</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ स्पोर्ट्स बाइक का मजा, इलेक्ट्रिक का दम! देखें PHOTOS ]]>
+            </title>
+            <link>https://www.aajtak.in/visualstories/utility/sports-bike-look-electric-bike-ultraviolette-f77-range-features-photos-lbsv-13912-25-11-2022</link>
+            <guid isPermaLink="false">1669397170037</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ पहले से इतनी बदल गई हैं कृति सेनन, पहचानना होगा मुश्किल ]]>
+            </title>
+            <link>https://www.aajtak.in/visualstories/entertainment/kriti-sanon-transformation-then-and-now-photos-viral-sister-nupur-sanon-bhediya-box-office-tmovk-13909-25-11-2022</link>
+            <guid isPermaLink="false">1669397170038</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ 42 साल में 24 की लगती है सलमान की 'गर्लफ्रेंड', उम्र का असर नहीं ]]>
+            </title>
+            <link>https://www.aajtak.in/visualstories/entertainment/salman-khan-rumoured-girlfriend-iulia-vantur-fitness-at-age-of-42-glamrous-beauty-tmovh-13904-25-11-2022</link>
+            <guid isPermaLink="false">1669397170039</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ TV एक्ट्रेस की हुई सर्जरी, बोलीं- दर्द को किया था इग्नोर, अब ऐसी हालत में पहुंचीं ]]>
+            </title>
+            <link>https://www.aajtak.in/entertainment/television/story/tv-actress-rupali-bhosle-gets-admitted-to-the-hospital-for-surgery-share-note-tmovb-1583268-2022-11-25</link>
+            <guid isPermaLink="false">1669397170040</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ कौन हैं PAK की अनीसा शेख? जिनके लहंगे की हो रही चर्चा, इंडियन कनेक्शन है वजह   9 ]]>
+            </title>
+            <link>https://www.aajtak.in/entertainment/news/photo/who-is-aneesa-sheikh-miss-grand-pakistan-wants-end-of-war-between-india-and-pakistan-by-wearing-indian-designer-lehenga-tmovk-1583235-2022-11-25</link>
+            <guid isPermaLink="false">1669397170041</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ नई Innova से नज़रें नहीं हटा पाएंगे! जबरदस्त अंदाज में लॉन्च हुई MPV ]]>
+            </title>
+            <link>https://www.aajtak.in/auto/news/photo/toyota-innova-hycross-mpv-revealed-in-india-bookings-starts-price-features-specifiation-details-1583328-2022-11-25</link>
+            <guid isPermaLink="false">1669397170042</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ केवल जीनियस ही दे पाएंगे इन आसान सवालों के जवाब! ]]>
+            </title>
+            <link>https://www.aajtak.in/education/quiz/photo/general-knowledge-quiz-in-hindi-sarkari-naukri-interview-tricky-questions-capitals-indian-states-know-more-lbse-1583263-2022-11-25</link>
+            <guid isPermaLink="false">1669397170043</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ इतना बदल गई सलमान की ऑनस्क्रीन भांजी, ग्लैमरस अवतार देख पहचानना मुश्किल ]]>
+            </title>
+            <link>https://www.aajtak.in/entertainment/bollywood-news/photo/salman-khan-film-hum-saath-saath-hain-actress-zoya-afroz-then-and-now-look-must-see-photos-tmovf-1582876-2022-11-25</link>
+            <guid isPermaLink="false">1669397170044</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ हिमाचल में ही श्रद्धा का कत्ल करना चाहता था आफताब, अब जुड़ सकती है IPC की ये धारा ]]>
+            </title>
+            <link>https://www.aajtak.in/crime/big-crime/story/shraddha-walker-murder-case-accused-aftab-amin-poonawalla-polygraph-test-disclosure-himachal-conspiracy-interrogation-evidence-ipc-120b-delhi-police-crime-lno-1583206-2022-11-25</link>
+            <guid isPermaLink="false">1669397170045</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Police Commissionerate: जानें, क्या होता है पुलिस कमिश्नरी सिस्टम? कैसे करता है काम ]]>
+            </title>
+            <link>https://www.aajtak.in/crime/police-and-intelligence/story/up-agra-prayagraj-ghaziabad-police-commissionerate-system-metropolis-district-crpc-power-police-commissioner-governance-admin-crime-lno-1583138-2022-11-25</link>
+            <guid isPermaLink="false">1669397170046</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ 'हमने भागने की कोशिश की...', लिखकर शादीशुदा जोड़े ने खाया जहर ]]>
+            </title>
+            <link>https://www.aajtak.in/india/haryana/story/we-both-tried-to-run-away-married-lover-couple-consumed-poison-in-bahadurgarh-haryana-suicide-note-recovered-lclcn-1583432-2022-11-25</link>
+            <guid isPermaLink="false">1669397170047</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ सुरंग खोदकर चुरा लिया रेल का पूरा इंजन, बेच भी दिया, बिहार में चोरों का बड़ा कारनामा ]]>
+            </title>
+            <link>https://www.aajtak.in/crime/news/story/bihar-rohtas-thieves-first-dug-a-tunnel-and-then-stole-a-train-engine-lcln-1583233-2022-11-25</link>
+            <guid isPermaLink="false">1669397170048</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ कीवियों के सामने बेबस नजर आए भारतीय गेंदबाज, पहाड़ जैसा टारगेट भी पड़ा छोटा ]]>
+            </title>
+            <link>https://www.aajtak.in/sports/cricket/story/india-vs-new-zealand-1st-odi-match-report-kane-williamson-and-tom-latham-masterclass-help-nz-win-tspo-1583264-2022-11-25</link>
+            <guid isPermaLink="false">1669397170049</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ फीफा वर्ल्ड कप की मेजबान टीम कतर दूसरा मैच हारी, सेनेगल ने बुरी तरह हराया ]]>
+            </title>
+            <link>https://www.aajtak.in/sports/football/story/wales-vs-iran-fifa-world-cup-2022-6th-day-match-result-update-football-qatar-vs-senegal-netherlands-vs-ecuador-tspo-1583358-2022-11-25</link>
+            <guid isPermaLink="false">1669397170050</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ सड़क पर ब्रांडेड जूते बेच रहा हमशक्ल, देखकर कोहली ने दिया ऐसा रिएक्शन ]]>
+            </title>
+            <link>https://www.aajtak.in/sports/cricket/story/virat-kohli-looking-like-man-promote-puma-brand-team-india-cricketer-know-more-details-tspo-1583286-2022-11-25</link>
+            <guid isPermaLink="false">1669397170051</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ ODI: शार्दुल की धुलाई, चहल-अर्शदीप भी बेबस... लैथम ने ऐसे पलटा मैच ]]>
+            </title>
+            <link>https://www.aajtak.in/sports/cricket/story/shardul-thakur-to-tom-latham-indian-bowlers-against-new-zealand-in-1st-odi-ind-vs-nz-match-umran-malik-tspo-1583299-2022-11-25</link>
+            <guid isPermaLink="false">1669397170052</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ कीवियों के खिलाफ खूब चलता है श्रेयस का बल्ला, PAK दिग्गज की बराबरी की ]]>
+            </title>
+            <link>https://www.aajtak.in/sports/cricket/story/india-vs-new-zealand-first-odi-shreyas-iyer-equals-ramiz-raja-record-tspo-1583139-2022-11-25</link>
+            <guid isPermaLink="false">1669397170053</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ दिल के मरीजों के लिए कितना सेफ है सेक्स? बरतें ये सावधानियां ]]>
+            </title>
+            <link>https://www.aajtak.in/lifestyle/news/story/is-sex-dangerous-if-you-have-heart-disease-signs-youre-healthy-enough-for-sex-tlifn-1583253-2022-11-25</link>
+            <guid isPermaLink="false">1669397170054</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ पेट के लिए वरदान है मुनक्का, फायदे जानकर चौंक जाएंगे आप ]]>
+            </title>
+            <link>https://www.aajtak.in/lifestyle/news/photo/munakka-benefits-raisins-stomach-gut-health-benefits-of-black-raisins-tlifp-1577816-2022-11-25</link>
+            <guid isPermaLink="false">1669397170055</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ सर्दियों में बढ़ जाता है जोड़ों का दर्द? राहत पाने के लिए करें ये काम ]]>
+            </title>
+            <link>https://www.aajtak.in/lifestyle/news/story/arthritis-lifestyle-changes-to-prevent-joint-pain-during-winters-tlifn-1582992-2022-11-25</link>
+            <guid isPermaLink="false">1669397170056</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ कम खर्च में घूमना है विदेश तो इन जगहों को करें ट्राई, जेब नहीं होगी ढीली ]]>
+            </title>
+            <link>https://www.aajtak.in/lifestyle/tourism/photo/these-are-the-top-seven-budget-friendly-foreign-countries-for-tourist-tlifp-1574513-2022-11-24</link>
+            <guid isPermaLink="false">1669397170057</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आलिया की बेटी का नाम है बहुत खास, जानें कैसा होगा उसका भविष्य ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/news/story/alia-ranbir-name-their-daughter-what-her-name-means-and-numerological-significance-tlifdg-1583164-2022-11-25</link>
+            <guid isPermaLink="false">1669397170058</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ मनी प्लांट से भी ज्यादा शुभ होते हैं ये 5 पौधे, घर में रखते ही बरसने लगेगा पैसा ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/news/story/vastu-tips-these-five-plants-are-lucky-more-than-money-plants-tlifdu-1579673-2022-11-25</link>
+            <guid isPermaLink="false">1669397170059</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ राशिफल: वृष वाले अनजान लोगों से रहें दूर, जानें अपनी राशि का हाल ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/rashiphal/story/daily-horoscope-dainik-rashifal-25-november-2022-friday-tlifdn-1582944-2022-11-25</link>
+            <guid isPermaLink="false">1669397170060</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आगे ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/video/luck-connection-daily-aries-93236-2010-04-10</link>
+            <guid isPermaLink="false">1669397170061</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आगे ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/video/luck-connection-daily-taurus-93237-2010-04-10</link>
+            <guid isPermaLink="false">1669397170062</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आगे ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/video/luck-connection-daily-gemini-93238-2010-04-10</link>
+            <guid isPermaLink="false">1669397170063</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आगे ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/video/luck-connection-daily-cancer-93239-2010-04-10</link>
+            <guid isPermaLink="false">1669397170064</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आगे ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/video/luck-connection-daily-leo-93240-2010-04-10</link>
+            <guid isPermaLink="false">1669397170065</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आगे ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/video/luck-connection-daily-virgo-93241-2010-04-10</link>
+            <guid isPermaLink="false">1669397170066</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आगे ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/video/luck-connection-daily-libra-93242-2010-04-10</link>
+            <guid isPermaLink="false">1669397170067</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आगे ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/video/luck-connection-daily-scorpio-93243-2010-04-10</link>
+            <guid isPermaLink="false">1669397170068</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आगे ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/video/luck-connection-daily-sagittarius-93213-2010-04-09</link>
+            <guid isPermaLink="false">1669397170069</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आगे ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/video/luck-connection-daily-capricorn-93244-2010-04-10</link>
+            <guid isPermaLink="false">1669397170070</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आगे ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/video/luck-connection-daily-aquarius-93245-2010-04-10</link>
+            <guid isPermaLink="false">1669397170071</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ आगे ]]>
+            </title>
+            <link>https://www.aajtak.in/religion/video/luck-connection-daily-pisces-93246-2010-04-10</link>
+            <guid isPermaLink="false">1669397170072</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ बम लगाकर गाय के जबड़े को उड़ाया, हुई मौत ]]>
+            </title>
+            <link>https://www.aajtak.in/crime/news/story/cow-mouth-bomb-blast-injured-police-investigation-banda-uttar-pradesh-lclar-1583255-2022-11-25</link>
+            <guid isPermaLink="false">1669397170073</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ सरकारी किताबों में छपा अधूरा राष्ट्रगान, अफसरों ने बच्चों को बांट दीं ]]>
+            </title>
+            <link>https://www.aajtak.in/india/uttar-pradesh/story/moradabad-incomplete-national-anthem-printed-in-government-books-officers-distributed-to-children-lcla-1583486-2022-11-25</link>
+            <guid isPermaLink="false">1669397170074</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ UP: गलत बिल जारी करने वाले बिजली कर्मियों पर होगी सख्त कार्रवाई ]]>
+            </title>
+            <link>https://www.aajtak.in/india/uttar-pradesh/story/lucknow-strict-action-will-be-taken-against-electricity-workers-who-issue-wrong-bills-uppcl-instructions-lcla-1583450-2022-11-25</link>
+            <guid isPermaLink="false">1669397170075</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ 'नशा शराब में होता तो...' तेजाब की बोतल लेकर नाच रही थी महिला, लड़कियां झुलसीं ]]>
+            </title>
+            <link>https://www.aajtak.in/india/uttar-pradesh/story/kanpur-nasha-sharab-me-hota-to-nachti-bottle-woman-dancing-with-acid-bottle-on-her-head-two-girls-scorched-lcla-1583400-2022-11-25</link>
+            <guid isPermaLink="false">1669397170076</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Jio ला रहा नई सर्विस, खत्म होगी YouTube और Insta की बादशाहत? ]]>
+            </title>
+            <link>https://www.aajtak.in/technology/tech-news/story/jio-to-launch-short-video-app-platfom-to-take-on-youtube-shorts-and-instagram-reels-ttec-1583312-2022-11-25</link>
+            <guid isPermaLink="false">1669397170077</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Samsung दे रहा 45 हजार तक का डिस्काउंट, जल्द खत्म होगा ऑफर ]]>
+            </title>
+            <link>https://www.aajtak.in/technology/tech-deals-/story/samsung-black-friday-sale-offer-discount-and-more-ttec-1583353-2022-11-25</link>
+            <guid isPermaLink="false">1669397170078</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ रिव्यू: 12 हजार रुपये वाला सैमसंग का सबसे सस्ता 5G फोन, खरीदें या नहीं? ]]>
+            </title>
+            <link>https://www.aajtak.in/technology/reviews/story/samsung-galaxy-m13-5g-review-price-camera-specifications-ttec-1580581-2022-11-25</link>
+            <guid isPermaLink="false">1669397170079</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ कोई आपकी जासूसी कर रहा? इस तरह से हो रहा खेल, ऐसे करें ब्लॉक ]]>
+            </title>
+            <link>https://www.aajtak.in/technology/tech-tips-and-tricks-/story/is-someone-spying-you-via-email-tracking-pixel-how-to-stop-ttec-1581150-2022-11-25</link>
+            <guid isPermaLink="false">1669397170080</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ जामताड़ा से भी आगे राजस्थान का ये गांव, Sextortion का फैला माया जाल ]]>
+            </title>
+            <link>https://www.aajtak.in/technology/tech-tips-and-tricks-/story/sextortion-whatsapp-video-call-suicide-exposes-rajasthan-sex-video-extortion-racket-ttec-1583063-2022-11-25</link>
+            <guid isPermaLink="false">1669397170081</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ मुगलों को धूल चटाने वाले लासित बोरफुकन और बैटल ऑफ सराईघाट की कहानी ]]>
+            </title>
+            <link>https://www.aajtak.in/education/knowledge/story/who-was-assame-fighter-lachit-borphukan-history-of-battle-of-saraighat-1583122-2022-11-25</link>
+            <guid isPermaLink="false">1669397170082</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ IGNOU TEE लेट फीस के साथ रजिस्‍ट्रेशन का आज आखिरी मौका ]]>
+            </title>
+            <link>https://www.aajtak.in/education/admission/story/ignou-december-tee-2022-registration-with-late-fee-last-date-today-apply-now-1583070-2022-11-25</link>
+            <guid isPermaLink="false">1669397170083</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ भारत में आज ही के दिन हुई थी पहली STD Call, 62 साल में यूं खत्म हो गया सफर ]]>
+            </title>
+            <link>https://www.aajtak.in/education/knowledge/story/first-std-call-was-made-in-india-on-this-day-journey-started-and-ended-in-62-years-1582885-2022-11-25</link>
+            <guid isPermaLink="false">1669397170084</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ कैसे अमेरिका की आंख की किरकरी बन गया था यह राष्ट्रपति, 638 बार हुई मारने की कोशिश ]]>
+            </title>
+            <link>https://www.aajtak.in/education/knowledge/story/fidel-castro-life-and-history-relation-with-women-638-murder-attempts-controversies-1582731-2022-11-25</link>
+            <guid isPermaLink="false">1669397170085</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ SBI में बिना परीक्षा नौकरी पाने का मौका, ₹19.50 लाख तक वेतन ]]>
+            </title>
+            <link>https://www.aajtak.in/education/career/story/sbi-recruitment-2022-to-fill-total-65-specialist-cadre-officer-posts-salary-more-than-19-lakh-ctc-1582818-2022-11-24</link>
+            <guid isPermaLink="false">1669397170086</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ नए अवतार में लॉन्च हुई Royal Enfield की ये दमदार बाइक ]]>
+            </title>
+            <link>https://www.aajtak.in/auto/news/story/updated-royal-enfield-himalayan-launched-with-new-colour-and-features-price-rs-2-16-lakh-lbs-1583351-2022-11-25</link>
+            <guid isPermaLink="false">1669397170087</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ SUV का मजा, CNG वाला माइलेज! जल्द आ रहीं ये जबरदस्त गाड़ियां ]]>
+            </title>
+            <link>https://www.aajtak.in/auto/news/story/maruti-brezza-to-tata-nexon-upcoming-cng-variant-suv-car-in-india-lbs-1582734-2022-11-25</link>
+            <guid isPermaLink="false">1669397170088</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ स्वैग पड़ेगा जेब पर भारी! कार में किए ये बदलाव तो कटेगा मोटा चालान ]]>
+            </title>
+            <link>https://www.aajtak.in/auto/news/story/illegal-car-modifications-you-should-avoid-to-prevent-hefty-challan-central-motor-vehicle-act-rule-1582652-2022-11-24</link>
+            <guid isPermaLink="false">1669397170089</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ हिट है 15x15x15 फॉर्मूला, उम्र 25,30,35 या हो 40...सबके लिए एक नियम! ]]>
+            </title>
+            <link>https://www.aajtak.in/business/utility/story/want-to-become-a-crorepati-follow-15-15-15-rule-in-mutual-funds-power-of-sip-tuta-1583259-2022-11-25</link>
+            <guid isPermaLink="false">1669397170090</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Bisleri कंपनी चलाने में अब नहीं रुचि! जानिए क्या करती हैं जयंती ]]>
+            </title>
+            <link>https://www.aajtak.in/business/news/photo/jayanti-chauhan-daughter-of-bisleri-chairman-ramesh-chauhan-who-not-be-interested-in-business-know-the-profile-tutd-1583201-2022-11-25</link>
+            <guid isPermaLink="false">1669397170091</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ क्यों बेचनी पड़ रही है Bisleri? कंपनी मालिक ने बताई वजह... बेटी का जिक्र! ]]>
+            </title>
+            <link>https://www.aajtak.in/business/news/story/tata-to-acquire-bisleri-why-the-need-to-sell-most-popular-water-bottle-brand-news-in-hindi-tutc-1582575-2022-11-24</link>
+            <guid isPermaLink="false">1669397170092</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Paytm निकला दशक का सबसे बर्बाद IPO, निवेशकों के 79% पैसे डूबे! ]]>
+            </title>
+            <link>https://www.aajtak.in/business/news/story/paytm-share-down-75-per-cent-last-one-year-world-worst-large-ipos-in-a-decade-tuta-1582750-2022-11-24</link>
+            <guid isPermaLink="false">1669397170093</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ क्या बिक गई Bisleri? देश की ये बड़ी कंपनी डील के करीब ]]>
+            </title>
+            <link>https://www.aajtak.in/business/news/story/tata-consumer-products-tcpl-to-acquire-bisleri-for-an-estimated-rs-7000-crore-report-tutc-1582277-2022-11-24</link>
+            <guid isPermaLink="false">1669397170094</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ चीन की 21 मंजिला इमारत में लगी आग, 10 लोगों की मौत ]]>
+            </title>
+            <link>https://www.aajtak.in/world/story/china-fire-killed-10-and-nine-injured-at-apartment-under-covid-lockdown-in-xinjiang-province-ntc-1583463-2022-11-25</link>
+            <guid isPermaLink="false">1669397170095</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ रूसी तेल पर प्राइस कैप लगाने को लेकर पुतिन का बड़ा बयान ]]>
+            </title>
+            <link>https://www.aajtak.in/world/story/russia-president-vladimir-putin-reaction-over-crude-oil-price-cap-to-imposed-by-west-countries-tlifwe-1583198-2022-11-25</link>
+            <guid isPermaLink="false">1669397170096</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ तीन साल बाद पति के पास लौटी पत्नी, मिलते ही तोड़ा दम! ]]>
+            </title>
+            <link>https://www.aajtak.in/world/story/wife-dies-on-day-she-reunites-with-husband-after-3-years-praised-for-organ-donations-tstsb-1583173-2022-11-25</link>
+            <guid isPermaLink="false">1669397170097</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ शख्स जिसे समझ रहा था सोने का पत्थर, वह उससे कीमती चीज निकली ]]>
+            </title>
+            <link>https://www.aajtak.in/science/story/gold-rock-turns-out-valuable-rare-meteorite-tstr-1583357-2022-11-25</link>
+            <guid isPermaLink="false">1669397170098</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ ये है दुनिया की सबसे महंगी दवा, एक डोज़ 28.51 करोड़ रुपये की ]]>
+            </title>
+            <link>https://www.aajtak.in/science/story/worlds-most-expensive-medicine-hemgenix-cost-28-crore-rupees-per-dose-tstr-1583241-2022-11-25</link>
+            <guid isPermaLink="false">1669397170099</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ इंडियन नेवी का नया 'हंटर-किलर', ब्रह्मोस-बराक मिसाइलों से है लैस ]]>
+            </title>
+            <link>https://www.aajtak.in/science/photo/indian-navy-gets-ins-mormugao-d67-stealth-guided-missile-destroyer-tstrd-1583143-2022-11-25</link>
+            <guid isPermaLink="false">1669397170100</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ पेट के लिए वरदान है मुनक्का ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/know-what-are-the-benefits-of-black-raisins-health-tips-and-news-mmt-1583284-2022-11-25</link>
+            <guid isPermaLink="false">1669397170101</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ सर्दियों में जोड़ों के दर्द से ऐसे पाएं राहत ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/health-news-how-to-manage-knee-pain-tips-in-hindi-mmt-1583152-2022-11-25</link>
+            <guid isPermaLink="false">1669397170102</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ जानें पानी कैसे बन सकता है ज़हर... क्या है इसकी सही मात्रा? ]]>
+            </title>
+            <link>https://www.aajtak.in/short-videos/video/bruce-lee-death-reason-how-water-can-be-harmful-for-body-how-much-to-drink-in-a-day-mmt-1582585-2022-11-24</link>
+            <guid isPermaLink="false">1669397170103</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/opinion-analysis</link>
+            <guid isPermaLink="false">1669397170104</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ रोटी सख्त या चावल ज्यादा गल जाएं तो पुरुष भड़क जाते हैं, औरतें भी इसपर राजी हैं ]]>
+            </title>
+            <link>https://www.aajtak.in/opinion-analysis-/story/women-beaten-or-killed-by-intimate-partner-honor-killing-india-ntc-1582109-2022-11-24</link>
+            <guid isPermaLink="false">1669397170105</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ सेनेटरी पैड पर नई रिपोर्ट पढ़कर महिलाओं को 40-50 साल पीछे फेंक देंगे मर्द! ]]>
+            </title>
+            <link>https://www.aajtak.in/opinion-analysis-/story/sanitary-pad-harmful-chemicals-can-cause-cancer-in-india-and-medical-science-gender-bias-ntc-1581476-2022-11-23</link>
+            <guid isPermaLink="false">1669397170106</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ BCCI अब जागा... सेलेक्टर्स पर गिरी गाज, 'पंड्या युग' करेगा राज ]]>
+            </title>
+            <link>https://www.aajtak.in/sports/cricket/story/opinion-bcci-is-bracing-up-for-split-captaincy-hardik-pandya-era-of-t20-team-begins-tspo-1578926-2022-11-19</link>
+            <guid isPermaLink="false">1669397170107</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/jokes</link>
+            <guid isPermaLink="false">1669397170108</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ फेल होकर बाप को ही डांटने लगा बेटा, वजह जानकर कंट्रोल नहीं कर पाएंगे हंसी ]]>
+            </title>
+            <link>https://www.aajtak.in/jokes/story/jokes-in-hindi-father-son-majedar-chutkule-viral-memes-joke-fresh-new-hindi-jokes-lbs-1582149-2022-11-25</link>
+            <guid isPermaLink="false">1669397170109</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ पति को चुकंदर खाने की सलाह क्यों दे रही थी पत्नी, जानकर हंसेंगे आप ]]>
+            </title>
+            <link>https://www.aajtak.in/jokes/story/husband-wife-hindi-jokes-social-media-viral-memes-chutkule-lbs-1582789-2022-11-25</link>
+            <guid isPermaLink="false">1669397170110</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ डॉक्टर ने पूछा-शराब पीना बंद किया या नहीं? मरीज का जवाब सुन हो जाएंगे लोटपोट ]]>
+            </title>
+            <link>https://www.aajtak.in/jokes/story/doctor-patient-majedar-hindi-chutkule-liquor-joke-funny-memes-lbs-1582799-2022-11-25</link>
+            <guid isPermaLink="false">1669397170111</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ टीचर ने तोड़ा ट्रैफिक सिग्नल तो मिली ये मजेदार सजा, पढ़ें वायरल जोक्स ]]>
+            </title>
+            <link>https://www.aajtak.in/jokes/story/teacher-student-funny-jokes-traffic-signal-hindi-chutkule-viral-memes-lbs-1582154-2022-11-24</link>
+            <guid isPermaLink="false">1669397170112</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ जब गुलजार से म‍िलने के ल‍िए बोला था झूठ, ओमप्रकाश मेहरा से सुनें क‍िस्सा ]]>
+            </title>
+            <link>https://www.aajtak.in/literature/sahiya-aaj-tak/video/sahitya-aajtak-2022-bollywood-writer-and-director-rakesh-mehra-tells-exciting-stories-included-meeting-with-writer-gulzar-1581010-2022-11-24</link>
+            <guid isPermaLink="false">1669397170113</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ साहित्य आज तक 2022: माइक के लाल मंच पर चमके युवा कलाकार ]]>
+            </title>
+            <link>https://www.aajtak.in/literature/sahiya-aaj-tak/story/mike-ke-lal-becomes-a-stage-for-budding-poets-and-artists-during-sahitya-aaj-tak-2022-1581931-2022-11-23</link>
+            <guid isPermaLink="false">1669397170114</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ कहानी : पाज़ेब | स्टोरीबॉक्स विद जमशेद कमर सिद्दीक़ी ]]>
+            </title>
+            <link>https://www.aajtak.in/literature/stories/story/hindi-audio-story-pazeb-storybox-with-jamshed-qamar-siddiqui-1581026-2022-11-22</link>
+            <guid isPermaLink="false">1669397170115</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.aajtak.in/podcast</link>
+            <guid isPermaLink="false">1669397170116</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ इतिहास की बड़ी मंदियों की पूरी पड़ताल: ज्ञान-ध्यान, Ep 595 ]]>
+            </title>
+            <link>https://podcasts.aajtak.in/history-education/explainers/recession-meaning-history-how-recession-ends-1583493-2022-11-25</link>
+            <guid isPermaLink="false">1669397170117</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ अशोक गहलोत इशारों-इशारों में राहुल-प्रियंका को क्या संदेश दे रहे?: दिन भर, 25 नवंबर ]]>
+            </title>
+            <link>https://podcasts.aajtak.in/news-current-affairs/din-bhar/rajasthan-conflict-started-again-muslim-factor-in-gujrat-poll-maharastra-and-karnatka-border-conflict-and-india-vs-new-zeland-odi-match-1583452-2022-11-25</link>
+            <guid isPermaLink="false">1669397170118</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ शाम चार बजे का न्यूज़ पॉडकास्ट - 5 मिनट ]]>
+            </title>
+            <link>https://podcasts.aajtak.in/news-current-affairs/audio-news-in-hindi/evening-4-pm-news-bulletin-5-minute-1583290-2022-11-25</link>
+            <guid isPermaLink="false">1669397170119</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ আরও জানুন ]]>
+            </title>
+            <link>https://bangla.aajtak.in</link>
+            <guid isPermaLink="false">1669397170120</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Kunal Ghosh Attack Prahlad Joshi: 'সঙ্গে কয়লাপাচারকারী কী করছিলেন?' ছবি দেখিয়ে কয়লামন্ত্রীকে নিশানা কুণালের ]]>
+            </title>
+            <link>https://bangla.aajtak.in/kolkata/story/tmc-leader-kunal-ghosh-demands-interrogation-union-coal-minister-prahlad-joshi-coal-smuggling-case-ssr-475027-2022-11-25</link>
+            <guid isPermaLink="false">1669397170121</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Mutual Funds Crorepati Formula: মিউচুয়াল ফান্ডে ১৫x১৫x১৫ ফর্মুলায় বিনিয়োগ করলেই কোটিপতি! হিসাবটা বুঝে নিন ]]>
+            </title>
+            <link>https://bangla.aajtak.in/utility/story/mutual-funds-15-15-15-formula-want-become-crorepati-follow-15-15-15-rule-mutual-funds-power-sip-sud-475118-2022-11-25</link>
+            <guid isPermaLink="false">1669397170122</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Mamata Banerjee-Suvendu Adhikari: 'বিরোধী দলনেতা আসলে খুশি হতাম,' বিধানসভায় মিউজিয়াম উদ্বোধনে মমতা ]]>
+            </title>
+            <link>https://bangla.aajtak.in/kolkata/story/chief-minister-mamata-banerjee-inaugurated-state-art-museum-west-bengal-legislative-assembly-abk-474953-2022-11-25</link>
+            <guid isPermaLink="false">1669397170123</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ FIFA World Cup 2022: বিশ্বকাপের প্রথম লাল কার্ড, গোলরক্ষকের ভুলে ডুবলেন বেলরা ]]>
+            </title>
+            <link>https://bangla.aajtak.in/sports/story/fifa-world-cup-2022-wales-lost-against-iran-wayne-hennessey-red-card-gareth-bale-football-world-cup-2022-jrd-475128-2022-11-25</link>
+            <guid isPermaLink="false">1669397170124</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.gnttv.com</link>
+            <guid isPermaLink="false">1669397170126</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ क्‍या होती है इंटरमिटेंट फास्टिंग? एलन मस्क समेत कई सेलिब्रिटीज वजन कम करने के लिए आपनाते हैं ये तरीका ]]>
+            </title>
+            <link>https://www.gnttv.com/health/story/what-intermittent-fasting-benefits-and-side-effects-elon-musk-475034-2022-11-25</link>
+            <guid isPermaLink="false">1669397170127</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Twitter ने 50 इंजीनियर्स को नौकरी से निकाला, Elon Musk ने इस हैकर को दी कंपनी में इंटर्नशिप ]]>
+            </title>
+            <link>https://www.gnttv.com/technology/story/elon-musk-twitter-fires-50-engineers-unsatisfactory-code-hire-hacker-george-hotz-fix-twitter-search-475009-2022-11-25</link>
+            <guid isPermaLink="false">1669397170128</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ होटल से चोरी हो गए थे भोजपुरी एक्ट्रेस आम्रपाली दुबे के लाखों के गहने, यूपी पुलिस ने 24 घंटे में ही चोर को पकड़ लिया ]]>
+            </title>
+            <link>https://www.gnttv.com/entertainment/story/bhojpuri-actress-amrapali-dubey-gold-stolen-worth-rs-25-lakh-recovered-within-24-hrs-474992-2022-11-25</link>
+            <guid isPermaLink="false">1669397170129</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ नाम क्या रखें इस अफसाने का? ]]>
+            </title>
+            <link>https://www.aajtak.in/india-today-hindi/special-issue/story/naam-kaya-rakhen-is-aphasane-ka-1580390-2022-11-25</link>
+            <guid isPermaLink="false">1669397170130</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ झींगे का धंधा झमाझम ]]>
+            </title>
+            <link>https://www.aajtak.in/india-today-hindi/special-issue/story/jhenge-ka-dhandha-jhamajham-1580428-2022-11-25</link>
+            <guid isPermaLink="false">1669397170131</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ इंडिया नहीं, भारत की सेहत का ख्याल ]]>
+            </title>
+            <link>https://www.aajtak.in/india-today-hindi/special-issue/story/india-nahin-bharat-ki-sehat-ka-khayal-1580498-2022-11-25</link>
+            <guid isPermaLink="false">1669397170132</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ BJP should make conman Sukesh its national president: Delhi CM Arvind Kejriwal ]]>
+            </title>
+            <link>https://www.indiatoday.in/india/story/bjp-should-make-conman-sukesh-chandrashekhar-its-national-president-delhi-chief-minister-arvind-kejriwal-2301818-2022-11-25</link>
+            <guid isPermaLink="false">1669397170133</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ BJP taught rioters lesson in 2002, brought permanent peace to Gujarat: Amit Shah ]]>
+            </title>
+            <link>https://www.indiatoday.in/elections/gujarat-assembly-polls-2022/story/bjp-taught-rioters-lesson-in-2002-brought-permanent-peace-to-gujarat-amit-shah-2301812-2022-11-25</link>
+            <guid isPermaLink="false">1669397170134</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ UP man arrested for faking name, justifying Shraddha Walkar's murder ]]>
+            </title>
+            <link>https://www.indiatoday.in/india/story/vikas-kumar-rashid-khan-shraddha-walker-aaftab-poonawala-2301790-2022-11-25</link>
+            <guid isPermaLink="false">1669397170135</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ और भी ]]>
+            </title>
+            <link>https://www.thelallantop.com</link>
+            <guid isPermaLink="false">1669397170136</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ जब श्रीदेवी के सुपरहिट गाने में एक ब्लंडर हुआ और उसे वैसे ही रहने दिया गया ]]>
+            </title>
+            <link>http://www.thelallantop.com/bherant/legacy-of-hawa-hawai-song-is-here-to-stay/</link>
+            <guid isPermaLink="false">1669397170137</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ कलाई तो बच गई पर जादू टूट गया ]]>
+            </title>
+            <link>http://www.thelallantop.com/tehkhana/life-story-of-ex-indian-cricket-team-captain-mohammad-azharuddin-the-wonder-boy-accused-in-match-fixing-with-manoj-prabhakar/</link>
+            <guid isPermaLink="false">1669397170138</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ पुनीत इस्सर और अमिताभ के बीच हुए हादसे के बारे में इस एक्ट्रेस को पहले पता चल गया था! ]]>
+            </title>
+            <link>http://www.thelallantop.com/jhamajham/amitabh-bachchans-film-coolie-completed-almost-three-and-a-half-decade-of-its-release-heres-some-interesting-anecdotes-from-that-film-except-that-injury/</link>
+            <guid isPermaLink="false">1669397170139</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ About us ]]>
+            </title>
+            <link>https://www.indiatodaygroup.com/about-us.php</link>
+            <guid isPermaLink="false">1669397170140</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Contact us ]]>
+            </title>
+            <link>https://www.indiatodaygroup.com/contact.php</link>
+            <guid isPermaLink="false">1669397170141</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Advertise with us ]]>
+            </title>
+            <link>http://specials.indiatoday.com/specials/popup/advertisewithus.htm</link>
+            <guid isPermaLink="false">1669397170142</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Complaint Redressal ]]>
+            </title>
+            <link>https://www.aajtak.in/complain-redressal</link>
+            <guid isPermaLink="false">1669397170143</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Privacy Policy ]]>
+            </title>
+            <link>https://www.indiatodaygroup.com/privacy-policy.html</link>
+            <guid isPermaLink="false">1669397170144</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Terms and Conditions ]]>
+            </title>
+            <link>http://specials.indiatoday.com/common/termsandconditions.phtml</link>
+            <guid isPermaLink="false">1669397170145</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Correction Policy ]]>
+            </title>
+            <link>https://www.aajtak.in/fact-check/correction-policy</link>
+            <guid isPermaLink="false">1669397170146</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Press Releases ]]>
+            </title>
+            <link>https://www.aajtak.in/prnewswire/prnewswire.html</link>
+            <guid isPermaLink="false">1669397170147</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ T&Cs for AajTak HD Contest ]]>
+            </title>
+            <link>https://akm-img-a-in.tosshub.com/aajtak/resource/smedia2/at-hd-media-planners-contest-t%26cs-tvtn.pdf</link>
+            <guid isPermaLink="false">1669397170148</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Vasant Valley ]]>
+            </title>
+            <link>https://www.vasantvalley.org/</link>
+            <guid isPermaLink="false">1669397170149</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Online Courses ]]>
+            </title>
+            <link>http://learntoday.in/</link>
+            <guid isPermaLink="false">1669397170150</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ India Today Education ]]>
+            </title>
+            <link>https://www.indiatoday.in/education-today</link>
+            <guid isPermaLink="false">1669397170151</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ ITMI ]]>
+            </title>
+            <link>https://www.indiatoday.in/itmi/</link>
+            <guid isPermaLink="false">1669397170152</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Aajtak Campus National Aptitude test ]]>
+            </title>
+            <link>https://www.aajtakcampus.in/</link>
+            <guid isPermaLink="false">1669397170153</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ World Esports Cup ]]>
+            </title>
+            <link>https://www.itg.gg/</link>
+            <guid isPermaLink="false">1669397170154</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Esports Premier League ]]>
+            </title>
+            <link>https://espl.itg.gg/</link>
+            <guid isPermaLink="false">1669397170155</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ India Today Diaries ]]>
+            </title>
+            <link>http://www.indiatodaydiaries.com/</link>
+            <guid isPermaLink="false">1669397170156</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Thomson Press ]]>
+            </title>
+            <link>http://www.thomsonpress.com</link>
+            <guid isPermaLink="false">1669397170157</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ OddNaari ]]>
+            </title>
+            <link>http://www.oddnaari.in/</link>
+            <guid isPermaLink="false">1669397170158</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Money Today ]]>
+            </title>
+            <link>http://moneytoday.intoday.in</link>
+            <guid isPermaLink="false">1669397170159</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Reader's Digest ]]>
+            </title>
+            <link>http://subscription.readersdigest.in/rdindia/subscription_2016/index.jsp?csource=aajtak</link>
+            <guid isPermaLink="false">1669397170160</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Music Today ]]>
+            </title>
+            <link>http://www.musictoday.in</link>
+            <guid isPermaLink="false">1669397170161</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Time ]]>
+            </title>
+            <link>https://subscriptions.intoday.in/time?utm_source=atwebsite</link>
+            <guid isPermaLink="false">1669397170162</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Gadgets & Gizmos ]]>
+            </title>
+            <link>http://www.gadgetsngizmos.in</link>
+            <guid isPermaLink="false">1669397170163</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Sahitya Aaj Tak ]]>
+            </title>
+            <link>https://www.aajtak.in/sahitya-aajtak/2018/</link>
+            <guid isPermaLink="false">1669397170164</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Agenda Aajtak ]]>
+            </title>
+            <link>http://agenda.aajtak.in</link>
+            <guid isPermaLink="false">1669397170165</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ India Today Conclave ]]>
+            </title>
+            <link>http://www.indiatodayconclave.com</link>
+            <guid isPermaLink="false">1669397170166</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Ideaplex ]]>
+            </title>
+            <link>http://www.ideaplex.in</link>
+            <guid isPermaLink="false">1669397170167</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ India Today Woman's Summit ]]>
+            </title>
+            <link>https://www.indiatoday.in/india-today-woman-summit</link>
+            <guid isPermaLink="false">1669397170168</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ India Today Youth Summit ]]>
+            </title>
+            <link>https://www.indiatoday.in/mind-rocks-2017-delhi</link>
+            <guid isPermaLink="false">1669397170169</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ State Of The States Conclave ]]>
+            </title>
+            <link>https://www.indiatoday.in/state-of-the-states/2016</link>
+            <guid isPermaLink="false">1669397170170</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ India Today Education Summit ]]>
+            </title>
+            <link>https://www.indiatoday.in/educationsummit/</link>
+            <guid isPermaLink="false">1669397170171</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Care Today ]]>
+            </title>
+            <link>http://www.caretoday.in</link>
+            <guid isPermaLink="false">1669397170172</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ India Content ]]>
+            </title>
+            <link>http://www.indiacontent.in</link>
+            <guid isPermaLink="false">1669397170173</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Headline Today ]]>
+            </title>
+            <link>https://www.headlinestoday.in/</link>
+            <guid isPermaLink="false">1669397170174</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Syndications Today ]]>
+            </title>
+            <link>https://www.indiacontent.in/</link>
+            <guid isPermaLink="false">1669397170181</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ Add Aaj Tak to Home Screen ]]>
+            </title>
+            <link>https://www.aajtak.in#</link>
+            <guid isPermaLink="false">1669397170182</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ लाइव टीवी ]]>
+            </title>
+            <link>https://www.aajtak.in/livetv</link>
+            <guid isPermaLink="false">1669397170183</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item>
+        <item>
+            <title>
+                <![CDATA[ मेन्यू ]]>
+            </title>
+            <link>undefined</link>
+            <guid isPermaLink="false">1669397170184</guid>
+            <dc:creator>
+                <![CDATA[ https://geekspool.com/rss/new ]]>
+            </dc:creator>
+        </item></channel>
+</rss>

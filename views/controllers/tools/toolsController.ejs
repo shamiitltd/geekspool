@@ -5,26 +5,16 @@
     <div class="main-content flex-column" id="mainContent">
         <span class="su-desc error"><%=messages.info %></span>
         <div class="flex-row delbox">
-            <a href="/sitescanner/new"><button type="button">Rss Generator</button></a>
-            <a href="/jobs/new"><button type="button">New Job Posting</button></a>
-            <a href="/internships/new"><button type="button">New Internships Posting</button></a>
-            <a href="/referral/new"><button type="button">New Referral Posting</button></a>
-            <a href="/scholarships/new"><button type="button">New Scholarships Posting</button></a>
-            <a href="/forwomen/new"><button type="button">New Exciting for women Posting</button></a>
-            <a href="/courses/organisation/new"><button type="button">New Editorial Posting</button></a>
-            <a href="/courses/new"><button type="button">New Course Posting</button></a>
+            <a href="/rss/new"><button type="button">Rss Generator</button></a>
+            <a href="/sitemap/new"><button type="button">Sitemap Generator</button></a>
         </div>
         <form action="/deleteDataFromDb" method="post">
             <div class="flex-row delbox">
                 <div>
                     <select name="database" class="select-box" id="">
                         <option value="">Select Database</option>
-                        <option value="jobs">Job</option>
-                        <option value="internships">Internship</option>
-                        <option value="referral">Referral</option>
-                        <option value="scholarships">Scholarship</option>
-                        <option value="forwomen">For women</option>
-                        <option value="courses">Course</option>
+                        <option value="rss">Rss</option>
+                        <option value="sitemap">Sitemap</option>
                     </select>
                 </div>
                 <div>

@@ -31,13 +31,13 @@ async function makeArrRecordUniqueNormal(arrOld) {
     return arrNew;
 }
 
-async function arrayToStringObjectTool(dataObject, separator=',') {
+async function arrayToStringObjectTool(dataObject, separator = ',') {
     for (let key in dataObject) {
         if (Array.isArray(dataObject[key])) {
             dataObject[key] = await makeArrRecordUniqueNormal(dataObject[key]);
             let str = '';
             for (let i = 0; i < dataObject[key].length; i++) {
-                if (str != '') str += separator;
+                if (str != '' && dataObject[key][i] != '') str += separator;
                 str += dataObject[key][i];
             }
             dataObject[key] = str;
@@ -50,7 +50,7 @@ async function arrayToStringObjectToolWithDuplicates(dataObject, separator = ','
         if (Array.isArray(dataObject[key])) {
             let str = '';
             for (let i = 0; i < dataObject[key].length; i++) {
-                if (str != '') str += separator;
+                if (str != '' && dataObject[key][i] != '') str += separator;
                 str += dataObject[key][i];
             }
             dataObject[key] = str;

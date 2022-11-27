@@ -1860,6 +1860,9 @@
     <Content Include="public\images\logo.webp" />
     <Content Include="public\javascripts\components\paginator.js" />
     <Content Include="public\javascripts\controllers\postDataForms.js" />
+    <Content Include="public\javascripts\controllers\profile.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="public\javascripts\controllers\signin.js" />
     <Content Include="public\javascripts\libraries\axios.js" />
     <Content Include="public\javascripts\libraries\firebase.js" />
@@ -1988,7 +1991,7 @@
     <Content Include="views\controllers\static\privacyPolicyController.ejs" />
     <Content Include="views\controllers\static\resetpassController.ejs" />
     <Content Include="views\controllers\static\signinController.ejs" />
-    <Content Include="views\controllers\tools\rssController.ejs" />
+    <Content Include="views\controllers\tools\rssgenController.ejs" />
     <Content Include="views\controllers\tools\sitemapgenController.ejs" />
     <Content Include="views\controllers\tools\toolsController.ejs" />
     <Content Include="views\controllers\tutorials\tutorialsController.ejs" />

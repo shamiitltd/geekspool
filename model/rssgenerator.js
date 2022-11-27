@@ -146,7 +146,7 @@ async function finalRssGeneration(sitemapFileName, languageCode, smapUrls, inclu
     mailObj["countUrls"] = "";
     if (excluded.length)
         mailObj["countUrls"] = "Urls, Excluded: " + excluded.join(", ");
-    let excludeFix = ['script:', '&', ' ','.ico']
+    let excludeFix = ['script:', '&', ' ', '.ico']
     let allUrls = [];
     let str = "";
     let arr = {
@@ -191,16 +191,24 @@ async function finalRssGeneration(sitemapFileName, languageCode, smapUrls, inclu
     });
 }
 
-function jobSchedular(min = 60, tableName = 'smaptorss') {
-    const job = schedule.scheduleJob(`*/${min} * * * *`, function () {
-        let usersQueryString = `SELECT * FROM ${tableName} WHERE  updated <= CURRENT_TIMESTAMP();`;
-        mysql.query(usersQueryString, async (err, results, fields) => {
+function jobSchedular(min = 60) {
+    try {
+        const job = schedule.scheduleJob(`*/${min} * * * *`, function () {
+            updateRssTable();
+        });
+    } catch (err) { }
+}
+function updateRssTable() {
+    try {
+        let queryStr = `CALL Get_Rss_recordsto_update();`;
+        mysql.query(queryStr, async (err, results, fields) => {
             if (err) {
                 // console.log( 'Some error, login with another method with different email', err );
                 return;
             }
+            results = results[0];
             if (!results || !results[0]) {
-                // console.log( 'No user with this email' );
+                // console.log( 'No record ready to update' );
                 return;
             }
             for (let i = 0; i < results.length; i++) {
@@ -213,22 +221,17 @@ function jobSchedular(min = 60, tableName = 'smaptorss') {
                 }
                 if (results[i].frequency != '0')
                     await finalRssGeneration(results[i].rssid, results[i].language, await stringToArray(results[i].urls), await stringToArray(results[i].included), await stringToArray(results[i].excluded), mailObj);
-                let sqlQueryString = `UPDATE ${tableName} 
-                        SET updated = DATE_ADD( CURRENT_TIMESTAMP(), INTERVAL ${results[i].frequency != '0' ? 1400 / results[i].frequency : 5256000} MINUTE )
-                        WHERE rssid='${results[i].rssid}'
-                        `;
-                mysql.query(sqlQueryString, async (cerr, cresults, cfields) => {
+                let queryStr = `CALL Upload_Rss_recordsto_update('${results[i].rssid}', ${results[i].frequency});`;
+                mysql.query(queryStr, async (cerr, cresults, cfields) => {
                     if (cerr) {
                         // console.log( "Not connected !!! " + cerr );
                         return;
                     }
-                    // console.log( 'The Inserted in table is: \n', cresults, cfields );
+                    //console.log( 'The Inserted in table is: \n', cresults, cfields );
                 });
-
             }
         });
-
-    });
+    } catch (err) { }
 }
 jobSchedular(15);
 module.exports = {
