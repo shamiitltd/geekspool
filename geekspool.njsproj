@@ -90,7 +90,7 @@
     </Content>
     <Content Include="help\storedprocedure.sql" />
     <Content Include="help\tables.sql" />
-    <Content Include="htaccess" />
+    <Content Include=".htaccess" />
     <Content Include="middleware\roles.js">
       <SubType>Code</SubType>
     </Content>

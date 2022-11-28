@@ -161,7 +161,7 @@ async function uploadtoolInfoData(res, dataObject) {
     let month = d.getMonth();
     let update = dataObject.rssid ? true : false;
     dataObject.rssid = dataObject.rssid ? dataObject.rssid : rssid;
-    dataObject.directorypath = `/feeds/${year}/${month}/`;
+    dataObject.directorypath = `/feeds/${year}/${month+1}/`;
     let queryString = `CALL Upload_rss_InfoData('${dataObject.rssid}', '${dataObject.userid}', '${dataObject.emails ? dataObject.emails : ''}',
                                                 '${dataObject.urls ? dataObject.urls : ''}', '${dataObject.included ? dataObject.included : ''}', 
                                                 '${dataObject.excluded ? dataObject.excluded : ''}', '${dataObject.remarks ? dataObject.remarks : ''}',
@@ -177,6 +177,7 @@ async function uploadtoolInfoData(res, dataObject) {
             emails: dataObject.emails ? dataObject.emails : '',
             rssid: dataObject.rssid,
             userid: dataObject.userid,
+            frequency: dataObject.frequency,
             path: dataObject.directorypath,
             urls: dataObject.urls ? dataObject.urls.split(',').join(", ") : ''
         }

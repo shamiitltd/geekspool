@@ -187,6 +187,14 @@ async function finalRssGeneration(sitemapFileName, languageCode, smapUrls, inclu
             mailObj["countUrls"] = "Urls, Includes: " + included.join(", ") + " " + mailObj["countUrls"];
         mailObj["countUrls"] = "Total: " + validLength + " " + mailObj["countUrls"];
         //responseMsgRss(mailObj);
+        let queryStr = `CALL Upload_Rss_recordsto_update('${mailObj.rssid}', ${mailObj.frequency}, ${validLength});`;
+        mysql.query(queryStr, async (cerr, cresults, cfields) => {
+            if (cerr) {
+                //console.log("Not connected !!! " + cerr + mailObj);
+                return;
+            }
+            //console.log( 'The Inserted in table is: \n', cresults, cfields );
+        });
         return validLength;
     });
 }
@@ -216,19 +224,13 @@ function updateRssTable() {
                     emails: results[i].emails ? results[i].emails : '',
                     rssid: results[i].rssid,
                     userid: results[i].userid,
+                    frequency: results[i].frequency,
                     path: results[i].directorypath,
                     urls: results[i].urls ? results[i].urls.split(',').join(", ") : ''
                 }
                 if (results[i].frequency != '0')
                     await finalRssGeneration(results[i].rssid, results[i].language, await stringToArray(results[i].urls), await stringToArray(results[i].included), await stringToArray(results[i].excluded), mailObj);
-                let queryStr = `CALL Upload_Rss_recordsto_update('${results[i].rssid}', ${results[i].frequency});`;
-                mysql.query(queryStr, async (cerr, cresults, cfields) => {
-                    if (cerr) {
-                        // console.log( "Not connected !!! " + cerr );
-                        return;
-                    }
-                    //console.log( 'The Inserted in table is: \n', cresults, cfields );
-                });
+                
             }
         });
     } catch (err) { }
