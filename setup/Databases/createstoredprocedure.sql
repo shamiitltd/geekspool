@@ -97,12 +97,12 @@ BEGIN
 END;
 
 --#
-/* Delete from Rss table*/
 
+/* Delete from Rss table*/
 CREATE PROCEDURE IF NOT EXISTS Delete_RssById(IN irssid Varchar(50), IN iuserid char(30))
 BEGIN
     DELETE FROM smaptorss 
-    WHERE rssid=irssid AND (userid=iuserid OR (SELECT COUNT(*) FROM `userlogin` WHERE id=iuserid AND `role`='admin')=1);
+    WHERE rssid=irssid AND (userid=iuserid or (SELECT COUNT(*)=1 as admin FROM `userlogin` WHERE id=iuserid AND `role`='admin'));
 END;
 
 --#
