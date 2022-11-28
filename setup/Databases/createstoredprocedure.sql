@@ -86,7 +86,7 @@ BEGIN
             frequency=ifrequency,
             ndtype=indtype,
             updated = DATE_ADD( CURRENT_TIMESTAMP(), INTERVAL IF(ifrequency != 0 , 1400/ifrequency, 5256000) MINUTE )
-        WHERE rssid=irssid AND (userid=iuserid OR (SELECT COUNT(*) FROM `userlogin` WHERE id=iuserid AND `role`='admin')=1);
+        WHERE rssid=irssid AND (userid=iuserid OR (SELECT COUNT(*)=1 as admin FROM `userlogin` WHERE id=iuserid AND `role`='admin'));
     else 
 	    /* Insert the data into smaptorss*/
 	    INSERT INTO 
@@ -195,11 +195,12 @@ END;
 --#
 /* Reset password user information*/
 
-CREATE PROCEDURE IF NOT EXISTS Upload_Rss_recordsto_update(IN irssid Varchar(50), IN ifrequency INT)
+CREATE PROCEDURE IF NOT EXISTS Upload_Rss_recordsto_update(IN irssid Varchar(50), IN ifrequency INT, IN validLength INT)
 BEGIN
     /* Update Data in smaptorss */
     UPDATE smaptorss 
-    SET updated = DATE_ADD( CURRENT_TIMESTAMP(), INTERVAL IF(ifrequency != 0 , 1400/ifrequency, 5256000) MINUTE )
+    SET updated = DATE_ADD( CURRENT_TIMESTAMP(), INTERVAL IF(ifrequency != 0 , 1400/ifrequency, 5256000) MINUTE ),
+        rsslength=validLength
     WHERE rssid=irssid;
 END;
 
