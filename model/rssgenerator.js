@@ -2,10 +2,8 @@ const fs = require('fs');
 const axios = require('axios').default;
 const cheerio = require('cheerio');
 const GetSitemapLinks = require("get-sitemap-links").default;
-const schedule = require('node-schedule');
 const { siteTitle, siteUrl } = require('../static/constants');
 require('dotenv').config();
-const { stringToArray } = require('../model/common');
 const { mysql } = require('../config/database');
 //const {
 //    responseMsgRss
