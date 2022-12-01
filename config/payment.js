@@ -1,5 +1,7 @@
 const Razorpay = require('razorpay');
-var instance = new Razorpay({ key_id: 'YOUR_KEY_ID', key_secret: 'YOUR_SECRET' })
+require('dotenv').config();
+
+let instance = new Razorpay({ key_id: process.env.razorpay_key_id, key_secret: process.env.razorpay_key_secret });
 
 var options = {
     amount: 50000,  // amount in the smallest currency unit
