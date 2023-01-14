@@ -88,6 +88,7 @@
     <Content Include="help\helpfile.sql">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="help\impinstruction.txt" />
     <Content Include="help\storedprocedure.sql" />
     <Content Include="help\tables.sql" />
     <Content Include=".htaccess" />

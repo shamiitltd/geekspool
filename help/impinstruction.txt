@@ -1,0 +1,9 @@
+-- GCP Instruction--
+sudo su (for super user)
+sudo passwd (to change password)
+
+---Add new domain GCP---
+Add CNAME/TXT recording in Zone editor for specific domain to verify, inside zone editor in cPanel
+----Sub domain----
+1. Don't create any subdomain in cpanel
+2. Add new CNAME in Zone editor (only) According to instruction
