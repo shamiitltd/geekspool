@@ -159,5 +159,5 @@ jobs:
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no "${{ secrets.SSH_USER }}" << 'EOF'
             cd "htdocs/${{ secrets.FTP_SERVER }}"
-            php artisan db:seed --force
+            #php artisan db:seed --force
           EOF
