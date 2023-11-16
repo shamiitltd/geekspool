@@ -103,9 +103,10 @@ jobs:
             #Prepare .env file
             sed -i "s/APP_ENV=.*/APP_ENV=${{ vars.APP_ENV }}/" .env
             sed -i "s/APP_DEBUG=.*/APP_DEBUG=${{ vars.APP_DEBUG }}/" .env
-            sed -i "s/DB_DATABASE=.*/DB_DATABASE=${{ secrets.DB_DATABASE }}/" .env
-            sed -i "s/DB_USERNAME=.*/DB_USERNAME=${{ secrets.DB_USERNAME }}/" .env
-            sed -i "s/DB_PASSWORD=.*/DB_PASSWORD=${{ secrets.DB_PASSWORD }}/" .env
+            sed -i "s/MYSQL_HOST=.*/MYSQL_HOST=${{ secrets.DB_HOSTSERVER }}/" .env
+            sed -i "s/MYSQL_DATABASE_TEST_DBGP=.*/MYSQL_DATABASE_TEST_DBGP=${{ secrets.DB_DATABASE }}/" .env
+            sed -i "s/MYSQL_USER_DBGP=.*/MYSQL_USER_DBGP=${{ secrets.DB_USERNAME }}/" .env
+            sed -i "s/MYSQL_PASSWORD_DBGP=.*/MYSQL_PASSWORD_DBGP=${{ secrets.DB_PASSWORD }}/" .env
           EOF
           
       - name: Remove the 'release' directory and .zip
